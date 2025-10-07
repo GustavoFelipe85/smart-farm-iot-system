@@ -29,12 +29,12 @@ Sistema IoT avançado para monitoramento e automação em agricultura de precis�
 
 ## 📁 Estrutura do Projeto
 smart-farm-iot-system/
-├── 📁 firmware/ # Código para microcontroladores
-├── 📁 backend/ # API e processamento de dados
-├── 📁 machine-learning/ # Modelos preditivos
-├── 📁 dashboard/ # Interface web
-├── 📁 docs/ # Documentação acadêmica
-└── 📁 hardware/ # Esquemas e PCB
+├── 📁 firmware/           # Código para microcontroladores
+├── 📁 backend/           # API e processamento de dados
+├── 📁 machine-learning/  # Modelos preditivos
+├── 📁 dashboard/         # Interface web
+├── 📁 docs/             # Documentação acadêmica
+└── 📁 hardware/         # Esquemas e PCB
 
 ## 🔬 Metodologia Científica
 1. **Revisão bibliográfica** do estado da arte em IoT agrícola
@@ -51,6 +51,50 @@ smart-farm-iot-system/
 
 ## 🔗 Projeto Anterior
 [TCC IoT Agribusiness](https://github.com/GustavoFelipe85/IoT-agribusiness-tcc) - Trabalho de graduação que originou esta pesquisa
+
+## 📊 Gestão do Projeto & Roadmap
+
+### 🎯 GitHub Projects
+Acompanhe o progresso da pesquisa através do nosso quadro Kanban:
+
+[**🔗 Acesse o Smart Farm IoT - Research Kanban**](https://github.com/GustavoFelipe85/smart-farm-iot-system/projects)
+
+### 📈 Status do Projeto
+![Project Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
+![Research Phase](https://img.shields.io/badge/Fase-Proposta_de_Pesquisa-blue)
+
+### 🗓️ Roadmap da Pesquisa
+
+#### 🎓 Fase 1: Proposta de Pesquisa (Atual)
+- [ ] Definição do problema de pesquisa
+- [ ] Revisão bibliográfica sistemática
+- [ ] Metodologia científica
+- [ ] Submissão para a universidade
+
+#### 🔬 Fase 2: Desenvolvimento do Sistema
+- [ ] Prototipagem hardware IoT
+- [ ] Desenvolvimento do firmware
+- [ ] API e backend
+- [ ] Dashboard de monitoramento
+
+#### 📊 Fase 3: Análise de Dados
+- [ ] Coleta de dados em campo
+- [ ] Análise estatística
+- [ ] Modelos de machine learning
+- [ ] Validação dos resultados
+
+#### ✍️ Fase 4: Produção Científica
+- [ ] Redação do artigo
+- [ ] Submissão para periódico
+- [ ] Preparação de apresentação
+
+### 📋 Métricas de Progresso
+| Fase | Progresso | Previsão |
+|------|-----------|----------|
+| Proposta | 🔵 75% | Out 2024 |
+| Desenvolvimento | 🟡 25% | Dez 2024 |
+| Análise | ⚪ 0% | Fev 2025 |
+| Publicação | ⚪ 0% | Abr 2025 |
 
 ## 👨‍💻 Autor
 **Gustavo Felipe Poluto Figueiredo**
