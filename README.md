@@ -54,9 +54,9 @@ smart-farm-iot-system/
 
 ## 👨‍💻 Autor
 **Gustavo Felipe Poluto Figueiredo**
-- Graduado em [Seu Curso] pela [Sua Universidade]
-- Email: [seu.email@domain.com]
-- LinkedIn: [seu-linkedin]
+- Graduado em Bacharelado em Engenharia da Computação pela Universidade de Santo Amaro (UNISA).
+- Email: gustavo.f.p.f@outlook.com.br
+- LinkedIn: www.linkedin.com/in/gustavofpaluch
 
 ## 📄 Licença
 Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
