@@ -51,3 +51,6 @@ services:
   grafana:
     networks:
       - iot-network
+environment:
+  - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUXDB_PASSWORD}
+  - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
