@@ -179,6 +179,3 @@ Graduado em Engenharia da Computação – UNISA (2025)
 
 ---
 
-Deseja que eu **gere o arquivo `README.md` pronto para commit** (UTF-8 formatado, Markdown validado e pronto para subir no GitHub)?  
-Posso exportar o arquivo em `.md` agora.
-```
