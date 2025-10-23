@@ -130,4 +130,4 @@ Gustavo Felipe Paluch Figueiredo Graduado em Engenharia da Computação – UNIS
 
 © 2025 – Projeto acadêmico e experimental desenvolvido com fins de pesquisa e inovação tecnológica.
 
-este foi o que você fez, me apresente uma versão caprichada para convencer a banca da Unioeste e funcional de preferência 
+
