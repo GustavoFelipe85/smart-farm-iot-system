@@ -100,6 +100,12 @@ Acompanhe o progresso da pesquisa através do nosso quadro Kanban:
 **Gustavo Felipe Paluch Figueiredo**
 - Graduado em Bacharelado em Engenharia da Computação pela Universidade de Santo Amaro (UNISA).
 - Email: gustavo.f.p.f@outlook.com.br
+
+## 🔗 Documentos Relacionados
+- [📘 TCC - Fatores e Aplicações Limitantes da IoT na Agricultura (UNISA)](https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed)
+- [🌱 Repositório do Projeto - Smart Farm IoT System (GitHub)](https://github.com/GustavoFelipe85/smart-farm-iot-system)
+- [📑 Pré-Projeto de Mestrado (UNIOESTE 2026)](link_para_pdf_final_copiado_do_lattes_ou_github)
+
 - LinkedIn: www.linkedin.com/in/gustavofpaluch
 
 ## 📄 Licença
