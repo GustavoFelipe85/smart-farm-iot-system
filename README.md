@@ -97,7 +97,7 @@ Acompanhe o progresso da pesquisa através do nosso quadro Kanban:
 | Publicação | ⚪ 0% | Abr 2025 |
 
 ## 👨‍💻 Autor
-**Gustavo Felipe Poluch Figueiredo**
+**Gustavo Felipe Paluch Figueiredo**
 - Graduado em Bacharelado em Engenharia da Computação pela Universidade de Santo Amaro (UNISA).
 - Email: gustavo.f.p.f@outlook.com.br
 - LinkedIn: www.linkedin.com/in/gustavofpaluch
