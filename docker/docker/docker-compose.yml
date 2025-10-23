@@ -43,4 +43,9 @@ networks:
   iot-network:
     driver: bridge
 
- 
+INFLUXDB_PASSWORD=StrongPass_2025!
+GRAFANA_PASSWORD=StrongPass_2025!
+
+ cd docker
+docker compose --env-file ../.env up -d
+
