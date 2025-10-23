@@ -1,112 +1,184 @@
-# 🌱 Smart Farm IoT System
+[`smart-farm-iot-system`](https://github.com/GustavoFelipe85/smart-farm-iot-system), estruturado em **português técnico e acadêmico**, de acordo com boas práticas DevOps e documentação científica do projeto IoT descrito no seu pré-projeto:
 
-## 🎓 Projeto para Seleção de Mestrado
-**Universidade Pública - Universidade do Oeste do Paraná (Unioeste)** - Programa de Pós-Graduação Mestrado em Ciências da Computação/Sistemas
+---
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
-[![IoT](https://img.shields.io/badge/IoT-Agriculture-yellow.svg)](https://github.com/topics/iot-agriculture)
+````markdown
+# 🌾 Smart Farm IoT System  
+**Plataforma Inteligente de Monitoramento e Automação para Agricultura de Precisão**
 
-## 📋 Descrição do Projeto
-Sistema IoT avançado para monitoramento e automação em agricultura de precisão, evoluindo do trabalho de TCC para aplicações em pesquisa acadêmica. O projeto integra sensores ambientais, análise de dados em tempo real e algoritmos de Machine Learning para otimização de recursos agrícolas.
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/GustavoFelipe85/smart-farm-iot-system)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-## 🎯 Objetivos de Pesquisa
-- [ ] **Machine Learning** para predição de safras e detectação de anomalias
-- [ ] **Otimização inteligente** de recursos hídricos e energéticos
-- [ ] **Integração avançada** com sensores multispectrais e drones
-- [ ] **Análise em tempo real** com dashboard interativo
-- [ ] **Publicação científica** dos resultados obtidos
+---
 
-## 🛠 Tecnologias Utilizadas
-| Área | Tecnologias |
-|------|-------------|
-| **Embedded** | Arduino, ESP32, Raspberry Pi |
-| **Sensores** | DHT22, Soil Moisture, LDR, pH sensors |
-| **Backend** | Python, Node.js, PostgreSQL |
-| **ML/AI** | Scikit-learn, TensorFlow, Pandas |
-| **Frontend** | React.js, Chart.js, WebSocket |
-| **Cloud** | AWS IoT, MQTT Protocol |
+## 🧠 Visão Geral do Projeto
+O **Smart Farm IoT System** é uma plataforma baseada em **Internet das Coisas (IoT)** aplicada à agricultura de precisão.  
+O sistema integra sensores ambientais, automação de irrigação e análise de dados em tempo real para aumentar a eficiência hídrica e produtiva.
 
-## 📁 Estrutura do Projeto
+A arquitetura é modular, de código aberto, e utiliza tecnologias amplamente adotadas na indústria, como **MQTT (Mosquitto)**, **InfluxDB**, e **Grafana**, orquestradas via **Docker Compose**.
+
+> **Base teórica:** Projeto derivado do TCC “Fatores e Aplicações Limitantes da IoT na Agricultura” (UNISA, 2025).  
+> **Repositório:** [TCC no DSpace UNISA](https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed)
+
+---
+
+## 🏗️ Arquitetura da Solução
+
+A plataforma é composta por três serviços principais executados em containers Docker:
+
+| Serviço     | Descrição                                                                 |
+|--------------|---------------------------------------------------------------------------|
+| **Mosquitto** | Broker MQTT responsável pela comunicação entre os sensores e o backend. |
+| **InfluxDB**  | Banco de dados time-series para armazenar medições ambientais.          |
+| **Grafana**   | Interface para visualização e análise dos dados coletados.              |
+
+```mermaid
+graph TD
+    A[Sensores IoT - ESP32] -->|MQTT| B[Broker Mosquitto]
+    B --> C[InfluxDB - Banco de Dados]
+    C --> D[Grafana - Dashboards e Alertas]
+````
+
+---
+
+## ⚙️ Infraestrutura (Docker Compose)
+
+Arquivo: `docker/docker-compose.yml`
+
+```yaml
+version: "3.8"
+
+networks:
+  iot-network:
+    driver: bridge
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    restart: unless-stopped
+    networks:
+      - iot-network
+
+  influxdb:
+    image: influxdb:2.7
+    container_name: influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./influxdb/data:/var/lib/influxdb2
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUXDB_PASSWORD}
+      - DOCKER_INFLUXDB_INIT_ORG=smartfarm
+      - DOCKER_INFLUXDB_INIT_BUCKET=sensors
+    restart: unless-stopped
+    networks:
+      - iot-network
+
+  grafana:
+    image: grafana/grafana:10.4.2
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+    depends_on:
+      - influxdb
+    restart: unless-stopped
+    networks:
+      - iot-network
+```
+
+---
+
+## 📦 Estrutura do Projeto
+
+```
 smart-farm-iot-system/
-├── 📁 firmware/           # Código para microcontroladores
-├── 📁 backend/           # API e processamento de dados
-├── 📁 machine-learning/  # Modelos preditivos
-├── 📁 dashboard/         # Interface web
-├── 📁 docs/             # Documentação acadêmica
-└── 📁 hardware/         # Esquemas e PCB
+├── docker/
+│   ├── docker-compose.yml
+│   ├── mosquitto/
+│   │   ├── config/
+│   │   ├── data/
+│   │   └── log/
+│   └── influxdb/
+│       └── data/
+├── firmware/         # Códigos embarcados (ESP32)
+├── backend/          # Scripts de ingestão e APIs (Python/Node.js)
+├── dashboards/       # Painéis Grafana e templates
+└── docs/             # Documentação técnica e relatórios
+```
 
-## 🔬 Metodologia Científica
-1. **Revisão bibliográfica** do estado da arte em IoT agrícola
-2. **Desenvolvimento iterativo** do sistema com testes de campo
-3. **Coleta e análise** de dados em condições reais
-4. **Validação estatística** dos resultados obtidos
-5. **Comparação** com métodos tradicionais
+---
 
-## 📊 Resultados Esperados
-- Redução de **≥20%** no consumo hídrico
-- Aumento de **≥15%** na produtividade
-- Sistema **autônomo** com mínima intervenção humana
-- Publicação em **periódico científico**
+## 🚀 Instruções de Execução
 
-## 🔗 Projeto Anterior
-[TCC IoT Agribusiness](https://github.com/GustavoFelipe85/IoT-agribusiness-tcc) - Trabalho de graduação que originou esta pesquisa
+### 1️⃣ Criar variáveis de ambiente
 
-## 📊 Gestão do Projeto & Roadmap
+Crie um arquivo `.env` na raiz do projeto:
 
-### 🎯 GitHub Projects
-Acompanhe o progresso da pesquisa através do nosso quadro Kanban:
+```bash
+INFLUXDB_PASSWORD=StrongPass_2025!
+GRAFANA_PASSWORD=StrongPass_2025!
+```
 
-[**🔗 Acesse o Smart Farm IoT - Research Kanban**](https://github.com/GustavoFelipe85/smart-farm-iot-system/projects)
+### 2️⃣ Subir os containers
 
-### 📈 Status do Projeto
-![Project Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
-![Research Phase](https://img.shields.io/badge/Fase-Proposta_de_Pesquisa-blue)
+```bash
+cd docker
+docker compose --env-file ../.env up -d
+```
 
-### 🗓️ Roadmap da Pesquisa
+### 3️⃣ Verificar os serviços
 
-#### 🎓 Fase 1: Proposta de Pesquisa (Atual)
-- [ ] Definição do problema de pesquisa
-- [ ] Revisão bibliográfica sistemática
-- [ ] Metodologia científica
-- [ ] Submissão para a universidade
+* Mosquitto: `localhost:1883`
+* InfluxDB UI: [http://localhost:8086](http://localhost:8086)
+* Grafana UI: [http://localhost:3000](http://localhost:3000)
 
-#### 🔬 Fase 2: Desenvolvimento do Sistema
-- [ ] Prototipagem hardware IoT
-- [ ] Desenvolvimento do firmware
-- [ ] API e backend
-- [ ] Dashboard de monitoramento
+---
 
-#### 📊 Fase 3: Análise de Dados
-- [ ] Coleta de dados em campo
-- [ ] Análise estatística
-- [ ] Modelos de machine learning
-- [ ] Validação dos resultados
+## 🧩 Próximas Etapas de Desenvolvimento
 
-#### ✍️ Fase 4: Produção Científica
-- [ ] Redação do artigo
-- [ ] Submissão para periódico
-- [ ] Preparação de apresentação
+* [ ] Adicionar sensores físicos (DHT22, YL-69, BMP280)
+* [ ] Implementar API REST de coleta de dados
+* [ ] Criar dashboards de irrigação e produtividade
+* [ ] Integração com aprendizado de máquina (MLflow / Scikit-Learn)
+* [ ] Publicação de artigo científico (IEEE ou SBC)
 
-### 📋 Métricas de Progresso
-| Fase | Progresso | Previsão |
-|------|-----------|----------|
-| Proposta | 🔵 75% | Out 2024 |
-| Desenvolvimento | 🟡 25% | Dez 2024 |
-| Análise | ⚪ 0% | Fev 2025 |
-| Publicação | ⚪ 0% | Abr 2025 |
+---
+
+## 📚 Referências
+
+* **WOLFERT, S. et al.** *Big Data in Smart Farming – A review.* Agricultural Systems, 153, p.69–80, 2017.
+* **ZHANG, Y. et al.** *IoT Applications in Smart Agriculture: A Review.* Journal of Agricultural Informatics, 13(1), p.45–60, 2022.
+* **ConectarAGRO.** Agricultura 4.0: Conectividade no campo. Disponível em: [https://conectaragro.com.br](https://conectaragro.com.br)
+
+---
 
 ## 👨‍💻 Autor
+
 **Gustavo Felipe Paluch Figueiredo**
-- Graduado em Bacharelado em Engenharia da Computação pela Universidade de Santo Amaro (UNISA).
-- Email: gustavo.f.p.f@outlook.com.br
+Graduado em Engenharia da Computação – UNISA (2025)
+[LinkedIn](https://www.linkedin.com/in/gustavofpaluch) | [Lattes](https://wwws.cnpq.br/cvlattesweb/PKG_MENU.menu?f_cod=6B7200F84D28E12A9BE8186ED261D2D4)
 
-## 🔗 Documentos Relacionados
-- [📘 TCC - Fatores e Aplicações Limitantes da IoT na Agricultura (UNISA)](https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed)
-- [🌱 Repositório do Projeto - Smart Farm IoT System (GitHub)](https://github.com/GustavoFelipe85/smart-farm-iot-system)
-- [📑 Pré-Projeto de Mestrado (UNIOESTE 2026)](link_para_pdf_final_copiado_do_lattes_ou_github)
+---
 
-- LinkedIn: www.linkedin.com/in/gustavofpaluch
+> © 2025 – Projeto acadêmico e experimental desenvolvido com fins de pesquisa e inovação tecnológica.
 
-## 📄 Licença
-Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
+```
+
+---
+
+Deseja que eu **gere o arquivo `README.md` pronto para commit** (UTF-8 formatado, Markdown validado e pronto para subir no GitHub)?  
+Posso exportar o arquivo em `.md` agora.
+```
