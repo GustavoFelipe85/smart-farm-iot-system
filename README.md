@@ -177,5 +177,4 @@ Graduado em Engenharia da Computação – UNISA (2025)
 
 ```
 
----
 
