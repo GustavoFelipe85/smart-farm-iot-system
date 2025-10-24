@@ -18,10 +18,10 @@
 ## 🚀 Status do Projeto
 
 **📅 Próximos Prazos:**
-- [ ] Sistema de coleta de dados - 15/Nov
-- [ ] Integração MQTT - 20/Nov
-- [ ] API REST para telemetria - 25/Nov
-- [ ] Dashboard de monitoramento - 30/Nov
+- [ ] Sistema de coleta de dados - 
+- [ ] Integração MQTT - 
+- [ ] API REST para telemetria - 
+- [ ] Dashboard de monitoramento - 
 
 **⚠️ Blocker Atual:** [Nenhum | Especificar se houver impedimentos]
 
