@@ -1,152 +1,131 @@
-🌾 Smart Farm IoT System
+<p align="center">
+  <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
+</p>
 
-Plataforma Inteligente de Monitoramento e Automação para Agricultura de Precisão
+# 🌱 Smart Farm IoT System
 
+## 🎓 Projeto para Seleção de Mestrado
+**Universidade Pública - Universidade do Oeste do Paraná (Unioeste)** - Programa de Pós-Graduação Mestrado em Ciências da Computação/Sistemas
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
+[![IoT](https://img.shields.io/badge/IoT-Agriculture-yellow.svg)](https://github.com/topics/iot-agriculture)
+[![Docker](https://img.shields.io/badge/Docker-Container-blue)](https://docker.com)
+[![ESP32](https://img.shields.io/badge/ESP32-IoT-green)](https://espressif.com)
+[![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)](https://github.com/GustavoFelipe85/smart-farm-iot-system)
+[![Fase](https://img.shields.io/badge/Fase-Proposta_de_Pesquisa-blue)](https://github.com/GustavoFelipe85/smart-farm-iot-system/projects)
 
+## 📋 Descrição do Projeto
+Sistema IoT avançado para monitoramento e automação em agricultura de precisão, evoluindo do trabalho de TCC para aplicações em pesquisa acadêmica. O projeto integra sensores ambientais, análise de dados em tempo real e algoritmos de Machine Learning para otimização de recursos agrícolas.
 
-🧠 Visão Geral do Projeto
+## 🎯 Objetivos de Pesquisa
+- [ ] **Machine Learning** para predição de safras e detecção de anomalias
+- [ ] **Otimização inteligente** de recursos hídricos e energéticos
+- [ ] **Integração avançada** com sensores multispectrais
+- [ ] **Análise em tempo real** com dashboard interativo
+- [ ] **Publicação científica** dos resultados obtidos
 
-O Smart Farm IoT System é uma plataforma modular de Internet das Coisas (IoT) aplicada à agricultura de precisão, com foco em eficiência hídrica e energética.
-O sistema coleta dados ambientais por meio de sensores de baixo custo, armazena-os em um banco de dados de séries temporais e os apresenta em dashboards interativos para análise e automação agrícola.
+## 🛠 Tecnologias Utilizadas
+| Área | Tecnologias |
+|------|-------------|
+| **Embedded** | Arduino, ESP32, Raspberry Pi |
+| **Sensores** | DHT22, Soil Moisture, LDR, pH sensors |
+| **Backend** | Python, Node.js, PostgreSQL |
+| **ML/AI** | Scikit-learn, TensorFlow, Pandas |
+| **Frontend** | React.js, Chart.js, WebSocket |
+| **Cloud/Infra** | Docker, MQTT, InfluxDB, Grafana |
 
-Baseado em princípios de computação ubíqua, análise de dados em tempo real e arquitetura escalável via contêineres, o projeto tem como objetivo apoiar pesquisas acadêmicas e o desenvolvimento sustentável no campo.
-
-📘 Base teórica: Projeto derivado do TCC “Fatores e Aplicações Limitantes da IoT na Agricultura
-” (UNISA, 2025).
-
-🏗️ Arquitetura da Solução
-
-A infraestrutura é composta por três serviços principais executados em containers Docker, conectados em rede local:
-
-Serviço	Função
-Mosquitto	Broker MQTT responsável pela comunicação entre sensores e backend.
-InfluxDB	Banco de dados de séries temporais que armazena medições ambientais.
-Grafana	Interface de visualização e análise de dados coletados em tempo real.
-graph TD
-    A[Sensores IoT - ESP32] -->|MQTT| B[Broker Mosquitto]
-    B --> C[InfluxDB - Banco de Dados]
-    C --> D[Grafana - Dashboards e Alertas]
-
-⚙️ Infraestrutura (Docker Compose)
-
-Arquivo: docker/docker-compose.yml
-
-version: "3.8"
-
-networks:
-  iot-network:
-    driver: bridge
-
-services:
-  mosquitto:
-    image: eclipse-mosquitto:2
-    container_name: mosquitto
-    ports:
-      - "1883:1883"
-      - "9001:9001"
-    volumes:
-      - ./mosquitto/config:/mosquitto/config
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
-    restart: unless-stopped
-    networks:
-      - iot-network
-
-  influxdb:
-    image: influxdb:2.7
-    container_name: influxdb
-    ports:
-      - "8086:8086"
-    volumes:
-      - ./influxdb/data:/var/lib/influxdb2
-    environment:
-      - DOCKER_INFLUXDB_INIT_MODE=setup
-      - DOCKER_INFLUXDB_INIT_USERNAME=admin
-      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUXDB_PASSWORD}
-      - DOCKER_INFLUXDB_INIT_ORG=smartfarm
-      - DOCKER_INFLUXDB_INIT_BUCKET=sensors
-    restart: unless-stopped
-    networks:
-      - iot-network
-
-  grafana:
-    image: grafana/grafana:10.4.2
-    container_name: grafana
-    ports:
-      - "3000:3000"
-    environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
-    depends_on:
-      - influxdb
-    restart: unless-stopped
-    networks:
-      - iot-network
-
-📦 Estrutura do Projeto
+## 📁 Estrutura do Projeto
+```
 smart-farm-iot-system/
-├── docker/
-│   ├── docker-compose.yml
-│   ├── mosquitto/
-│   │   ├── config/
-│   │   ├── data/
-│   │   └── log/
-│   └── influxdb/
-│       └── data/
-├── firmware/         # Códigos embarcados (ESP32)
-├── backend/          # Scripts e APIs (Python/Node.js)
-├── dashboards/       # Painéis Grafana
-└── docs/             # Documentação técnica e relatórios
+├── 📁 docker/              # Infraestrutura containerizada
+├── 📁 documentacao/        # Documentação acadêmica
+├── 📁 firmware/           # Código para microcontroladores
+├── 📁 backend/           # API e processamento de dados
+├── 📁 machine-learning/  # Modelos preditivos
+├── 📁 dashboard/         # Interface web
+└── 📁 hardware/         # Esquemas e PCB
+```
 
-🚀 Instruções de Execução
+## 🔬 Metodologia Científica
+A metodologia está alinhada à linha de pesquisa **Sistemas de Computação**, integrando práticas de instrumentação IoT, análise de dados e automação inteligente:
 
-1️⃣ Criar variáveis de ambiente
-Crie um arquivo .env na raiz do projeto:
+1. **Revisão bibliográfica** do estado da arte em IoT agrícola
+2. **Desenvolvimento iterativo** do sistema com testes de campo
+3. **Coleta e análise** de dados em condições reais
+4. **Validação estatística** dos resultados obtidos
+5. **Comparação** com métodos tradicionais
 
-INFLUXDB_PASSWORD=StrongPass_2025!
-GRAFANA_PASSWORD=StrongPass_2025!
+## 📊 Resultados Esperados
+- Redução de **≥20%** no consumo hídrico
+- Aumento de **≥15%** na produtividade
+- Sistema **autônomo** com mínima intervenção humana
+- Publicação em **periódico científico**
 
+## 🔗 Projeto Anterior
+[TCC IoT Agribusiness](https://github.com/GustavoFelipe85/IoT-agribusiness-tcc) - Trabalho de graduação que originou esta pesquisa
 
-2️⃣ Iniciar os containers
+## 📊 Gestão do Projeto & Roadmap
 
-cd docker
-docker compose --env-file ../.env up -d
+### 🎯 GitHub Projects
+Acompanhe o progresso da pesquisa através do nosso quadro Kanban:
 
+[**🔗 Acesse o Smart Farm IoT - Research Kanban**](https://github.com/GustavoFelipe85/smart-farm-iot-system/projects)
 
-3️⃣ Verificar os serviços
+### 🗓️ Roadmap da Pesquisa
 
-Mosquitto → localhost:1883
+#### 🎓 Fase 1: Proposta de Pesquisa (Atual)
+- [x] Definição do problema de pesquisa
+- [x] Revisão bibliográfica sistemática
+- [x] Metodologia científica
+- [ ] Submissão para a universidade
 
-InfluxDB UI → http://localhost:8086
+#### 🔬 Fase 2: Desenvolvimento do Sistema
+- [ ] Prototipagem hardware IoT
+- [ ] Desenvolvimento do firmware
+- [ ] API e backend
+- [ ] Dashboard de monitoramento
 
-Grafana UI → http://localhost:3000
+#### 📊 Fase 3: Análise de Dados
+- [ ] Coleta de dados em campo
+- [ ] Análise estatística
+- [ ] Modelos de machine learning
+- [ ] Validação dos resultados
 
-🧩 Próximas Etapas
+#### ✍️ Fase 4: Produção Científica
+- [ ] Redação do artigo
+- [ ] Submissão para periódico
+- [ ] Preparação de apresentação
 
-Adicionar sensores físicos (DHT22, YL-69, BMP280)
+### 📋 Métricas de Progresso
+| Fase | Progresso | Previsão |
+|------|-----------|----------|
+| Proposta | 🔵 90% | Out 2024 |
+| Desenvolvimento | 🟡 15% | Dez 2024 |
+| Análise | ⚪ 0% | Fev 2025 |
+| Publicação | ⚪ 0% | Abr 2025 |
 
-Implementar API REST de coleta de dados
+## 👨‍💻 Autor
+**Gustavo Felipe Paluch Figueiredo**
+- Graduado em Bacharelado em Engenharia da Computação pela Universidade de Santo Amaro (UNISA)
+- Email: gustavo.f.p.f@outlook.com.br
+- LinkedIn: [linkedin.com/in/gustavofpaluch](https://www.linkedin.com/in/gustavofpaluch)
 
-Criar dashboards de irrigação e produtividade
+## 🔗 Documentos Relacionados
+- [📘 TCC - Fatores e Aplicações Limitantes da IoT na Agricultura (UNISA)](https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed)
+- [🌱 Repositório do Projeto - Smart Farm IoT System (GitHub)](https://github.com/GustavoFelipe85/smart-farm-iot-system)
+- [📑 Projeto de Pesquisa - UNIOESTE](https://github.com/GustavoFelipe85/smart-farm-iot-system/tree/main/documentacao)
 
-Integrar aprendizado de máquina (Scikit-Learn / MLflow)
+## 📚 Referências Complementares
+WOLFERT, S. et al. Big Data in Smart Farming – A review. *Agricultural Systems*, v.153, p.69–80, 2017.  
+ZHANG, Y. et al. IoT Applications in Smart Agriculture: A Review. *Journal of Agricultural Informatics*, v.13, n.1, p.45–60, 2022.  
+CONECTARAGRO. Agricultura 4.0: Conectividade no campo. Disponível em: <https://conectaragro.com.br>. Acesso em: 09 out. 2024.
 
-Redigir artigo científico para congresso (IEEE / SBC)
+## 📄 Licença
+Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhos.
 
-📚 Referências
+---
 
-WOLFERT, S. et al. Big Data in Smart Farming – A review. Agricultural Systems, v.153, p.69–80, 2017.
+**📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (2024).**
 
-ZHANG, Y. et al. IoT Applications in Smart Agriculture: A Review. Journal of Agricultural Informatics, v.13, n.1, p.45–60, 2022.
-
-ConectarAGRO. Agricultura 4.0: Conectividade no campo. Disponível em: https://conectaragro.com.br
-
-👨‍💻 Autor
-
-Gustavo Felipe Paluch Figueiredo
-Graduado em Engenharia da Computação – UNISA (2025)
-📎 LinkedIn
- • Lattes
-
-© 2025 – Projeto acadêmico e experimental desenvolvido com fins de pesquisa e inovação tecnológica.
+---
