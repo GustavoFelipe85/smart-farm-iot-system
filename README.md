@@ -117,9 +117,9 @@ Acompanhe o progresso da pesquisa através do nosso quadro Kanban:
 - [📑 Projeto de Pesquisa - UNIOESTE](https://github.com/GustavoFelipe85/smart-farm-iot-system/tree/main/documentacao)
 
 ## 📚 Referências Complementares
-WOLFERT, S. et al. Big Data in Smart Farming – A review. *Agricultural Systems*, v.153, p.69–80, 2017.  
-ZHANG, Y. et al. IoT Applications in Smart Agriculture: A Review. *Journal of Agricultural Informatics*, v.13, n.1, p.45–60, 2022.  
-CONECTARAGRO. Agricultura 4.0: Conectividade no campo. Disponível em: <https://conectaragro.com.br>. Acesso em: 09 out. 2024.
+> WOLFERT, S. et al. *Big Data in Smart Farming – A review.* Agricultural Systems, v.153, p.69–80, 2017.  
+> ZHANG, Y. et al. *IoT Applications in Smart Agriculture: A Review.* Journal of Agricultural Informatics, v.13, n.1, p.45–60, 2022.  
+> CONECTARAGRO. *Agricultura 4.0: Conectividade no campo.* Disponível em: <https://conectaragro.com.br>. Acesso em: 09 out. 2024.
 
 ## 📄 Licença
 Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhos.
