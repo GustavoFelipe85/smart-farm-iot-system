@@ -1,0 +1,62 @@
+# ===========================================
+# SMART FARM IOT SYSTEM - CONFIGURAÇÕES
+# ===========================================
+
+# ✅ PYTHON
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ✅ NODE.JS
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.lock-wscript
+
+# ✅ DADOS SENSÍVEIS
+*.csv
+*.db
+*.sqlite
+*.sqlite3
+database/
+data/local/
+*.backup
+
+# ✅ LOGS
+*.log
+logs/
+*.logs
+
+# ✅ DOCKER
+docker-compose.override.yml
+
+# ✅ SISTEMA OPERACIONAL
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ✅ IDE/EDITORES
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ✅ BACKUPS
+*.backup
+*.bak
+*.tmp
