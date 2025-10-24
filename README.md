@@ -15,6 +15,26 @@
 [![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)](https://github.com/GustavoFelipe85/smart-farm-iot-system)
 [![Fase](https://img.shields.io/badge/Fase-Proposta_de_Pesquisa-blue)](https://github.com/GustavoFelipe85/smart-farm-iot-system/projects)
 
+## 🚀 Status do Projeto
+
+**📅 Próximos Prazos:**
+- [ ] Sistema de coleta de dados - 15/Nov
+- [ ] Integração MQTT - 20/Nov
+- [ ] API REST para telemetria - 25/Nov
+- [ ] Dashboard de monitoramento - 30/Nov
+
+**⚠️ Blocker Atual:** [Nenhum | Especificar se houver impedimentos]
+
+**✅ Última Conquista:** Estrutura inicial do projeto e documentação finalizada
+
+**📊 Progresso Geral:** 
+- [x] Definição de arquitetura (90%)
+- [x] Setup do repositório (100%)
+- [x] Research de tecnologias (85%)
+- [ ] Desenvolvimento do core (15%)
+- [ ] Testes e validação (0%)
+- [ ] Deploy (0%)
+
 ## 📋 Descrição do Projeto
 Sistema IoT avançado para monitoramento e automação em agricultura de precisão, evoluindo do trabalho de TCC para aplicações em pesquisa acadêmica. O projeto integra sensores ambientais, análise de dados em tempo real e algoritmos de Machine Learning para otimização de recursos agrícolas.
 
