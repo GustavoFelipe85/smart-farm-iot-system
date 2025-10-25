@@ -66,6 +66,82 @@ smart-farm-iot-system/
 ├── 📁 dashboard/         # Interface web
 └── 📁 hardware/         # Esquemas e PCB
 ```
+## 🚀 Quick Start
+
+### Pré-requisitos
+- **Docker** e **Docker Compose** instalados
+- **Git** para clonagem do repositório
+- **4GB RAM** disponível (mínimo recomendado)
+
+### Execução Rápida da Infraestrutura
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/GustavoFelipe85/smart-farm-iot-system.git
+cd smart-farm-iot-system
+
+# 2. Execute a infraestrutura Docker
+cd docker
+docker-compose up -d
+
+# 3. Aguarde os serviços inicializarem (≈ 1-2 minutos)
+
+🎯 Serviços Disponíveis
+Serviço	URL	Credenciais	Descrição
+Grafana	http://localhost:3000	admin / admin	Dashboard de monitoramento
+InfluxDB	http://localhost:8086	admin / SmartFarm2024!IoT@Unioeste	Banco de dados temporal
+Mosquitto	mqtt://localhost:1883	-	Broker MQTT
+
+📊 Verificação dos Serviços
+
+# Verificar status dos containers
+docker-compose ps
+
+# Ver logs em tempo real
+docker-compose logs -f
+
+# Parar a infraestrutura
+docker-compose down
+
+🤖 Testando o Machine Learning
+
+# Execute o notebook de demonstração (requer Python/Jupyter)
+cd src/ml
+jupyter notebook demonstracao_ml.ipynb
+
+🔧 Configuração de Desenvolvimento
+
+# Instalar dependências Python (se desenvolvendo localmente)
+pip install -r requirements.txt
+
+# Ou usando ambiente virtual
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+
+⏱️ Tempo estimado para setup completo: 5-10 minutos
+
+
+## 🔧 **VAMOS IMPLEMENTAR AGORA:**
+
+### **PASSO A PASSO:**
+
+1. **Edite o README.md**
+2. **Adicione a seção acima** após "## 📁 Estrutura do Projeto"
+3. **Commit:** `Add Quick Start section with Docker and ML instructions`
+
+### **LOCALIZAÇÃO EXATA NO README:**
+```markdown
+## 📁 Estrutura do Projeto
+[conteúdo atual...]
+
+## 🚀 Quick Start  ← **ADICIONAR AQUI**
+[novo conteúdo...]
+
+## 🔬 Metodologia Científica
+[conteúdo atual...]
+
 
 ## 🔬 Metodologia Científica
 A metodologia está alinhada à linha de pesquisa **Sistemas de Computação**, integrando práticas de instrumentação IoT, análise de dados e automação inteligente:
