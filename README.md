@@ -189,4 +189,4 @@ Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para deta
 **📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (2026).**
 ```
 
-importante para a primeira impressão! 🎨✨
+
