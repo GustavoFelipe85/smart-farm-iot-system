@@ -15,26 +15,6 @@
 [![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)](https://github.com/GustavoFelipe85/smart-farm-iot-system)
 [![Fase](https://img.shields.io/badge/Fase-Proposta_de_Pesquisa-blue)](https://github.com/GustavoFelipe85/smart-farm-iot-system/projects)
 
-## 🚀 Status do Projeto
-
-**📅 Próximos Prazos:**
-- [ ] Sistema de coleta de dados - 
-- [ ] Integração MQTT - 
-- [ ] API REST para telemetria - 
-- [ ] Dashboard de monitoramento - 
-
-**⚠️ Blocker Atual:** [Nenhum | Especificar se houver impedimentos]
-
-**✅ Última Conquista:** Estrutura inicial do projeto e documentação finalizada
-
-**📊 Progresso Geral:** 
-- [x] Definição de arquitetura (90%)
-- [x] Setup do repositório (100%)
-- [x] Research de tecnologias (85%)
-- [ ] Desenvolvimento do core (15%)
-- [ ] Testes e validação (0%)
-- [ ] Deploy (0%)
-
 ## 📋 Descrição do Projeto
 Sistema IoT avançado para monitoramento e automação em agricultura de precisão, evoluindo do trabalho de TCC para aplicações em pesquisa acadêmica. O projeto integra sensores ambientais, análise de dados em tempo real e algoritmos de Machine Learning para otimização de recursos agrícolas.
 
@@ -46,6 +26,7 @@ Sistema IoT avançado para monitoramento e automação em agricultura de precis�
 - [ ] **Publicação científica** dos resultados obtidos
 
 ## 🛠 Tecnologias Utilizadas
+
 | Área | Tecnologias |
 |------|-------------|
 | **Embedded** | Arduino, ESP32, Raspberry Pi |
@@ -56,24 +37,28 @@ Sistema IoT avançado para monitoramento e automação em agricultura de precis�
 | **Cloud/Infra** | Docker, MQTT, InfluxDB, Grafana |
 
 ## 📁 Estrutura do Projeto
+
 ```
 smart-farm-iot-system/
-├── 📁 docker/              # Infraestrutura containerizada
-├── 📁 documentacao/        # Documentação acadêmica
-├── 📁 firmware/           # Código para microcontroladores
-├── 📁 backend/           # API e processamento de dados
-├── 📁 machine-learning/  # Modelos preditivos
-├── 📁 dashboard/         # Interface web
-└── 📁 hardware/         # Esquemas e PCB
+├── 📁 src/                    # Código fonte
+│   ├── 📁 firmware/          # Código microcontroladores
+│   ├── 📁 backend/           # API e processamento
+│   ├── 📁 frontend/          # Dashboard web
+│   └── 📁 ml/                # Modelos machine learning
+├── 📁 docker/                # Infraestrutura containerizada
+├── 📁 documentacao/          # Documentação acadêmica
+├── 📁 tests/                 # Testes automatizados
+└── 📁 data/                  # Datasets e dados
 ```
+
 ## 🚀 Quick Start
 
-### Pré-requisitos
+### 📋 Pré-requisitos
 - **Docker** e **Docker Compose** instalados
 - **Git** para clonagem do repositório
 - **4GB RAM** disponível (mínimo recomendado)
 
-### Execução Rápida da Infraestrutura
+### ⚡ Execução Rápida
 
 ```bash
 # 1. Clone o repositório
@@ -85,15 +70,19 @@ cd docker
 docker-compose up -d
 
 # 3. Aguarde os serviços inicializarem (≈ 1-2 minutos)
+```
 
-🎯 Serviços Disponíveis
-Serviço	URL	Credenciais	Descrição
-Grafana	http://localhost:3000	admin / admin	Dashboard de monitoramento
-InfluxDB	http://localhost:8086	admin / SmartFarm2024!IoT@Unioeste	Banco de dados temporal
-Mosquitto	mqtt://localhost:1883	-	Broker MQTT
+### 🎯 Serviços Disponíveis
 
-📊 Verificação dos Serviços
+| Serviço | URL | Credenciais | Descrição |
+|---------|-----|-------------|-----------|
+| **Grafana** | http://localhost:3000 | `admin` / `admin` | Dashboard |
+| **InfluxDB** | http://localhost:8086 | `admin` / `SmartFarm2024!IoT@Unioeste` | Banco temporal |
+| **Mosquitto** | mqtt://localhost:1883 | - | Broker MQTT |
 
+### 🔧 Comandos Úteis
+
+```bash
 # Verificar status dos containers
 docker-compose ps
 
@@ -102,48 +91,22 @@ docker-compose logs -f
 
 # Parar a infraestrutura
 docker-compose down
+```
 
-🤖 Testando o Machine Learning
+### 🤖 Testando Machine Learning
 
-# Execute o notebook de demonstração (requer Python/Jupyter)
+```bash
+# Execute o notebook de demonstração
 cd src/ml
 jupyter notebook demonstracao_ml.ipynb
+```
 
-🔧 Configuração de Desenvolvimento
+**⏱️ Tempo estimado para setup completo: 5-10 minutos**
 
-# Instalar dependências Python (se desenvolvendo localmente)
-pip install -r requirements.txt
-
-# Ou usando ambiente virtual
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate  # Windows
-pip install -r requirements.txt
-
-⏱️ Tempo estimado para setup completo: 5-10 minutos
-
-
-## 🔧 **VAMOS IMPLEMENTAR AGORA:**
-
-### **PASSO A PASSO:**
-
-1. **Edite o README.md**
-2. **Adicione a seção acima** após "## 📁 Estrutura do Projeto"
-3. **Commit:** `Add Quick Start section with Docker and ML instructions`
-
-### **LOCALIZAÇÃO EXATA NO README:**
-```markdown
-## 📁 Estrutura do Projeto
-[conteúdo atual...]
-
-## 🚀 Quick Start  ← **ADICIONAR AQUI**
-[novo conteúdo...]
+---
 
 ## 🔬 Metodologia Científica
-[conteúdo atual...]
 
-
-## 🔬 Metodologia Científica
 A metodologia está alinhada à linha de pesquisa **Sistemas de Computação**, integrando práticas de instrumentação IoT, análise de dados e automação inteligente:
 
 1. **Revisão bibliográfica** do estado da arte em IoT agrícola
@@ -194,6 +157,7 @@ Acompanhe o progresso da pesquisa através do nosso quadro Kanban:
 - [ ] Preparação de apresentação
 
 ### 📋 Métricas de Progresso
+
 | Fase | Progresso | Previsão |
 |------|-----------|----------|
 | Proposta | 🔵 90% | Out 2024 |
@@ -213,15 +177,16 @@ Acompanhe o progresso da pesquisa através do nosso quadro Kanban:
 - [📑 Projeto de Pesquisa - UNIOESTE](https://github.com/GustavoFelipe85/smart-farm-iot-system/tree/main/documentacao)
 
 ## 📚 Referências Complementares
-> WOLFERT, S. et al. *Big Data in Smart Farming – A review.* Agricultural Systems, v.153, p.69–80, 2017.  
-> ZHANG, Y. et al. *IoT Applications in Smart Agriculture: A Review.* Journal of Agricultural Informatics, v.13, n.1, p.45–60, 2022.  
-> CONECTARAGRO. *Agricultura 4.0: Conectividade no campo.* Disponível em: <https://conectaragro.com.br>. Acesso em: 09 out. 2024.
+WOLFERT, S. et al. Big Data in Smart Farming – A review. *Agricultural Systems*, v.153, p.69–80, 2017.  
+ZHANG, Y. et al. IoT Applications in Smart Agriculture: A Review. *Journal of Agricultural Informatics*, v.13, n.1, p.45–60, 2022.  
+CONECTARAGRO. Agricultura 4.0: Conectividade no campo. Disponível em: <https://conectaragro.com.br>. Acesso em: 09 out. 2024.
 
 ## 📄 Licença
-Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhos.
+Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
 
-**📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (2024).**
+**📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (2026).**
+```
 
----
+importante para a primeira impressão! 🎨✨
