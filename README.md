@@ -25,6 +25,71 @@ Sistema IoT avançado para monitoramento e automação em agricultura de precis�
 - [ ] **Análise em tempo real** com dashboard interativo
 - [ ] **Publicação científica** dos resultados obtidos
 
+## 🏗 Arquitetura do Sistema
+
+```mermaid
+graph TB
+    %% ========== CAMADA SENSORES ==========
+    subgraph SENSORS [🛰️ Camada de Sensores]
+        A1[🌡️ Temperatura<br/>DHT22]
+        A2[💧 Umidade Solo<br/>Sensor Capacitivo]
+        A3[💨 Umidade Ar<br/>DHT22]
+        A4[☀️ Luminosidade<br/>LDR]
+        A5[📊 Produtividade<br/>Sensor Ótico]
+    end
+
+    %% ========== CAMADA EDGE ==========
+    subgraph EDGE [⚡ Camada Edge - ESP32]
+        B1[Firmware C++<br/>Pré-processamento]
+        B2[📦 Buffer Local<br/>SD Card]
+        B3[🔄 Gerenciador WiFi]
+        B4[📡 Cliente MQTT]
+    end
+
+    %% ========== CAMADA CLOUD ==========
+    subgraph CLOUD [☁️ Infraestrutura Cloud]
+        C1[MQTT Broker<br/>Mosquitto]
+        C2[Banco Temporal<br/>InfluxDB 2.0]
+        C3[Processamento<br/>Python Services]
+    end
+
+    %% ========== CAMADA ML ==========
+    subgraph ML [🤖 Machine Learning]
+        D1[📈 Predição de<br/>Produtividade]
+        D2[🚨 Detecção de<br/>Anomalias]
+        D3[🎯 Otimização de<br/>Recursos]
+        D4[📊 Análise de<br/>Tendências]
+    end
+
+    %% ========== CAMADA VISUALIZAÇÃO ==========
+    subgraph VIZ [📊 Visualização]
+        E1[Dashboards<br/>Grafana]
+        E2[Aplicação Web<br/>Streamlit]
+        E3[Sistema de<br/>Alertas]
+        E4[Relatórios<br/>Automáticos]
+    end
+
+    %% ========== CONEXÕES ==========
+    SENSORS --> EDGE
+    EDGE --> CLOUD
+    CLOUD --> ML
+    ML --> VIZ
+    CLOUD --> VIZ
+
+    %% ========== ESTILOS ==========
+    classDef sensors fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef edge fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef cloud fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef ml fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef viz fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+
+    class SENSORS sensors
+    class EDGE edge
+    class CLOUD cloud
+    class ML ml
+    class VIZ viz
+
+
 ## 🛠 Tecnologias Utilizadas
 
 | Área | Tecnologias |
