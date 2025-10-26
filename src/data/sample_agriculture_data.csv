@@ -1,0 +1,4 @@
+# src/data/sample_agriculture_data.csv
+timestamp,temperature,soil_moisture,humidity,light_intensity,productivity
+2024-01-01 08:00,25.3,65.2,72.1,8450,1250
+2024-01-01 12:00,28.7,58.4,68.3,12500,0
