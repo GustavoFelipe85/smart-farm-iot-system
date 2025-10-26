@@ -40,7 +40,7 @@ graph LR
     style D fill:#fff3e0
     style E fill:#fce4ec
     style F fill:#fff8e1
---
+
 ### 🔄 **Fluxo de Dados**
 1. **🛰️ Sensores**: Coleta de dados ambientais em tempo real
 2. **⚡ ESP32**: Processamento edge e armazenamento local  
