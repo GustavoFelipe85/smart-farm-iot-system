@@ -27,12 +27,12 @@ Sistema IoT avançado para monitoramento e automação em agricultura de precis�
 
 ## 🏗 Arquitetura do Sistema
 graph LR
-    A[🛰️ Sensores] --> B[⚡ ESP32]
-    B --> C[☁️ MQTT]
-    C --> D[💾 InfluxDB]
-    D --> E[🤖 ML]
-    E --> F[📊 Grafana]
-    D --> F
+ > A[🛰️ Sensores] --> B[⚡ ESP32]
+ > B --> C[☁️ MQTT]
+ > C --> D[💾 InfluxDB]
+ > D --> E[🤖 ML]
+ > E --> F[📊 Grafana]
+ > D --> F
     
     style A fill:#e3f2fd
     style B fill:#f3e5f5
