@@ -26,53 +26,24 @@ Sistema IoT avançado para monitoramento e automação em agricultura de precis�
 - [ ] **Publicação científica** dos resultados obtidos
 
 ## 🏗 Arquitetura do Sistema
-
 ```mermaid
-graph TB
-    %% Camada de Sensores
-    A1[🌡️ Sensor Temperatura]
-    A2[💧 Sensor Umidade Solo] 
-    A3[💨 Sensor Umidade Ar]
-    A4[☀️ Sensor Luminosidade]
-    A5[📊 Sensor Produtividade]
-
-    %% ESP32 - Edge Computing
-    B[📟 ESP32<br/>Edge Computing]
-    
-    %% Serviços Cloud
-    C[☁️ MQTT Broker]
-    D[💾 InfluxDB]
-    E[🤖 Machine Learning]
-    F[📊 Grafana Dashboard]
-
-    %% Conexões
-    A1 --> B
-    A2 --> B
-    A3 --> B
-    A4 --> B
-    A5 --> B
-    
-    B --> C
-    C --> D
-    D --> E
-    E --> F
+graph LR
+    A[🛰️ Sensores] --> B[⚡ ESP32]
+    B --> C[☁️ MQTT]
+    C --> D[💾 InfluxDB]
+    D --> E[🤖 ML]
+    E --> F[📊 Grafana]
     D --> F
-
-    classDef sensor fill:#e3f2fd,stroke:#1976d2
-    classDef edge fill:#f3e5f5,stroke:#7b1fa2
-    classDef cloud fill:#e8f5e8,stroke:#388e3c
-    classDef ml fill:#fff3e0,stroke:#f57c00
-    classDef viz fill:#fce4ec,stroke:#c2185b
-
-    class A1,A2,A3,A4,A5 sensor
-    class B edge
-    class C,D cloud
-    class E ml
-    class F viz
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style F fill:#fff8e1
 ---
     
 ## 📁 Estrutura do Projeto
-
 ```
 smart-farm-iot-system/
 ├── 📁 src/                    # Código fonte
