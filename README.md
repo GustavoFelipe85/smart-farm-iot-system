@@ -26,7 +26,6 @@ Sistema IoT avançado para monitoramento e automação em agricultura de precis�
 - [ ] **Publicação científica** dos resultados obtidos
 
 ## 🏗 Arquitetura do Sistema
-```mermaid
 graph LR
     A[🛰️ Sensores] --> B[⚡ ESP32]
     B --> C[☁️ MQTT]
