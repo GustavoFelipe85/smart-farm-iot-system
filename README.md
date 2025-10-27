@@ -201,16 +201,6 @@ Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para deta
 
 **📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)**
 ```
-## 🤝 Contribuição
-
-Contribuições são bem-vindas! Este é um projeto de pesquisa acadêmica. 
-
-🔗 **Veja nosso [Guia de Contribuição](CONTRIBUTING.md) para detalhes.**
-
-- 👨‍🔬 **Pesquisadores**: Como replicar experimentos
-- 💻 **Desenvolvedores**: Padrões de código
-- 🤝 **Parceiros**: Colaborações acadêmicas
-
 ## 🐳 Execução com Docker
 
 A infraestrutura completa pode ser executada com Docker:
@@ -243,4 +233,3 @@ Contribuições são bem-vindas! Este é um projeto de pesquisa acadêmica.
 Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)*
 
 ---
-
