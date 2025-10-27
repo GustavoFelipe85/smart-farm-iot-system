@@ -1,8 +1,10 @@
 # 🐳 Infraestrutura Docker
 
 ## 🚀 Inicialização Rápida
-
 ```bash
+cp .env.example .env
+docker-compose up -d
+
 # 1. Copie o arquivo de ambiente
 cp .env.example .env
 
@@ -17,3 +19,6 @@ Serviço	URL	Credenciais
 Grafana	http://localhost:3000	admin / ${GRAFANA_PASSWORD}
 InfluxDB	http://localhost:8086	admin / ${INFLUXDB_PASSWORD}
 MQTT Broker	mqtt://localhost:1883	-
+
+---
+
