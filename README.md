@@ -252,7 +252,7 @@ A infraestrutura completa pode ser executada com Docker:
 ```bash
 cd docker
 docker-compose up -d
----
+
 Serviços disponíveis:
 
 📊 Grafana: http://localhost:3000
@@ -274,7 +274,4 @@ Contribuições são bem-vindas! Este é um projeto de pesquisa acadêmica.
 
 🤝 Parceiros: Colaborações acadêmicas
 
-*Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do 
-Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)*
-
-
+*Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)*
