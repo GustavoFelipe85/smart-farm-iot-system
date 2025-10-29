@@ -70,6 +70,9 @@ smart-farm-iot-system/
 - **Docker** e **Docker Compose** instalados
 - **Git** para clonagem do repositório
 - **4GB RAM** disponível (mínimo recomendado)
+```bash
+# Instale as dependências Python
+pip install -r requirements.txt
 
 ### ⚡ Execução Rápida
 
