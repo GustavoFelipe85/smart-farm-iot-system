@@ -73,7 +73,7 @@ smart-farm-iot-system/
 
 ### ⚡ Execução Rápida
 
-```bash
+```
 # 1. Clone o repositório
 git clone https://github.com/GustavoFelipe85/smart-farm-iot-system.git
 cd smart-farm-iot-system
@@ -98,7 +98,6 @@ docker-compose logs -f
 
 # Parar a infraestrutura
 docker-compose down
----bash
 
 🌐 Serviços Disponíveis
 Serviço	URL	Descrição
