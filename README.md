@@ -63,16 +63,13 @@ smart-farm-iot-system/
 ├── 📁 tests/                 # Testes automatizados
 └── 📁 data/                  # Datasets e dados
 ```
-
 ## 🚀 Quick Start
 
 ### 📋 Pré-requisitos
-- **Docker** e **Docker Compose** instalados
-- **Git** para clonagem do repositório
-- **4GB RAM** disponível (mínimo recomendado)
-```bash
-# Instale as dependências Python
-pip install -r requirements.txt
+
+- Docker e Docker Compose instalados
+- Git para clonagem do repositório
+- 4GB RAM disponível (mínimo recomendado)
 
 ### ⚡ Execução Rápida
 
@@ -81,20 +78,14 @@ pip install -r requirements.txt
 git clone https://github.com/GustavoFelipe85/smart-farm-iot-system.git
 cd smart-farm-iot-system
 
-# 2. Execute a infraestrutura Docker
+# 2. Instale as dependências Python
+pip install -r requirements.txt
+
+# 3. Execute a infraestrutura Docker
 cd docker
 docker-compose up -d
 
-# 3. Aguarde os serviços inicializarem (≈ 1-2 minutos)
-```
-
-### 🎯 Serviços Disponíveis
-
-| Serviço | URL | Credenciais | Descrição |
-|---------|-----|-------------|-----------|
-| **Grafana** | http://localhost:3000 | `admin` / `admin` | Dashboard |
-| **InfluxDB** | http://localhost:8086 | `admin` / `SmartFarm2024!IoT@Unioeste` | Banco temporal |
-| **Mosquitto** | mqtt://localhost:1883 | - | Broker MQTT |
+# 4. Aguarde os serviços inicializarem (≈ 1-2 minutos)
 
 ### 🔧 Comandos Úteis
 
@@ -107,6 +98,13 @@ docker-compose logs -f
 
 # Parar a infraestrutura
 docker-compose down
+---bash
+
+🌐 Serviços Disponíveis
+Serviço	URL	Descrição
+Grafana	http://localhost:3000	Dashboard de monitoramento
+InfluxDB	http://localhost:8086	Banco de dados temporal
+Mosquitto	mqtt://localhost:1883	Broker MQTT
 ```
 
 ### 🤖 Testando Machine Learning
