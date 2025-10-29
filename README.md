@@ -203,21 +203,8 @@ Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para deta
 ---
 
 **📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)**
-```
-# 🚨 **AINDA PRECISA CORRIGIR!** 
-
-A formatação ainda não está correta. Veja os problemas:
-
-## ❌ **PROBLEMAS IDENTIFICADOS:**
-
-1. **❌ Serviços fora da lista** - estão como texto simples
-2. **❌ Link sem formatação** - `docker/README.md` sem `[]()`
-3. **❌ Seção Contribuição sem `##`** - ficou como texto normal
-4. **❌ Link do CONTRIBUTING.md** sem formatação
-
-## 📋 **VERSÃO CORRIGIDA - COLE ESTA:**
-
 ```markdown
+
 ## 🐳 Execução com Docker
 
 A infraestrutura completa pode ser executada com Docker:
@@ -227,10 +214,13 @@ cd docker
 docker-compose up -d
 ```
 
-**Serviços disponíveis:**
-- 📊 **Grafana**: http://localhost:3000
-- 💾 **InfluxDB**: http://localhost:8086  
-- 📡 **MQTT Broker**: mqtt://localhost:1883
+### 🌐 Serviços Disponíveis
+
+| Serviço | URL | Descrição |
+|---------|-----|-----------|
+| **Grafana** | http://localhost:3000 | Dashboard de monitoramento |
+| **InfluxDB** | http://localhost:8086 | Banco de dados temporal |
+| **Mosquitto** | mqtt://localhost:1883 | Broker MQTT |
 
 Veja [docker/README.md](docker/README.md) para detalhes completos.
 
@@ -243,11 +233,8 @@ Contribuições são bem-vindas! Este é um projeto de pesquisa acadêmica.
 - 👨‍🔬 **Pesquisadores**: Como replicar experimentos
 - 💻 **Desenvolvedores**: Padrões de código
 - 🤝 **Parceiros**: Colaborações acadêmicas
-
 ---
 
-*Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)*
-```
 ## 🐳 Execução com Docker
 
 A infraestrutura completa pode ser executada com Docker:
