@@ -73,7 +73,7 @@ smart-farm-iot-system/
 
 ### ⚡ Execução Rápida
 
-```
+```bash
 # 1. Clone o repositório
 git clone https://github.com/GustavoFelipe85/smart-farm-iot-system.git
 cd smart-farm-iot-system
@@ -86,6 +86,7 @@ cd docker
 docker-compose up -d
 
 # 4. Aguarde os serviços inicializarem (≈ 1-2 minutos)
+```
 
 ### 🔧 Comandos Úteis
 
@@ -98,13 +99,15 @@ docker-compose logs -f
 
 # Parar a infraestrutura
 docker-compose down
-
-🌐 Serviços Disponíveis
-Serviço	URL	Descrição
-Grafana	http://localhost:3000	Dashboard de monitoramento
-InfluxDB	http://localhost:8086	Banco de dados temporal
-Mosquitto	mqtt://localhost:1883	Broker MQTT
 ```
+
+### 🌐 Serviços Disponíveis
+
+| Serviço | URL | Descrição |
+|---------|-----|-----------|
+| **Grafana** | http://localhost:3000 | Dashboard de monitoramento |
+| **InfluxDB** | http://localhost:8086 | Banco de dados temporal |
+| **Mosquitto** | mqtt://localhost:1883 | Broker MQTT |
 
 ### 🤖 Testando Machine Learning
 
