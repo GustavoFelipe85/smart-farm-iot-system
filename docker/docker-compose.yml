@@ -11,8 +11,13 @@ services:
   influxdb:
     image: influxdb:2.7
     ports: ["8086:8086"]
-    volumes:
-      - "./influxdb2:/var/lib/influxdb2"
+   volumes:
+  - "influxdb_data:/var/lib/influxdb2"
+
+volumes:
+  influxdb_data:
+  grafana_data:
+  mosquitto_data:
     environment:
       - DOCKER_INFLUXDB_INIT_MODE=setup
       - DOCKER_INFLUXDB_INIT_USERNAME=admin
