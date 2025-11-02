@@ -1,49 +1,32 @@
-version: "3.8"
-
+version: '3.8'
 services:
   mosquitto:
     image: eclipse-mosquitto:2
-    container_name: mosquitto
-    ports:
-      - "1883:1883"
-      - "9001:9001"
+    ports: ["1883:1883"]
     volumes:
-      - ./mosquitto/config:/mosquitto/config
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
-    networks:
-      - iot-network
+      - "./mosquitto.conf:/mosquitto/config/mosquitto.conf"
+      - "./mosquitto/data:/mosquitto/data"
+      - "./mosquitto/log:/mosquitto/log"
 
   influxdb:
     image: influxdb:2.7
-    container_name: influxdb
-    ports:
-      - "8086:8086"
+    ports: ["8086:8086"]
     volumes:
-      - ./influxdb/data:/var/lib/influxdb2
+      - "./influxdb2:/var/lib/influxdb2"
     environment:
       - DOCKER_INFLUXDB_INIT_MODE=setup
       - DOCKER_INFLUXDB_INIT_USERNAME=admin
-      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUXDB_PASSWORD}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=smartfarm123
       - DOCKER_INFLUXDB_INIT_ORG=smartfarm
       - DOCKER_INFLUXDB_INIT_BUCKET=sensors
-    networks:
-      - iot-network
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=smartfarm-token-12345
 
   grafana:
-    image: grafana/grafana:latest
-    container_name: grafana
-    ports:
-      - "3000:3000"
+    image: grafana/grafana:10.2.0
+    ports: ["3000:3000"]
+    volumes:
+      - "./grafana:/var/lib/grafana"
     environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
     depends_on:
       - influxdb
-    networks:
-      - iot-network
-
-networks:
-  iot-network:
-    driver: bridge
-
