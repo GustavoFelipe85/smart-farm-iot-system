@@ -1,0 +1,92 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Smart Farm Overview",
+    "tags": ["iot", "smart-farm"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "type": "timeseries",
+        "title": "Temperatura - Todos os Dispositivos",
+        "gridPos": {"x": 0, "y": 0, "w": 12, "h": 8},
+        "targets": [
+          {
+            "query": "from(bucket: \"sensors\")\n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r._measurement == \"environment\")\n  |> filter(fn: (r) => r._field == \"temperature\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {"mode": "palette-classic"},
+            "custom": {"axisPlacement": "auto", "drawStyle": "line", "lineInterpolation": "linear"},
+            "unit": "celsius"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "type": "timeseries",
+        "title": "Umidade - Todos os Dispositivos",
+        "gridPos": {"x": 12, "y": 0, "w": 12, "h": 8},
+        "targets": [
+          {
+            "query": "from(bucket: \"sensors\")\n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r._measurement == \"environment\")\n  |> filter(fn: (r) => r._field == \"humidity\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {"mode": "palette-classic"},
+            "custom": {"axisPlacement": "auto", "drawStyle": "line", "lineInterpolation": "linear"},
+            "unit": "percent"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "type": "stat",
+        "title": "Temperatura Atual",
+        "gridPos": {"x": 0, "y": 8, "w": 6, "h": 4},
+        "targets": [
+          {
+            "query": "from(bucket: \"sensors\")\n  |> range(start: -5m)\n  |> filter(fn: (r) => r._measurement == \"environment\")\n  |> filter(fn: (r) => r._field == \"temperature\")\n  |> last()",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {"mode": "thresholds"},
+            "unit": "celsius"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "type": "stat",
+        "title": "Umidade Atual",
+        "gridPos": {"x": 6, "y": 8, "w": 6, "h": 4},
+        "targets": [
+          {
+            "query": "from(bucket: \"sensors\")\n  |> range(start: -5m)\n  |> filter(fn: (r) => r._measurement == \"environment\")\n  |> filter(fn: (r) => r._field == \"humidity\")\n  |> last()",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {"mode": "thresholds"},
+            "unit": "percent"
+          }
+        }
+      }
+    ],
+    "time": {"from": "now-6h", "to": "now"},
+    "timepicker": {},
+    "templating": {"list": []},
+    "refresh": "5s",
+    "schemaVersion": 38,
+    "version": 1,
+    "editable": true
+  },
+  "overwrite": true
+}
