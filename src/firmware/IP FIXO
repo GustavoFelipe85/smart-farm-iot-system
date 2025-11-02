@@ -1,0 +1,2 @@
+// SOLUÇÃO: Usar hostname ou configurar
+const char* mqtt_server = "seu-hostname-ou-ip";
