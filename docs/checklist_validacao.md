@@ -66,3 +66,30 @@ curl -G http://localhost:8086/api/v2/query?org=smartfarm \
 {"device":"esp32-node-2","temp":-5.2,"umid":85.7}
 {"device":"sensor-001","temp":30.0,"umid":45.5}
 
+Testes Automatizados (Futuro)
+python
+def validate_payload(payload):
+    required = ['device', 'temp', 'umid']
+    return all(field in payload for field in required)
+
+    
+### 11. `src/frontend/README.md`
+```markdown
+# Frontend - Smart Farm Dashboard
+
+## Status: Planejado para Fase 2
+
+## Funcionalidades Previstas
+- Dashboard web responsivo
+- Controle de dispositivos IoT
+- Alertas e notificações
+- Relatórios personalizados
+
+## Stack Tecnológica
+- React.js ou Vue.js
+- Chart.js para gráficos
+- WebSocket para atualizações em tempo real
+- API REST para histórico
+
+## No momento:
+Use o Grafana em http://localhost:3000 para visualização dos dados.
