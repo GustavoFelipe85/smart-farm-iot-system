@@ -109,6 +109,8 @@ docker-compose down
 | **InfluxDB** | http://localhost:8086 | Banco de dados temporal |
 | **Mosquitto** | mqtt://localhost:1883 | Broker MQTT |
 
+Veja [docker/README.md](docker/README.md) para detalhes completos.
+
 ### 🤖 Testando Machine Learning
 
 ```bash
@@ -202,16 +204,6 @@ Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para deta
 
 ---
 **📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)**
-
-### 🌐 Serviços Disponíveis
-
-| Serviço | URL | Descrição |
-|---------|-----|-----------|
-| **Grafana** | http://localhost:3000 | Dashboard de monitoramento |
-| **InfluxDB** | http://localhost:8086 | Banco de dados temporal |
-| **Mosquitto** | mqtt://localhost:1883 | Broker MQTT |
-
-Veja [docker/README.md](docker/README.md) para detalhes completos.
 
 ## 🤝 Contribuição
 
