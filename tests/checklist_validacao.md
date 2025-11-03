@@ -297,10 +297,9 @@ curl http://localhost:8086/health
 **Próxima revisão**: {{DATA_FUTURA}}
 ```
 
-## 🎯 **PARA ADICIONAR AO SEU REPOSITÓRIO:**
+## 🎯 **REPOSITÓRIO:**
 
 ```bash
-# Salve o conteúdo acima no arquivo que você criou:
 # docs/checklist_validacao.md
 
 git add docs/checklist_validacao.md
