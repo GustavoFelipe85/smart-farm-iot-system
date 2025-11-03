@@ -41,13 +41,12 @@ graph LR
     style E fill:#fce4ec
     style F fill:#fff8e1
 ---
-
-## 🔐 Segurança da Infraestrutura  
+## 🔐 Segurança da Infraestrutura
 
 ### Políticas Implementadas
 - **Credenciais**: Armazenadas exclusivamente em variáveis de ambiente (`.env`)
-- **Versionamento**: Secrets protegidos via `.gitignore` 
-- **Tokens**: Gerados dinamicamente para cada ambiente
+- **Versionamento**: Secrets protegidos via `.gitignore`
+- **Tokens**: Gerados dinamicamente para cada ambiente  
 - **Rede**: Containers isolados em rede bridge dedicada
 - **Validação**: Schema validation para todos os payloads MQTT
 
@@ -56,15 +55,6 @@ graph LR
 # Gere secrets seguros:
 openssl rand -hex 32  # Para tokens
 pwgen -s 16 1         # Para senhas
-### 🔄 **Fluxo de Dados**
-1. **🛰️ Sensores**: Coleta de dados ambientais em tempo real
-2. **⚡ ESP32**: Processamento edge e armazenamento local  
-3. **☁️ MQTT**: Transmissão de dados para cloud
-4. **💾 InfluxDB**: Armazenamento temporal dos dados
-5. **🤖 ML**: Análise preditiva com machine learning
-6. **📊 Grafana**: Visualização e dashboards interativos
-
-```
  ## 📁 Estrutura do Projeto
 smart-farm-iot-system/
 ├── 📁 src/                    # Código fonte
