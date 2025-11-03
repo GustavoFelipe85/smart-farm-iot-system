@@ -1,15 +1,13 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
- (https://img.shields.io/badge/Python-3.8+-blue-https://img.shields.io/badge/Docker-✓-green)
-(https://img.shields.io/badge/ESP32-IoT-orange)
-
+ 
 # Projeto Acadêmico IoT
 
 🌱 **Smart Farm IoT System**  
 **🎓 Projeto para Seleção de Mestrado**  
 Universidade Pública - Universidade do Oeste do Paraná (Unioeste) - Programa de Pós-Graduação Mestrado em Ciências da Computação/Sistemas - (EDITAL Nº 11/2025 - PPGComp)
 
-`MIT License` `Python` `IoT` `Docker` `ESP32` `Status: Fase 1`
+`MIT License` `Python` `IoT` `Docker` `ESP32` `Status: 🎓 Proposta de Pesquisa (90% Concluído)`
 
 ## 📋 Descrição do Projeto
 Sistema IoT avançado para monitoramento e automação em agricultura de precisão. O projeto integra sensores ambientais, análise de dados em tempo real e preparação para algoritmos de Machine Learning para otimização de recursos agrícolas.
@@ -193,6 +191,8 @@ Contribuições são bem-vindas! Este é um projeto de pesquisa acadêmica.
 ---
 
 **📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)**
+---
+
 ## 🐳 Execução com Docker
 
 A infraestrutura completa pode ser executada com Docker:
