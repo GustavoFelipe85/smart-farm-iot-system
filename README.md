@@ -191,6 +191,7 @@ Contribuições são bem-vindas! Este é um projeto de pesquisa acadêmica.
 ---
 
 **📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)**
+
 ---
 
 ## 🐳 Execução com Docker
