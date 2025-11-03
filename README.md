@@ -1,6 +1,11 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
- 
+ https://img.shields.io/badge/Python-3.8+-blue
+https://img.shields.io/badge/Docker-%E2%9C%93-green
+https://img.shields.io/badge/ESP32-IoT-orange
+https://img.shields.io/badge/License-MIT-yellow
+https://img.shields.io/badge/Status-Fase_1-important
+  
 # Projeto Acadêmico IoT
 
 🌱 **Smart Farm IoT System**  
