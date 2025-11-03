@@ -40,7 +40,22 @@ graph LR
     style D fill:#fff3e0
     style E fill:#fce4ec
     style F fill:#fff8e1
+---
 
+## 🔐 Segurança da Infraestrutura  ✅ **NOVA SEÇÃO AQUI**
+
+### Políticas Implementadas
+- **Credenciais**: Armazenadas exclusivamente em variáveis de ambiente (`.env`)
+- **Versionamento**: Secrets protegidos via `.gitignore` 
+- **Tokens**: Gerados dinamicamente para cada ambiente
+- **Rede**: Containers isolados em rede bridge dedicada
+- **Validação**: Schema validation para todos os payloads MQTT
+
+### Para Ambiente de Produção
+```bash
+# Gere secrets seguros:
+openssl rand -hex 32  # Para tokens
+pwgen -s 16 1         # Para senhas
 ### 🔄 **Fluxo de Dados**
 1. **🛰️ Sensores**: Coleta de dados ambientais em tempo real
 2. **⚡ ESP32**: Processamento edge e armazenamento local  
