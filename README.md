@@ -42,7 +42,7 @@ graph LR
     style F fill:#fff8e1
 ---
 
-## 🔐 Segurança da Infraestrutura  ✅ **NOVA SEÇÃO AQUI**
+## 🔐 Segurança da Infraestrutura  
 
 ### Políticas Implementadas
 - **Credenciais**: Armazenadas exclusivamente em variáveis de ambiente (`.env`)
@@ -63,10 +63,9 @@ pwgen -s 16 1         # Para senhas
 4. **💾 InfluxDB**: Armazenamento temporal dos dados
 5. **🤖 ML**: Análise preditiva com machine learning
 6. **📊 Grafana**: Visualização e dashboards interativos
----
-    
-## 📁 Estrutura do Projeto
+
 ```
+ ## 📁 Estrutura do Projeto
 smart-farm-iot-system/
 ├── 📁 src/                    # Código fonte
 │   ├── 📁 firmware/          # Código microcontroladores
@@ -77,6 +76,7 @@ smart-farm-iot-system/
 ├── 📁 documentacao/          # Documentação acadêmica
 ├── 📁 tests/                 # Testes automatizados
 └── 📁 data/                  # Datasets e dados
+
 ```
 ## 🚀 Quick Start
 
