@@ -1,8 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
-</p>  ![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![Docker](https://img.shields.io/badge/Docker-✓-green)
-![ESP32](https://img.shields.io/badge/ESP32-IoT-orange)
+ (https://img.shields.io/badge/Python-3.8+-blue-https://img.shields.io/badge/Docker-✓-green)
+(https://img.shields.io/badge/ESP32-IoT-orange)
 
 # Projeto Acadêmico IoT
 
