@@ -91,7 +91,7 @@
   "overwrite": true
 }
 
-// 📊 Grafana - Painéis profissionais
+// Grafana - Painéis profissionais
 {
   "dashboard": {
     "panels": [
