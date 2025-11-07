@@ -1,23 +1,37 @@
 version: '3.8'
+
+# 🔐 ADICIONAR REDES PARA ISOLAMENTO
+networks:
+  iot-network:
+    driver: bridge
+
 services:
   mosquitto:
     image: eclipse-mosquitto:2
+    container_name: mosquitto
     ports: ["1883:1883"]
     volumes:
-      - "./mosquitto.conf:/mosquitto/config/mosquitto.conf"
+      # 🔐 ADICIONAR ARQUIVO DE SENHAS
+      - "./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro"
+      - "./mosquitto/passwords:/mosquitto/config/passwords:ro"  # ⬅️ NOVO!
       - "./mosquitto/data:/mosquitto/data"
       - "./mosquitto/log:/mosquitto/log"
+    restart: unless-stopped
+    # 🔐 ADICIONAR HEALTHCHECK E REDE
+    healthcheck:
+      test: ["CMD", "mosquitto", "-c", "/mosquitto/config/mosquitto.conf", "-v"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - iot-network
 
   influxdb:
     image: influxdb:2.7
+    container_name: influxdb
     ports: ["8086:8086"]
-   volumes:
-  - "influxdb_data:/var/lib/influxdb2"
-
-volumes:
-  influxdb_data:
-  grafana_data:
-  mosquitto_data:
+    volumes:
+      - "influxdb_data:/var/lib/influxdb2"
     environment:
       - DOCKER_INFLUXDB_INIT_MODE=setup
       - DOCKER_INFLUXDB_INIT_USERNAME=admin
@@ -25,9 +39,13 @@ volumes:
       - DOCKER_INFLUXDB_INIT_ORG=smartfarm
       - DOCKER_INFLUXDB_INIT_BUCKET=sensors
       - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=smartfarm-token-12345
+    restart: unless-stopped
+    networks:
+      - iot-network
 
   grafana:
     image: grafana/grafana:10.2.0
+    container_name: grafana
     ports: ["3000:3000"]
     volumes:
       - "./grafana:/var/lib/grafana"
@@ -35,3 +53,11 @@ volumes:
       - GF_SECURITY_ADMIN_PASSWORD=admin123
     depends_on:
       - influxdb
+    restart: unless-stopped
+    networks:
+      - iot-network
+
+volumes:
+  influxdb_data:
+  grafana_data:
+  mosquitto_data:
