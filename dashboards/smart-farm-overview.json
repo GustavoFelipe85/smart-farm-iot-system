@@ -90,3 +90,26 @@
   },
   "overwrite": true
 }
+
+// 📊 Grafana - Painéis profissionais
+{
+  "dashboard": {
+    "panels": [
+      {
+        "title": "🌡️ Saúde do Sistema",
+        "type": "stat",
+        "metrics": ["temperatura", "umidade", "solo"]
+      },
+      {
+        "title": "💧 Histórico de Irrigação",
+        "type": "graph", 
+        "metrics": ["water_events", "soil_trend"]
+      },
+      {
+        "title": "⚠️ Alertas Ativos",
+        "type": "alertlist",
+        "metrics": ["active_alerts"]
+      }
+    ]
+  }
+}
