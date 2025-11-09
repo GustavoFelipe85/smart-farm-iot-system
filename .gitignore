@@ -63,3 +63,13 @@ Thumbs.db
 *.backup
 *.bak
 *.tmp
+
+# ✅ GitHub .gitignore template for Python
+*.pyc
+__pycache__/
+*.so
+.Python
+env/
+venv/
+.venv/
+.env
