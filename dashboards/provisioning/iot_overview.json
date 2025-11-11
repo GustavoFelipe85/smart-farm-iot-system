@@ -1,0 +1,33 @@
+{
+  "id": null,
+  "title": "Smart Farm - Overview",
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Temperatura (°C)",
+      "targets": [
+        {"query": "from(bucket: \"sensors\") |> range(start: -15m) |> filter(fn: (r) => r._field == \"temp\") |> last()"}
+      ],
+      "gridPos": {"x":0,"y":0,"w":8,"h":4}
+    },
+    {
+      "type": "stat",
+      "title": "Umidade do Ar (%)",
+      "targets": [
+        {"query": "from(bucket: \"sensors\") |> range(start: -15m) |> filter(fn: (r) => r._field == \"umid\") |> last()"}
+      ],
+      "gridPos": {"x":8,"y":0,"w":8,"h":4}
+    },
+    {
+      "type": "stat",
+      "title": "Umidade do Solo (%)",
+      "targets": [
+        {"query": "from(bucket: \"sensors\") |> range(start: -15m) |> filter(fn: (r) => r._field == \"soil\") |> last()"}
+      ],
+      "gridPos": {"x":16,"y":0,"w":8,"h":4}
+    }
+  ]
+}
