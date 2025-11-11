@@ -1,194 +1,233 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
   
-# Projeto Acadêmico IoT
+Entendido.
+Vou entregar exatamente o que você pediu:
 
-🌱 **Smart Farm IoT System**  
-**🎓 Projeto para Seleção de Mestrado**  
-Universidade Pública - Universidade do Oeste do Paraná (Unioeste) - Programa de Pós-Graduação Mestrado em Ciências da Computação/Sistemas - (EDITAL Nº 11/2025 - PPGComp)
+✅ **README híbrido**
+✅ **Visual forte como o DeepSeek**
+✅ **Com emojis e ilustrações gráficas**
+✅ **Mas 100% coerente com o SEU projeto real**
+✅ **Seguro para ser submetido à UNIOESTE**
+✅ **Sem exageros, sem mentir funcionalidades**
+✅ **Tom científico + design moderno**
 
-`MIT License` `Python` `IoT` `Docker` `ESP32` `Status: 🎓 Proposta de Pesquisa (90% Concluído)`
+---
 
-## 📋 Descrição do Projeto
-Sistema IoT avançado para monitoramento e automação em agricultura de precisão. O projeto integra sensores ambientais, análise de dados em tempo real e preparação para algoritmos de Machine Learning para otimização de recursos agrícolas.
+# ✅ **🚀 PRONTO PARA USAR – README HÍBRIDO (VISUAL + CIENTÍFICO)**
 
-## 🎯 Objetivos de Pesquisa
-- Machine Learning para predição de safras e detecção de anomalias
-- Otimização inteligente de recursos hídricos e energéticos
-- Integração avançada com sensores multispectrais
-- Análise em tempo real com dashboard interativo
-- Publicação científica dos resultados obtidos
+Use este arquivo como **README.md oficial** no repositório.
 
-## 🏗 Arquitetura do Sistema
+---
+
+````markdown
+<div align="center">
+
+# 🌾 Smart Farm IoT System  
+### **Plataforma Inteligente de Monitoramento e Análise para Agricultura de Precisão**
+
+📡 **IoT** • 📊 **Time-Series Analytics** • 🐍 **Python** • 🐳 **Docker** • 📈 **Grafana**  
+
+[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)]()
+[![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)]()
+[![Docker](https://img.shields.io/badge/Docker-OK-2496ED?style=for-the-badge&logo=docker)]()
+
+</div>
+
+---
+
+# 📘 Visão Geral
+
+O **Smart Farm IoT System** é um ecossistema de monitoramento agrícola que integra sensores ambientais, comunicação MQTT, persistência de dados em séries temporais e visualização em tempo real.  
+
+✅ Projeto baseado no TCC:  
+**“Fatores e Aplicações Limitantes da IoT na Agricultura” – UNISA (2025)**  
+
+✅ Evolução científica para **Mestrado UNIOESTE – Sistemas de Computação**.  
+
+🎯 Foco: construir uma plataforma modular, científica e expandível para experimentação IoT aplicada à agricultura de precisão.
+
+---
+
+# 🎯 Objetivos do Projeto
+
+- ✅ Monitoramento contínuo de **temperatura**, **umidade do ar**, **umidade do solo**  
+- ✅ Transmissão eficiente via **MQTT com autenticação**  
+- ✅ Armazenamento temporal usando **InfluxDB 2.x**  
+- ✅ Visualização por **Grafana**  
+- ✅ Arquitetura **modular** para permitir:
+  - aprendizado de máquina (fase 3)  
+  - controle inteligente de irrigação (fase 2)  
+  - testes científicos e validação experimental  
+
+---
+
+# 🏗️ Arquitetura do Sistema
+
+## 🔄 Fluxo de Dados
 
 ```mermaid
-graph LR
-A[🛰️ Sensores] --> B[⚡ ESP32]
-B --> C[☁️ MQTT]
-C --> D[💾 InfluxDB]
-D --> E[🤖 ML]
-E --> F[📊 Grafana]
-D --> F
+flowchart LR
+    A[🌡️ ESP32 + Sensores] -->|MQTT| B[(📡 Mosquitto Broker)]
+    B -->|Mensagem JSON| C[🐍 Python Consumer]
+    C -->|Write| D[(💾 InfluxDB)]
+    D -->|Query| E[📈 Grafana Dashboards]
+````
 
-style A fill:#e3f2fd
-style B fill:#f3e5f5
-style C fill:#e8f5e8
-style D fill:#fff3e0
-style E fill:#fce4ec
-style F fill:#fff8e1
-```
+✅ Arquitetura **real**, exatamente como implementada no repositório.
 
-## 🔐 Segurança da Infraestrutura
+---
 
-### Políticas Implementadas
-- **Credenciais**: Armazenadas exclusivamente em variáveis de ambiente (`.env`)
-- **Versionamento**: Secrets protegidos via `.gitignore`
-- **Tokens**: Gerados dinamicamente para cada ambiente
-- **Rede**: Containers isolados em rede bridge dedicada
-- **Validação**: Schema validation para todos os payloads MQTT
+# 🧩 Componentes Principais
 
-### Para Ambiente de Produção
-```bash
-# Gere secrets seguros:
-openssl rand -hex 32  # Para tokens
-pwgen -s 16 1         # Para senhas
-```
+| Camada            | Tecnologia           | Função                            |
+| ----------------- | -------------------- | --------------------------------- |
+| 📡 Comunicação    | **MQTT (Mosquitto)** | Transporte leve e eficiente       |
+| 🐍 Backend        | **Python Consumer**  | Processa mensagens e valida dados |
+| 💾 Banco de Dados | **InfluxDB 2.x**     | Time-series database              |
+| 📈 Visualização   | **Grafana**          | Dashboards e alertas              |
+| 🔌 Edge IoT       | **ESP32**            | Leitura de sensores               |
 
-## 📁 Estrutura do Projeto
+---
+
+# 📁 Estrutura do Repositório
 
 ```
 smart-farm-iot-system/
-├── 📁 src/                    # Código fonte
-│   ├── 📁 firmware/          # Código microcontroladores
-│   ├── 📁 backend/           # API e processamento
-│   ├── 📁 frontend/          # Dashboard web
-│   └── 📁 ml-models/         # Modelos machine learning
-├── 📁 docker/                # Infraestrutura containerizada
-├── 📁 docs/                  # Documentação acadêmica
-├── 📁 tests/                 # Testes automatizados
-├── 📁 dashboards/            # Configurações Grafana
-└── 📁 data/                  # Datasets e dados
+├── docker/
+│   ├── docker-compose.yml          # Orquestração
+│   ├── mosquitto/                  # Configuração MQTT
+│   ├── influxdb/                   # Armazenamento Influx
+│   └── grafana/                    # Persistência Grafana
+├── src/
+│   ├── backend/python-consumer/    # Processamento MQTT → InfluxDB
+│   ├── esp32/                      # Código fonte para microcontroladores
+│   └── api/                        # (fase 2) API REST futura
+├── docs/                           # Documentação acadêmica
+├── tests/                          # Testes unitários
+└── .env.example                    # Variáveis de ambiente
 ```
-
-## 🚀 Quick Start
-
-### 📋 Pré-requisitos
-- Docker e Docker Compose instalados
-- Git para clonagem do repositório
-- 4GB RAM disponível (mínimo recomendado)
-
-### ⚡ Execução Rápida
-```bash
-# 1. Clone o repositório
-git clone https://github.com/GustavoFelipe85/smart-farm-iot-system.git
-cd smart-farm-iot-system
-
-# 2. Configure variáveis de ambiente
-cp .env.example .env
-# Edite o .env com suas credenciais
-
-# 3. Execute a infraestrutura Docker
-cd docker
-docker compose --env-file ../.env up -d
-
-# 4. Aguarde os serviços inicializarem (≈ 1-2 minutos)
-```
-
-## 🔧 Comandos Úteis
-
-```bash
-# Verificar status dos containers
-docker compose ps
-
-# Ver logs em tempo real
-docker compose logs -f
-
-# Parar a infraestrutura
-docker compose down
-```
-
-## 🌐 Serviços Disponíveis
-
-| Serviço | URL | Descrição |
-|---------|-----|-----------|
-| **Grafana** | http://localhost:3000 | Dashboard de monitoramento |
-| **InfluxDB** | http://localhost:8086 | Banco de dados temporal |
-| **Mosquitto** | mqtt://localhost:1883 | Broker MQTT |
-
-Veja `docker/README.md` para detalhes completos.
-
-## 🔬 Metodologia Científica
-A metodologia está alinhada à linha de pesquisa Sistemas de Computação, integrando práticas de instrumentação IoT, análise de dados e automação inteligente:
-
-- Revisão bibliográfica do estado da arte em IoT agrícola
-- Desenvolvimento iterativo do sistema com testes de campo
-- Coleta e análise de dados em condições reais
-- Validação estatística dos resultados obtidos
-- Comparação com métodos tradicionais
-
-## 📊 Resultados Esperados
-- Redução de ≥20% no consumo hídrico
-- Aumento de ≥15% na produtividade
-- Sistema autônomo com mínima intervenção humana
-- Publicação em periódico científico
-
-## 🗓️ Roadmap da Pesquisa
-
-### 🎓 Fase 1: Proposta de Pesquisa (Atual)
-- Definição do problema de pesquisa
-- Revisão bibliográfica sistemática
-- Metodologia científica
-- Submissão para a universidade
-
-### 🔬 Fase 2: Desenvolvimento do Sistema
-- Prototipagem hardware IoT
-- Desenvolvimento do firmware
-- API e backend
-- Dashboard de monitoramento
-
-### 📊 Fase 3: Análise de Dados
-- Coleta de dados em campo
-- Análise estatística
-- Modelos de machine learning
-- Validação dos resultados
-
-### ✍️ Fase 4: Produção Científica
-- Redação do artigo
-- Submissão para periódico
-- Preparação de apresentação
-
-## 📋 Métricas de Progresso
-
-| Fase | Progresso | Previsão |
-|------|-----------|----------|
-| Proposta | 🔵 90% | Out 2024 |
-| Desenvolvimento | 🟡 15% | Dez 2024 |
-| Análise | ⚪ 0% | Fev 2025 |
-| Publicação | ⚪ 0% | Abr 2025 |
-
-## 👨‍💻 Autor
-**Gustavo Felipe Paluch Figueiredo**
-
-- Graduado em Bacharelado em Engenharia da Computação pela Universidade de Santo Amaro (UNISA)
-- Email: gustavo.f.p.f@outlook.com.br
-- LinkedIn: [gustavofpaluch](https://linkedin.com/in/gustavofpaluch)
-
-## 📚 Referências Complementares
-- WOLFERT, S. et al. Big Data in Smart Farming – A review. Agricultural Systems, v.153, p.69–80, 2017.
-- ZHANG, Y. et al. IoT Applications in Smart Agriculture: A Review. Journal of Agricultural Informatics, v.13, n.1, p.45–60, 2022.
-- CONECTARAGRO. Agricultura 4.0: Conectividade no campo. Disponível em: https://conectaragro.com.br.
-
-## 📄 Licença
-Este projeto está sob licença MIT. Veja o arquivo LICENSE para detalhes.
-
-## 🤝 Contribuição
-Contribuições são bem-vindas! Este é um projeto de pesquisa acadêmica.
-
-- 👨‍🔬 **Pesquisadores**: Como replicar experimentos
-- 💻 **Desenvolvedores**: Padrões de código
-- 🤝 **Parceiros**: Colaborações acadêmicas
 
 ---
+
+# 🐳 Docker – Infraestrutura
+
+O sistema roda completamente em Docker para garantir:
+
+✅ Reprodutibilidade
+✅ Isolamento de serviços
+✅ Testabilidade científica
+
+### Comando básico
+
+```bash
+cd docker
+docker compose up -d
+```
+
+---
+
+# 🔧 Configuração via `.env`
+
+Exemplo **seguro** para seu ambiente:
+
+```bash
+# MQTT
+MQTT_BROKER=mosquitto
+MQTT_PORT=1883
+MQTT_USERNAME=iot_user
+MQTT_PASSWORD=SenhaMQTT_2025!
+
+# InfluxDB
+INFLUX_URL=http://influxdb:8086
+INFLUX_ORG=smartfarm
+INFLUX_BUCKET=sensors
+INFLUX_TOKEN=TokenInflux_2025!
+
+# Grafana
+GRAFANA_ADMIN_USER=admin
+GRAFANA_ADMIN_PASSWORD=Admin2025!
+```
+
+⚠️ Importante:
+✅ `.env` **não deve ser commitado**
+✅ Apenas `.env.example` fica no GitHub
+
+---
+
+# 📊 Dashboards (Grafana)
+
+✅ Painéis principais recomendados:
+
+* **Visão Geral do Ambiente**
+* **Umidade do Solo x Tempo**
+* **Temperatura/Humidade**
+* **Taxa de mensagens MQTT**
+* **Alertas e thresholds**
+
+Adicione posteriormente capturas reais do painel para fortalecer apresentação.
+
+---
+
+# 🔬 Roteiro Científico (usado na banca)
+
+### Contribuições acadêmicas
+
+* Arquitetura IoT modular de baixo custo
+* Pipeline MQTT → Python → InfluxDB replicável
+* Base real para pesquisa de machine learning
+* Reprodutibilidade científica via Docker
+* Métricas verificáveis para agricultura de precisão
+
+### Próximas fases
+
+✅ **Fase 1:** Infraestrutura base
+✅ **Fase 2:** Controle inteligente de irrigação
+✅ **Fase 3:** Predição de necessidades hídricas (ML)
+✅ **Fase 4:** Artigo científico para congresso/IEEE
+
+---
+
+# 🧪 Testes rápidos
+
+### Publicar mensagem simulada
+
+```bash
+mosquitto_pub -h localhost -t "smartfarm/sensors" \
+ -m '{"device":"test", "temp":25.4, "umid":60.1}' \
+ -u iot_user -P SenhaMQTT_2025!
+```
+
+### Consultar dados no Influx
+
+```bash
+curl -G http://localhost:8086/api/v2/query \
+  -H "Authorization: Token $INFLUX_TOKEN" \
+  --data-urlencode 'q=from(bucket:"sensors") |> range(start: -10m)'
+```
+
+---
+
+# 👨‍💻 Autor
+
+**Gustavo Felipe Paluch Figueiredo**
+Engenharia da Computação – UNISA
+
+🔗 LinkedIn: [https://www.linkedin.com/in/gustavofpaluch](https://www.linkedin.com/in/gustavofpaluch)
+📧 Email: [gustavo.f.p.f@outlook.com.br](mailto:gustavo.f.p.f@outlook.com.br)
+
+---
+
+<div align="center">
+
+### ✨ “Tecnologia e ciência transformando a agricultura brasileira.”
+
+### 🌱 Smart Farm IoT System – 2025
+
+</div>
+
+```
 
 **📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)**
 
