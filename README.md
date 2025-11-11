@@ -2,8 +2,6 @@
   <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
   
 ````markdown
-<div align="center">
-
 # 🌾 Smart Farm IoT System  
 ### **Plataforma Inteligente de Monitoramento e Análise para Agricultura de Precisão**
 
@@ -212,9 +210,7 @@ Engenharia da Computação – UNISA
 
 ```
 
-
 ---
-
 ## 🐳 Execução com Docker
 
 A infraestrutura completa pode ser executada com Docker:
