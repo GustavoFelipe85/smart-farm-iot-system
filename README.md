@@ -6,7 +6,7 @@
 
 ### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
 
-**Versão acadêmica — Compatível com o estado REAL do seu repositório**
+
 
 <div align="center">
 
@@ -268,7 +268,7 @@ Acessos:
 # 👨‍💻 Autor
 
 **Gustavo Felipe Paluch Figueiredo**
-Engenharia da Computação – UNISA
+Bacharelado Engenharia da Computação – UNISA
 
 🔗 LinkedIn: [https://www.linkedin.com/in/gustavofpaluch](https://www.linkedin.com/in/gustavofpaluch)
 📧 Email: [gustavo.f.p.f@outlook.com.br](mailto:gustavo.f.p.f@outlook.com.br)
@@ -286,8 +286,6 @@ Engenharia da Computação – UNISA
 </div>
 
 ```
-
----
 ## 🐳 Execução com Docker
 
 A infraestrutura completa pode ser executada com Docker:
