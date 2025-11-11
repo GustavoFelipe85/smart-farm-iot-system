@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": ["device", "ts", "metrics"],
+  "properties": {
+    "device": { "type": "string" },
+    "ts": { "type": "string", "format": "date-time" },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "temp": { "type": "number" },
+        "umid": { "type": "number" },
+        "soil": { "type": "number" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
