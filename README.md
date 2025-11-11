@@ -38,37 +38,35 @@ O projeto **não inclui APIs de controle, ML, automação ou atuadores**, pois e
 * Estabelecer estrutura sólida para futuras fases (controle, ML, automação).
 
 ---
-
-# 🏗️ **Arquitetura Implementada**
-
-100% refletindo o estado REAL do repositório.
+## 🏗️ Arquitetura Implementada
 
 ```mermaid
-flowchart TB
-    subgraph A [🌱 Edge - Sensores IoT]
-        A1[ESP32<br/>DHT22 + Solo]
-    end
+flowchart LR
+  subgraph Edge[🌱 Edge - Sensores IoT]
+    ESP[ESP32<br>DHT22 + Solo]
+  end
 
-    subgraph B [🔐 Comunicação]
-        B1[MQTT Broker<br/>Mosquitto Secure]
-    end
+  subgraph Comm[🔐 Comunicação]
+    MQ[MQTT Broker<br>Mosquitto Secure]
+  end
 
-    subgraph C [🐍 Processamento]
-        C1[Python Consumer<br/>JSON Validation]
-    end
+  subgraph Proc[⚙️ Processamento]
+    PY[Python Consumer<br>JSON Validation]
+  end
 
-    subgraph D [💾 Armazenamento]
-        D1[InfluxDB 2.7<br/>Bucket sensors]
-    end
+  subgraph DB[💾 Armazenamento]
+    INF[InfluxDB 2.7]
+  end
 
-    subgraph E [📊 Visualização]
-        E1[Grafana 10.4<br/>Dashboards Básicos]
-    end
+  subgraph Viz[📊 Visualização]
+    GF[Grafana 10.4<br>Dashboards Básicos]
+  end
 
-    A -->|MQTT Secure| B
-    B -->|Mensagem Validada| C
-    C -->|Write Data| D
-    D -->|Consulta| E
+  ESP -->|MQTT Secure| MQ
+  MQ -->|Mensagem Válida| PY
+  PY -->|Write Data| INF
+  INF -->|Consulta| GF
+
 ```
 
 ---
