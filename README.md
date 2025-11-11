@@ -1,25 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
   
-Entendido.
-Vou entregar exatamente o que você pediu:
-
-✅ **README híbrido**
-✅ **Visual forte como o DeepSeek**
-✅ **Com emojis e ilustrações gráficas**
-✅ **Mas 100% coerente com o SEU projeto real**
-✅ **Seguro para ser submetido à UNIOESTE**
-✅ **Sem exageros, sem mentir funcionalidades**
-✅ **Tom científico + design moderno**
-
----
-
-# ✅ **🚀 PRONTO PARA USAR – README HÍBRIDO (VISUAL + CIENTÍFICO)**
-
-Use este arquivo como **README.md oficial** no repositório.
-
----
-
 ````markdown
 <div align="center">
 
