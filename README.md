@@ -38,6 +38,7 @@ O projeto **não inclui APIs de controle, ML, automação ou atuadores**, pois e
 * Estabelecer estrutura sólida para futuras fases (controle, ML, automação).
 
 ---
+
 ## 🏗️ Arquitetura Implementada
 
 ```mermaid
@@ -61,6 +62,12 @@ flowchart LR
   subgraph VIS[📊 Visualização]
     GF[Grafana 10.4<br/>Dashboards Básicos]
   end
+
+  ESP -->|MQTT Secure| MQ
+  MQ -->|Mensagem Validada| PY
+  PY -->|Write Data| INF
+  INF -->|Consulta| GF
+
 
 ```
 
@@ -276,8 +283,9 @@ Bacharelado em Engenharia da Computação – UNISA
 
 **📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)**
 
----
+```bash
 </div>
+```bash
 
 ## 🐳 Execução com Docker
 
