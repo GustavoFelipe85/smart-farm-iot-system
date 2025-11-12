@@ -62,11 +62,6 @@ flowchart LR
     GF[Grafana 10.4<br/>Dashboards Básicos]
   end
 
-  ESP -->|MQTT Secure| MQ
-  MQ -->|Mensagem Validada| PY
-  PY -->|Write Data| INF
-  INF -->|Consulta| GF
-
 ```
 
 # 🔧 **Componentes Implementados (Fase 2 – Concluída)**
@@ -281,9 +276,9 @@ Bacharelado em Engenharia da Computação – UNISA
 
 **📌 Documento técnico elaborado para fins acadêmicos no contexto do processo seletivo do Programa de Pós-Graduação em Ciência da Computação – UNIOESTE (EDITAL Nº 11/2025 - PPGComp.)**
 
+---
 </div>
 
-```
 ## 🐳 Execução com Docker
 
 A infraestrutura completa pode ser executada com Docker:
