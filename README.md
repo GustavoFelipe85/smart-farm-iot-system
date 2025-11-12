@@ -39,17 +39,23 @@ O projeto **não inclui APIs de controle, ML, automação ou atuadores**, pois e
 
 ---
 
+## 🧩 Fases do Projeto
+
+| Fase | Descrição | Status | Principais Entregas |
+|------|------------|--------|----------------------|
+| **1️⃣ Fase 1 — Infraestrutura IoT** | Configuração de sensores ESP32, coleta e envio MQTT. | ✅ Concluída | Firmware + MQTT Broker |
+| **2️⃣ Fase 2 — Processamento e Visualização** | Ingestão de dados, persistência temporal e dashboards. | ✅ Concluída | Python Consumer + InfluxDB + Grafana |
+| **3️⃣ Fase 3 — Expansão Inteligente** | API, automação de irrigação e modelos preditivos. | 🔜 Planejada | FastAPI + Controle + ML |
+
+> 💡 **Status Atual:** Este repositório corresponde à Fase 2 concluída do projeto Smart Farm IoT System.
+
+---
+
 ## 🏗️ Arquitetura Implementada
 
 100% refletindo o estado real do repositório (Fase 2 concluída).
 
 ```mermaid
-flowchart LR
-  %% Layout ajustado e espaçamento balanceado
-  classDef box fill:#2c2f33,stroke:#555,stroke-width:1px,color:#fff,rx:8px,ry:8px;
-  classDef title fill:#111,stroke:#444,stroke-width:0.5px,color:#ffcc00,font-weight:bold;
-  classDef text fill:#23272a,color:#fff,font-size:12px;
-
   %% Seções principais
   subgraph EDGE[🌱 Edge - Sensores IoT]
     E1[ESP32<br/>DHT22 + Sensor de Solo]
@@ -79,8 +85,6 @@ flowchart LR
 
   %% Classes
   class E1,C1,P1,D1,V1 box;
-
-
 
 ```
 
