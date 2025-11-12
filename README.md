@@ -109,10 +109,7 @@ flowchart LR
 | Automação de irrigação | ❌ Não implementado |
 
 ---
-
 ## 🏗️ Arquitetura Implementada
-
-100% refletindo o estado real do repositório.
 
 ```mermaid
 flowchart LR
@@ -140,8 +137,6 @@ flowchart LR
   MQ -->|Mensagem Validada| PY
   PY -->|Write Data| INF
   INF -->|Consulta| GF
-```
-
 ---
 
 # ⚙️ **Fluxo Operacional**
