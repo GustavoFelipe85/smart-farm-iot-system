@@ -41,32 +41,45 @@ O projeto **não inclui APIs de controle, ML, automação ou atuadores**, pois e
 
 ## 🏗️ Arquitetura Implementada
 
+100% refletindo o estado real do repositório (Fase 2 concluída).
+
 ```mermaid
 flowchart LR
+  %% Layout ajustado e espaçamento balanceado
+  classDef box fill:#2c2f33,stroke:#555,stroke-width:1px,color:#fff,rx:8px,ry:8px;
+  classDef title fill:#111,stroke:#444,stroke-width:0.5px,color:#ffcc00,font-weight:bold;
+  classDef text fill:#23272a,color:#fff,font-size:12px;
+
+  %% Seções principais
   subgraph EDGE[🌱 Edge - Sensores IoT]
-    ESP[ESP32<br/>DHT22 + Solo]
+    E1[ESP32<br/>DHT22 + Sensor de Solo]
   end
 
-  subgraph COMM[📡 Comunicação Segura]
-    MQ[MQTT Broker<br/>Mosquitto Secure]
+  subgraph COMM[🔒 Comunicação Segura]
+    C1[MQTT Broker<br/>Mosquitto (Auth Enabled)]
   end
 
   subgraph PROC[⚙️ Processamento]
-    PY[Python Consumer<br/>JSON Validation]
+    P1[Python Consumer<br/>Validação JSON Schema]
   end
 
   subgraph DB[💾 Armazenamento]
-    INF[InfluxDB 2.7]
+    D1[InfluxDB 2.7<br/>Time-Series Database]
   end
 
   subgraph VIS[📊 Visualização]
-    GF[Grafana 10.4<br/>Dashboards Básicos]
+    V1[Grafana 10.4<br/>Dashboards Básicos]
   end
 
-  ESP -->|MQTT Secure| MQ
-  MQ -->|Mensagem Validada| PY
-  PY -->|Write Data| INF
-  INF -->|Consulta| GF
+  %% Fluxo de dados
+  E1 -->|"MQTT Secure"| C1
+  C1 -->|"Mensagem Validada"| P1
+  P1 -->|"Write Data"| D1
+  D1 -->|"Consulta"| V1
+
+  %% Classes
+  class E1,C1,P1,D1,V1 box;
+
 
 
 ```
