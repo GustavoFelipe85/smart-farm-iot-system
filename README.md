@@ -257,7 +257,7 @@ Acessos:
 * Wolfert, S. et al. *Big Data in Smart Farming.* Agricultural Systems, 2017.
 * Zhang, Y. *IoT Applications in Smart Agriculture.* JAI, 2022.
 * ConectarAGRO. *Agricultura 4.0.*
-* Este trabalho evolui o TCC: [📘 TCC – “Fatores e Aplicações Limitantes da IoT na Agricultura” (UNISA)](https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed)
+* Este trabalho evolui do TCC: [📘 TCC – “Fatores e Aplicações Limitantes da IoT na Agricultura” (UNISA)](https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed)
 
 ---
 
