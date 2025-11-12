@@ -110,33 +110,36 @@ flowchart LR
 
 ---
 
-# 📦 **Estrutura do Projeto**
+## 🏗️ Arquitetura Implementada
 
-```
-smart-farm-iot-system/
-├── docker/
-│   ├── mosquitto/
-│   │   ├── mosquitto.conf
-│   │   ├── passwords
-│   │   ├── data/
-│   │   └── log/
-│   ├── influxdb/
-│   └── docker-compose.yml
-├── src/
-│   └── backend/
-│        └── python-consumer
-│            ├── consumer.py
-│            ├── mqtt_handler.py
-│            ├── influx_manager.py
-│            └── schema.json
-├── tests/
-├── docs/
-│   ├── architecture.md
-│   ├── deployment_guide.md
-│   └── hardware_setup.md
-├── requirements.txt
-├── .env.example
-└── README.md
+100% refletindo o estado real do repositório.
+
+```mermaid
+flowchart LR
+  subgraph EDGE[🌱 Edge - Sensores IoT]
+    ESP[ESP32<br/>DHT22 + Solo]
+  end
+
+  subgraph COMM[📡 Comunicação Segura]
+    MQ[MQTT Broker<br/>Mosquitto Secure]
+  end
+
+  subgraph PROC[⚙️ Processamento]
+    PY[Python Consumer<br/>JSON Validation]
+  end
+
+  subgraph DB[💾 Armazenamento]
+    INF[InfluxDB 2.7]
+  end
+
+  subgraph VIS[📊 Visualização]
+    GF[Grafana 10.4<br/>Dashboards Básicos]
+  end
+
+  ESP -->|MQTT Secure| MQ
+  MQ -->|Mensagem Validada| PY
+  PY -->|Write Data| INF
+  INF -->|Consulta| GF
 ```
 
 ---
