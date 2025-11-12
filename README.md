@@ -107,42 +107,12 @@ flowchart LR
 | Automação de irrigação | ❌ Não implementado |
 
 ---
-## 🏗️ Arquitetura Implementada
-
-```mermaid
-flowchart LR
-  subgraph EDGE[🌱 Edge - Sensores IoT]
-    ESP[ESP32<br/>DHT22 + Solo]
-  end
-
-  subgraph COMM[📡 Comunicação Segura]
-    MQ[MQTT Broker<br/>Mosquitto Secure]
-  end
-
-  subgraph PROC[⚙️ Processamento]
-    PY[Python Consumer<br/>JSON Validation]
-  end
-
-  subgraph DB[💾 Armazenamento]
-    INF[InfluxDB 2.7]
-  end
-
-  subgraph VIS[📊 Visualização]
-    GF[Grafana 10.4<br/>Dashboards Básicos]
-  end
-
-  ESP -->|MQTT Secure| MQ
-  MQ -->|Mensagem Validada| PY
-  PY -->|Write Data| INF
-  INF -->|Consulta| GF
----
 
 # ⚙️ **Fluxo Operacional**
 
 ### 1️⃣ Captura → ESP32
 
 Leitura dos sensores e publicação MQTT:
-
 ```json
 {
   "device": "esp32-node-01",
