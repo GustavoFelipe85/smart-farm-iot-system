@@ -243,7 +243,9 @@ Acessos:
 # 👨‍💻 **Autor**
 
 **Gustavo Felipe Paluch Figueiredo**
-Bacharelado em Engenharia da Computação – UNISA
+
+Bacharelado em Engenharia da Computação 
+Universidade Santo Amaro (Unisa)
 
 🔗 LinkedIn: [https://www.linkedin.com/in/gustavofpaluch](https://www.linkedin.com/in/gustavofpaluch)
 
