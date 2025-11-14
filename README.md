@@ -20,28 +20,28 @@
 
 # 📘 **Resumo Executivo**
 
-O **Smart Farm IoT System** é uma plataforma modular de **monitoramento ambiental agrícola**, baseada em uma arquitetura IoT segura e containerizada.  
+O **Smart Farm IoT System** é uma plataforma modular de monitoramento ambiental agrícola, baseada em uma arquitetura IoT segura e containerizada.
 
 O sistema implementa:
 
-- Captura via ESP32 + sensores
-- Comunicação MQTT autenticada
-- Ingestão e validação em Python
-- Armazenamento time-series em InfluxDB
-- Visualização no Grafana
+- Captura via ESP32 + sensores  
+- Comunicação MQTT autenticada  
+- Ingestão e validação em Python  
+- Armazenamento time-series em InfluxDB  
+- Dashboards analíticos no Grafana  
 
-Este repositório representa **a conclusão integral da Fase 2**, contendo toda a infraestrutura, pipeline de dados e observabilidade.  
-Não inclui API, automação, ML ou atuadores — estes pertencem às Fases 3–6 planejadas.
+Este repositório documenta **a Fase 2 concluída**, contendo toda a infraestrutura, ingestão, validação e observabilidade.  
+Funcionalidades como API, automação, ML e atuadores serão implementadas nas fases 3–6.
 
 ---
 
 # 🎯 **Objetivos do Projeto**
 
 - Criar uma arquitetura IoT **segura, replicável e modular**  
-- Monitorar: 🌡 temperatura, 💧 umidade do ar e 🌱 umidade do solo  
-- Registrar medições em banco time-series  
+- Monitorar temperatura, umidade do ar e umidade do solo  
+- Registrar medições em banco **time-series**  
 - Disponibilizar dashboards analíticos  
-- Estabelecer base sólida para futuras fases (API, automação, ML)
+- Construir base técnica para automação, controle e ML nas próximas fases  
 
 ---
 
@@ -53,7 +53,7 @@ Não inclui API, automação, ML ou atuadores — estes pertencem às Fases 3–
 | **2️⃣ Fase 2 — Processamento e Visualização** | Ingestão, persistência e dashboards | ✅ Concluída | Python Consumer + InfluxDB + Grafana |
 | **3️⃣ Fase 3 — Expansão Inteligente** | API, automação e ML | 🔜 Planejada | FastAPI + Controle + ML |
 
-> 💡 **Status Atual:** Este repositório corresponde exatamente à **Fase 2 concluída**.
+> 💡 **Status Atual:** Este repositório corresponde **à Fase 2 concluída** do projeto Smart Farm IoT System.
 
 ---
 
@@ -156,7 +156,7 @@ flowchart LR
 
 ---
 
-# 📈 **Resultados (Fase 2)**
+# 📈 **Resultados Obtidos (Fase 2)**
 
 | Indicador                | Valor              |
 | ------------------------ | ------------------ |
@@ -174,11 +174,11 @@ flowchart LR
 * Variáveis sensíveis no `.env`
 * `.env.example` fornecido
 * Rede Docker isolada
-* Senha do Grafana via ambiente
+* Senha do Grafana via env
 
 ---
 
-# 📘 **.env.example (válido e final)**
+# 📘 **.env.example (versão final)**
 
 ```bash
 # MQTT
@@ -206,6 +206,7 @@ git clone https://github.com/GustavoFelipe85/smart-farm-iot-system
 cd smart-farm-iot-system
 
 copy .env.example .env  # Windows
+cp .env.example .env    # Linux / macOS
 
 cd docker
 docker-compose up -d
@@ -231,22 +232,20 @@ Acessos:
 
 # 📚 **Referências**
 
-* Wolfert, S. et al. *Big Data in Smart Farming.* Agricultural Systems, 2017. 
-* Zhang, Y. *IoT Applications in Smart Agriculture.* JAI, 2022. 
-* ConectarAGRO. *Agricultura 4.0.* 
-* Este trabalho evolui do TCC:
-[📘 TCC – “Fatores e Aplicações Limitantes da IoT na Agricultura” (UNISA)](https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed)
+* Wolfert, S. et al. *Big Data in Smart Farming.* Agricultural Systems, 2017.
+* Zhang, Y. *IoT Applications in Smart Agriculture.* JAI, 2022.
+* ConectarAGRO. *Agricultura 4.0.*
+* TCC: **“Fatores e Aplicações Limitantes da IoT na Agricultura” – UNISA**
+  [https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed](https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed)
 
 ---
 
 # 👨‍💻 **Autor**
 
 **Gustavo Felipe Paluch Figueiredo**
-
-Engenharia da Computação – Universidade Santo Amaro (Unisa)
+Bacharelado em Engenharia da Computação – UNISA
 
 🔗 LinkedIn: [https://www.linkedin.com/in/gustavofpaluch](https://www.linkedin.com/in/gustavofpaluch)
-
 📧 Email: [gustavo.f.p.f@outlook.com.br](mailto:gustavo.f.p.f@outlook.com.br)
 
 ---
@@ -257,6 +256,9 @@ Engenharia da Computação – Universidade Santo Amaro (Unisa)
 
 📌 Documento técnico elaborado para o processo seletivo do **PPGComp – UNIOESTE (Edital 11/2025)**
 
+Este repositório documenta integralmente a **Fase 2**, concluída com foco em rigor metodológico, reprodutibilidade e aderência às diretrizes de pesquisa em Sistemas de Computação.
+
 </div>
 ```
+
 
