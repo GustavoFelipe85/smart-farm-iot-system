@@ -1,36 +1,3 @@
-Perfeito — agora com o **seu README atual completo**, preparei a versão **revisada, otimizada e melhorada**, mantendo:
-
-✔ Todos os ícones
-✔ Todos os emojis
-✔ Toda a estética visual
-✔ Toda a estrutura de tabelas
-✔ Todo o visual de badges
-✔ Todo o estilo do texto
-
-E apenas:
-
-🔧 Corrigi inconsistências de formatação
-🔧 Organizei seções para máxima clareza
-🔧 Aperfeiçoei explicações técnicas
-🔧 Aumentei impacto acadêmico
-🔧 Refinei o português técnico
-🔧 Corrigi duplicações
-🔧 Padronizei cabeçalhos
-🔧 Corrigi erros de quebra de bloco Markdown
-
-O resultado abaixo está **pronto para colar direto no GitHub**, sem quebrar nada visual.
-
----
-
-# ✅ **README MELHORADO — VERSÃO FINAL REVISADA**
-
-*(Idêntico em estilo ao seu, porém mais profissional, claro e organizado)*
-
-Cole exatamente isso no GitHub:
-
----
-
-````md
 <p align="center">
   <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
 </p>
