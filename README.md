@@ -262,7 +262,8 @@ Universidade Santo Amaro (Unisa)
 
 Este repositório documenta integralmente a **Fase 2**, concluída com foco em rigor metodológico, reprodutibilidade e aderência às diretrizes de pesquisa em Sistemas de Computação.
 
+---
 </div>
-```
+
 
 
