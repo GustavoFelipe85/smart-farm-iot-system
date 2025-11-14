@@ -231,7 +231,11 @@ Acessos:
 
 # 📚 **Referências**
 
-*(mantidas as suas)*
+* Wolfert, S. et al. *Big Data in Smart Farming.* Agricultural Systems, 2017. 
+* Zhang, Y. *IoT Applications in Smart Agriculture.* JAI, 2022. 
+* ConectarAGRO. *Agricultura 4.0.* 
+* Este trabalho evolui do TCC:
+[📘 TCC – “Fatores e Aplicações Limitantes da IoT na Agricultura” (UNISA)](https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed)
 
 ---
 
@@ -254,15 +258,3 @@ Engenharia da Computação – UNISA
 </div>
 ```
 
----
-
-# 🔥 **Pronto. Este é o README ideal para a Fase 2.**
-
-Se quiser, posso:
-
-* Gerar versão minimalista para GitHub
-* Produzir versão para impressos / anexo documental
-* Criar página de documentação HTML
-* Criar README para a Fase 3 (quando você iniciar)
-
-Só mandar.
