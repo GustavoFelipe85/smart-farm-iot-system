@@ -67,7 +67,7 @@ A arquitetura deve permitir a adição futura de novos sensores, tópicos MQTT, 
   "temperature": 25.3,
   "humidity_air": 60.5,
 
----
+Campos obrigatórios:
 
 device_id (string)
 
