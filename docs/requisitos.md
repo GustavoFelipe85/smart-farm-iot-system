@@ -2,63 +2,68 @@
 
 ## 1. Visão Geral
 
-O Smart Farm IoT System é uma plataforma distribuída para monitoramento ambiental aplicada à agricultura de precisão.  
-A Fase 2 tem como foco a consolidação do pipeline de dados IoT:
+A Fase 2 do Smart Farm IoT System especifica os requisitos necessários para a consolidação do pipeline IoT:
 
-> Dispositivo (ESP32/simulador) → Broker MQTT → Consumer Python → InfluxDB → Grafana
+> Nó IoT (ESP32 / Simulador) → Broker MQTT → Consumer Python → InfluxDB → Grafana
 
-Esta fase não trata ainda de sensores avançados nem automação de irrigação; esses elementos serão desenvolvidos nas Fases 3 e 4, em ambiente de laboratório.
+O objetivo desta fase é estabelecer a base técnica, garantir reprodutibilidade e documentar os requisitos funcionais e não funcionais antes da integração com sensores reais (Fase 3) e testes de campo (Fase 4).
 
 ---
 
-## 2. Requisitos Funcionais
+## 2. Requisitos Funcionais (RF)
 
 **RF01 – Coleta de dados ambientais**  
-O sistema deve coletar periodicamente leituras de temperatura, umidade do ar e umidade do solo a partir de um nó IoT (ESP32 ou simulador).
+O sistema deve coletar periodicamente leituras de temperatura, umidade do ar e umidade do solo (simuladas nesta fase).
 
 **RF02 – Publicação via MQTT**  
-O nó IoT deve publicar as leituras em um tópico MQTT configurado, em formato JSON.
+O nó IoT deve publicar um payload JSON em um tópico MQTT específico.
 
-**RF03 – Validação de payload**  
-O serviço consumer em Python deve validar o payload recebido (estrutura JSON, campos obrigatórios e tipos) e descartar mensagens inválidas ou incompletas.
+**RF03 – Validação do payload**  
+O consumer Python deve validar se cada mensagem possui todos os campos obrigatórios e tipos corretos.
 
-**RF04 – Armazenamento em banco time-series**  
-As mensagens válidas devem ser persistidas em um bucket do InfluxDB 2.x, com timestamp e tags adequadas (ex.: `device_id`, `sensor_type`).
+**RF04 – Armazenamento no InfluxDB**  
+O consumer deve persistir as leituras válidas no InfluxDB, organizando por timestamps e tags.
 
-**RF05 – Dashboard de monitoramento**  
-O sistema deve disponibilizar dashboards no Grafana para visualização de séries históricas e dados em tempo quase real.
+**RF05 – Visualização via Grafana**  
+O sistema deve possuir dashboards com gráficos históricos das medições.
 
 **RF06 – Configuração via variáveis de ambiente**  
-Parâmetros sensíveis (usuários, senhas, URLs) devem ser configuráveis via variáveis de ambiente, sem exposição direta em código.
+Credenciais, URLs e parâmetros sensíveis não devem estar hardcoded.
 
 **RF07 – Execução via Docker Compose**  
-Todos os serviços da Fase 2 (MQTT, consumer, InfluxDB, Grafana) devem ser executáveis através de um `docker-compose up`.
+Todo o pipeline (MQTT, Consumer, InfluxDB, Grafana) deve subir com o comando:
+
+```
+
+docker-compose up -d
+
+````
 
 ---
 
-## 3. Requisitos Não Funcionais
+## 3. Requisitos Não Funcionais (RNF)
 
 **RNF01 – Desempenho**  
-O sistema deve ser capaz de processar, no mínimo, 10.000 mensagens/hora sem perda significativa de desempenho, em ambiente de laboratório.
+Processar pelo menos 10.000 mensagens/hora sem degradação significativa.
 
 **RNF02 – Latência**  
-O tempo médio entre a publicação MQTT e a persistência no InfluxDB deve ser inferior a 200 ms em condições normais de rede local.
+Latência média MQTT → InfluxDB deve ser < 200 ms em rede local.
 
 **RNF03 – Confiabilidade**  
-Falhas em um dos serviços não devem corromper os dados já armazenados. Após reinício, o sistema deve retornar ao estado operacional normal.
+O sistema deve se recuperar após falhas sem perda de dados já processados.
 
-**RNF04 – Segurança básica**  
-O broker MQTT não deve permitir conexões anônimas. Usuários e senhas devem ser exigidos para publicação e assinatura.
+**RNF04 – Segurança**  
+O broker MQTT deve operar com autenticação habilitada (`allow_anonymous false`).
 
 **RNF05 – Reprodutibilidade**  
-Um usuário com Docker instalado deve ser capaz de replicar o ambiente executando apenas os comandos e instruções descritos no README.
+Qualquer usuário deve conseguir executar o ambiente apenas com Docker instalado.
 
 **RNF06 – Extensibilidade**  
-A arquitetura deve permitir a adição futura de novos sensores, tópicos MQTT, atuadores e módulos de análise sem grandes mudanças estruturais.
+A arquitetura deve permitir novos sensores, tópicos e módulos sem grandes mudanças.
 
 ---
 
-## 4. Formato do Payload MQTT (Fase 2)
+## 4. Formato do Payload MQTT
 
 ```json
 {
@@ -66,17 +71,68 @@ A arquitetura deve permitir a adição futura de novos sensores, tópicos MQTT, 
   "timestamp": "2025-01-01T12:00:00Z",
   "temperature": 25.3,
   "humidity_air": 60.5,
-
-Campos obrigatórios:
-
-device_id (string)
-
-timestamp (ISO 8601)
-
-temperature (float)
-
-humidity_air (float)
-
-humidity_soil (float)
   "humidity_soil": 45.2
 }
+````
+
+### Campos obrigatórios
+
+* `device_id`
+* `timestamp` (ISO 8601)
+* `temperature`
+* `humidity_air`
+* `humidity_soil`
+
+---
+
+## 5. Taxa de Envio e Operação
+
+### Frequência padrão de envio
+
+A taxa de envio das medições deve ser:
+
+**→ 1 leitura a cada 30 segundos**
+
+### Estrutura do tópico MQTT
+
+O padrão hierárquico de publicação é:
+
+```
+smartfarm/<area>/<device>/metrics
+```
+
+**Exemplo real utilizado nesta fase:**
+
+```
+smartfarm/field1/device1/metrics
+```
+
+Esse padrão facilita:
+
+* organização dos dispositivos
+* segmentação por ambientes de coleta
+* escalabilidade para Fase 3 e Fase 4
+
+---
+
+## 6. Escopo da Fase 2
+
+### Incluído nesta fase:
+
+* Pipeline completo MQTT → Consumer Python → InfluxDB → Grafana
+* Validação de JSON
+* Dashboards usuais
+* Documentação inicial (requisitos, arquitetura, especificações)
+
+### Fora do escopo desta fase (próximas etapas):
+
+* Integração com sensores reais
+* Firmware avançado (buffer, validação no edge)
+* Automação de irrigação
+* Testes de campo
+* Algoritmos de ML
+* Coleta com hardware real em ambiente agrícola
+
+Esses itens pertencem às **Fase 3 e Fase 4**, a serem desenvolvidas com laboratório durante o mestrado.
+
+---
