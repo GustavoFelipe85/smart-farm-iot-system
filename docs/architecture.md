@@ -49,21 +49,21 @@ Todos os serviços (exceto o dispositivo IoT) são executados via Docker Compose
 
 ```mermaid
 flowchart LR
-    subgraph Device["Nó IoT (ESP32 / Simulador)"]
-        sensor[Leitura de sensores (temperatura, umidade do ar, umidade do solo)]
+    subgraph Device["No IoT (ESP32 / Simulador)"]
+        sensor["Leitura sensores temperatura e umidade"]
     end
 
     subgraph Broker["Mosquitto MQTT"]
         mqtt[(Broker MQTT)]
     end
 
-    subgraph Backend["Backend & Storage"]
-        consumer[Consumer Python (validação e ingestão)]
+    subgraph Backend["Backend e Storage"]
+        consumer["Consumer Python - validacao e ingestao"]
         influx[(InfluxDB 2.x)]
     end
 
-    subgraph Visualization["Visualização"]
-        grafana[Grafana Dashboards]
+    subgraph Visualization["Visualizacao"]
+        grafana["Grafana Dashboards"]
     end
 
     sensor -->|JSON MQTT| mqtt
