@@ -35,6 +35,21 @@ Funcionalidades como API, automação, ML e atuadores serão implementadas nas f
 
 ---
 
+> 📝 **Este projeto integra o processo seletivo do Programa de Pós-Graduação em Ciência da Computação (PPGComp) – UNIOESTE.**  
+> Todo o desenvolvimento segue rigor metodológico, reprodutibilidade e aderência às diretrizes da linha de pesquisa *Sistemas de Computação*, conforme previsto no Edital 11/2025.
+
+Este repositório documenta integralmente a **Fase 2** do Smart Farm IoT System, incluindo:
+- arquitetura distribuída,
+- pipeline IoT completo,
+- validação de dados,
+- persistência estruturada,
+- dashboards analíticos,
+- documentação técnica formal.
+
+As **Fases 3 e 4** (sensores reais, testes de laboratório, testes de campo, automação e análise científica) serão executadas durante o Mestrado.
+
+---
+
 # 🎯 **Objetivos do Projeto**
 
 - Criar uma arquitetura IoT **segura, replicável e modular**  
