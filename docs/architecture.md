@@ -1,253 +1,152 @@
-# Arquitetura do Sistema Smart Farm IoT
 
-## Visão Geral
-Sistema de monitoramento de temperatura e umidade para agricultura de precisão.
+# Arquitetura do Sistema – Smart Farm IoT System (Fase 2)
 
-## Diagrama
-```
-ESP32 (DHT22) → MQTT (Mosquitto) → Python Consumer → InfluxDB → Grafana
-```
+Este documento descreve a arquitetura atual do projeto Smart Farm IoT System, correspondente à Fase 2 (pipeline IoT completo). A arquitetura inclui o nó IoT, o broker MQTT, o consumer em Python, o banco de dados InfluxDB e os dashboards Grafana.
 
-## Componentes
-- **ESP32**: Coleta dados do sensor DHT22
-- **Mosquitto**: Broker MQTT na porta 1883  
-- **Python Consumer**: Processa e armazena no InfluxDB
-- **InfluxDB**: Banco de dados time-series
-- **Grafana**: Dashboard de visualização
+---
 
-## Fluxo de Dados
-1. ESP32 publica JSON no tópico `smartfarm/sensors`
-2. Consumer Python grava no InfluxDB
-3. Grafana visualiza dados em tempo real
-```
+## 1. Visão Geral da Arquitetura
 
-## 🚀 **VERSÃO MELHORADA** (sugestão):
+A arquitetura do sistema segue o fluxo:
 
-**Arquivo: `docs/architecture.md`**
-```markdown
-# Arquitetura do Sistema Smart Farm IoT
+**Nó IoT → Broker MQTT → Consumer Python → InfluxDB → Grafana**
 
-## 🎯 Visão Geral
+Todos os serviços (exceto o dispositivo IoT) são executados via Docker Compose.
 
-Sistema de monitoramento em tempo real para agricultura de precisão, coletando dados de temperatura e umidade através de sensores ESP32, processando via MQTT e armazenando em banco de dados time-series para visualização em dashboards.
+---
 
-## 📊 Diagrama de Arquitetura
+## 2. Componentes da Arquitetura
+
+### **2.1. Nó IoT (ESP32 ou simulador)**
+- Realiza leitura de sensores (simulados na Fase 2)
+- Formata dados em JSON
+- Publica métricas no broker MQTT
+
+### **2.2. Broker MQTT (Mosquitto)**
+- Gerencia tópicos de publicação
+- Aplica autenticação
+- Entrega mensagens ao consumer Python
+
+### **2.3. Consumer Python**
+- Assina tópicos MQTT
+- Valida JSON (estrutura, tipos e campos)
+- Insere dados válidos no InfluxDB
+- Gera logs de inconsistências
+
+### **2.4. Banco InfluxDB 2.x**
+- Armazena métricas time-series
+- Buckets configurados via variáveis de ambiente
+- API para consultas via Grafana
+
+### **2.5. Grafana**
+- Painéis dinâmicos para monitoramento
+- Integração nativa com InfluxDB
+- Visualização histórica e quase em tempo real
+
+---
+
+## 3. Fluxo de Dados Ponta-a-Ponta
 
 ```mermaid
-graph TB
-    subgraph "Camada de Dispositivos"
-        A[ESP32 + DHT22] -->|WiFi| B[MQTT Broker<br/>Mosquitto]
-        A2[ESP32 + DHT22] -->|WiFi| B
+flowchart LR
+    subgraph Device["Nó IoT (ESP32 / Simulador)"]
+        sensor[Leitura de sensores\n(temperatura, umidade do ar, umidade do solo)]
     end
-    
-    subgraph "Camada de Processamento"
-        B -->|JSON via MQTT| C[Python Consumer]
-        C -->|Write Data| D[InfluxDB 2.7]
+
+    subgraph Broker["Mosquitto MQTT"]
+        mqtt[(Broker MQTT)]
     end
-    
-    subgraph "Camada de Visualização"
-        D -->|Query Data| E[Grafana Dashboard]
-        E --> F[📱 Web Browser]
-        E --> G[📊 Mobile App]
+
+    subgraph Backend["Backend & Storage"]
+        consumer[Consumer Python\n(validação + ingestão)]
+        influx[(InfluxDB 2.x)]
     end
-    
-    subgraph "Camada de Persistência"
-        H[Volumes Docker] --> D
-        H --> B
+
+    subgraph Visualization["Visualização"]
+        grafana[Grafana Dashboards]
     end
-    
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-```
 
-## 🏗️ Componentes do Sistema
-
-### 1. 🎛️ Camada de Dispositivos (Edge)
-- **Microcontrolador**: ESP32 com WiFi
-- **Sensores**: DHT22 (Temperatura e Umidade)
-- **Protocolo**: MQTT over WiFi
-- **Frequência**: Leitura a cada 5 segundos
-
-### 2. 🔄 Camada de Mensageria
-- **Broker**: Mosquitto MQTT
-- **Porta**: 1883 (TCP)
-- **Tópico**: `smartfarm/sensors`
-- **Formato**: JSON
-- **QoS**: 1 (Pelo menos uma vez)
-
-### 3. ⚙️ Camada de Processamento
-- **Linguagem**: Python 3.8+
-- **Bibliotecas**: paho-mqtt, influxdb-client
-- **Função**: Consumir MQTT → Converter → InfluxDB
-- **Resiliência**: Reconexão automática
-
-### 4. 💾 Camada de Armazenamento
-- **Banco**: InfluxDB 2.7
-- **Bucket**: `sensors`
-- **Org**: `smartfarm`
-- **Medição**: `environment`
-- **Tags**: `device`
-- **Fields**: `temperature`, `humidity`
-
-### 5. 📈 Camada de Visualização
-- **Dashboard**: Grafana 10.2+
-- **Fonte**: InfluxDB (Flux queries)
-- **Atualização**: 5 segundos
-- **Métricas**: Tempo real + histórico
-
-## 🔄 Fluxo de Dados Detalhado
-
-### 1. Coleta no Dispositivo
-```cpp
-// ESP32 - Leitura do sensor
-float temp = dht.readTemperature();  // 24.3°C
-float umid = dht.readHumidity();     // 60.1%
-
-// Payload MQTT
-String payload = "{\"device\":\"esp32-node-1\",\"temp\":24.3,\"umid\":60.1}";
-```
-
-### 2. Transmissão MQTT
-```
-Tópico: smartfarm/sensors
-Mensagem: {"device":"esp32-node-1","temp":24.3,"umid":60.1}
-QoS: 1 | Retained: true
-```
-
-### 3. Processamento no Consumer
-```python
-# Recebe MQTT → Converte → InfluxDB
-point = Point("environment") \
-    .tag("device", "esp32-node-1") \
-    .field("temperature", 24.3) \
-    .field("humidity", 60.1)
-```
-
-### 4. Armazenamento InfluxDB
-```
-Measurement: environment
-Tags: device=esp32-node-1
-Fields: temperature=24.3, humidity=60.1
-Timestamp: 2024-01-15T10:30:00Z
-```
-
-### 5. Visualização Grafana
-```flux
-from(bucket: "sensors")
-  |> range(start: -1h)
-  |> filter(fn: (r) => r._measurement == "environment")
-  |> filter(fn: (r) => r._field == "temperature")
-```
-
-## 🔧 Especificações Técnicas
-
-### Mensagens MQTT
-```json
-{
-  "device": "string_identificador",
-  "temp": "float[-20.0 à 80.0]",
-  "umid": "float[0.0 à 100.0]"
-}
-```
-
-### Esquema InfluxDB
-- **Measurement**: `environment`
-- **Tags**: 
-  - `device` (string): Identificador do sensor
-- **Fields**:
-  - `temperature` (float): Graus Celsius
-  - `humidity` (float): Percentual
-- **Timestamp**: Auto-gerado
-
-### Portas e Endpoints
-| Serviço | Porta | Protocolo | Uso |
-|---------|-------|-----------|-----|
-| Mosquitto | 1883 | TCP/MQTT | Dispositivos → Broker |
-| InfluxDB | 8086 | HTTP | Consumer → Database |
-| Grafana | 3000 | HTTP | Usuário → Dashboard |
-
-## 🛡️ Considerações de Segurança
-
-### Desenvolvimento
-- MQTT: Autenticação anônima
-- InfluxDB: Token estático
-- Rede: Localhost/isolada
-
-### Produção (Recomendado)
-- MQTT: SSL/TLS + Autenticação
-- InfluxDB: Token rotativo
-- Rede: VPN/VPC
-- Firewall: Portas restritas
-
-## 📈 Escalabilidade
-
-### Horizontal (Mais Dispositivos)
-- Adicionar mais ESP32
-- Balanceamento de tópicos MQTT
-- Sharding no InfluxDB
-
-### Vertical (Mais Recursos)
-- Cluster Mosquitto
-- InfluxDB replicado
-- Load Balancer Grafana
-
-## 🔄 Resiliência
-
-### Tolerância a Falhas
-- Reconexão automática MQTT
-- Retry mechanism no consumer
-- Persistência em disco
-- Health checks Docker
-
-### Monitoramento
-- Logs estruturados
-- Métricas de performance
-- Alertas de saúde
+    sensor -->|JSON MQTT| mqtt
+    mqtt -->|Subscribe| consumer
+    consumer -->|Time-series write| influx
+    grafana -->|Queries| influx
+````
 
 ---
 
-## 🎯 Próximas Evoluções
+## 4. Arquitetura Física (Containers)
 
-### Fase 2 (Em Planejamento)
-- [ ] Dashboard web customizado
-- [ ] Sistema de alertas
-- [ ] Controle de atuadores
-- [ ] Autenticação JWT
+Todos os serviços estão definidos no arquivo `docker-compose.yml`:
 
-### Fase 3 (Futuro)
-- [ ] Machine Learning (anomalias)
-- [ ] Clusterização
-- [ ] API REST
-- [ ] Mobile App
+* **mqtt-broker** → Porta 1883
+* **consumer** → Python 3.11
+* **influxdb** → Porta 8086
+* **grafana** → Porta 3000
+
+Os serviços utilizam network Docker interna.
 
 ---
 
-**Manutenção**: GustavoFelipe85  
-**Última Atualização**: {{DATA_ATUAL}}  
-**Versão da Arquitetura**: 1.0
+## 5. Evolução da Arquitetura
+
+### **Fase 3 (Laboratório):**
+
+* Sensores físicos reais
+* Buffer local no ESP32
+* Validação no edge
+* Firmwares mais avançados
+
+### **Fase 4 (Campo):**
+
+* Coleta real em ambiente agrícola
+* Análise científica
+* Algoritmos de ML
+* Comparações edge vs backend
+
+---
+
+**Documento atualizado para uso acadêmico e técnico na Fase 2 do projeto.**
+
+````
+
+---
+
+# ✅ **2. Caminho correto da seção: “5. Taxa de Envio e Operação”**
+
+Ela deve ficar dentro do arquivo:
+
+📁 **`docs/requisitos.md`**
+
+E exatamente **na seção 5** do documento (já existe e está correta).
+
+Aqui está o trecho exato para colar dentro do arquivo:
+
+```markdown
+## 5. Taxa de Envio e Operação
+
+### Frequência padrão de envio
+O nó IoT (ESP32 ou simulador) deve enviar leituras em intervalos fixos de:
+
+**→ 30 segundos (padrão da Fase 2)**
+
+Isso garante:
+- carga estável para o broker MQTT
+- granularidade adequada para séries temporais
+- consumo energético reduzido
+
+### Estrutura do tópico MQTT
+Todas as métricas devem ser enviadas seguindo um padrão hierárquico:
+
+````
+
+smartfarm/field1/device1/metrics
+
 ```
 
-## 🎯 **MELHORIAS PROPOSTAS:**
-
-1. **✅ Diagrama visual** (Mermaid.js)
-2. **✅ Estrutura em camadas** clara
-3. **✅ Fluxo de dados detalhado**
-4. **✅ Especificações técnicas completas**
-5. **✅ Considerações de segurança**
-6. **✅ Estratégia de escalabilidade**
-7. **✅ Plano de evolução futura**
-
-## 🔄 **PARA ATUALIZAR SEU REPOSITÓRIO:**
-
-```bash
-# Substituir o arquivo atual
-# Salve o conteúdo acima como: docs/architecture.md
-
-git add docs/architecture.md
-git commit -m "docs: atualiza arquitetura com diagramas e especificações completas"
-git push origin main
+Regras:
+- `smartfarm/` → namespace geral do projeto  
+- `field1/` → campo ou área monitorada  
+- `device1/` → identificador lógico do nó  
+- `metrics` → tópico de publicação de dados ambientais  
 ```
 
