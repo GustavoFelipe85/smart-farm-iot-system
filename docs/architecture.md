@@ -50,7 +50,7 @@ Todos os serviços (exceto o dispositivo IoT) são executados via Docker Compose
 ```mermaid
 flowchart LR
     subgraph Device["Nó IoT (ESP32 / Simulador)"]
-        sensor[Leitura de sensores\n(temperatura, umidade do ar, umidade do solo)]
+        sensor[Leitura de sensores (temperatura, umidade do ar, umidade do solo)]
     end
 
     subgraph Broker["Mosquitto MQTT"]
@@ -58,7 +58,7 @@ flowchart LR
     end
 
     subgraph Backend["Backend & Storage"]
-        consumer[Consumer Python\n(validação + ingestão)]
+        consumer[Consumer Python (validação e ingestão)]
         influx[(InfluxDB 2.x)]
     end
 
@@ -68,12 +68,10 @@ flowchart LR
 
     sensor -->|JSON MQTT| mqtt
     mqtt -->|Subscribe| consumer
-    consumer -->|Time-series write| influx
-    grafana -->|Queries| influx
+    consumer -->|Write| influx
+    grafana -->|Query| influx
+
 ````
-
----
-
 ## 4. Arquitetura Física (Containers)
 
 Todos os serviços estão definidos no arquivo `docker-compose.yml`:
