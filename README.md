@@ -264,8 +264,6 @@ Este repositório documenta integralmente a **Fase 2**, concluída com foco em r
 
 ---
 
----
-
 # 📚 Documentação Oficial (Fase 2)
 
 Este repositório inclui toda a documentação técnica referente à Fase 2 do projeto, contendo requisitos, arquitetura, diagramas e histórico de versões.
