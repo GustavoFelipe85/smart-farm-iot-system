@@ -25,13 +25,12 @@ O **Smart Farm IoT System** é uma plataforma modular de monitoramento ambiental
 O sistema implementa:
 
 - Captura via ESP32 + sensores  
-- Comunicação MQTT autenticada  
+- Comunicação MQTT Recebida  
 - Ingestão e validação em Python  
 - Armazenamento time-series em InfluxDB  
 - Dashboards analíticos no Grafana  
 
-Este repositório documenta **a Fase 2 concluída**, contendo toda a infraestrutura, ingestão, validação e observabilidade.  
-Funcionalidades como API, automação, ML e atuadores serão implementadas nas fases 3–6.
+Funcionalidades como API, automação, ML e atuadores serão implementadas nas Fases 3 e 4.
 
 ---
 
@@ -163,7 +162,7 @@ flowchart LR
 
 # 🧪 **Metodologia Operacional**
 
-* Frequência de amostragem: **30–60s**
+* Frequência de amostragem: **30s**
 * MQTT QoS: **1**
 * Sanitização completa do payload
 * Persistência com política de retenção
