@@ -25,7 +25,7 @@ O **Smart Farm IoT System** é uma plataforma modular de monitoramento ambiental
 O sistema implementa:
 
 - Captura via ESP32 + sensores  
-- Comunicação MQTT Recebida  
+- Comunicação MQTT autenticada  
 - Ingestão e validação em Python  
 - Armazenamento time-series em InfluxDB  
 - Dashboards analíticos no Grafana  
