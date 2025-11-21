@@ -263,7 +263,21 @@ Universidade Santo Amaro (Unisa)
 Este repositório documenta integralmente a **Fase 2**, concluída com foco em rigor metodológico, reprodutibilidade e aderência às diretrizes de pesquisa em Sistemas de Computação.
 
 ---
-</div>
+
+# 🧩 Fases do Projeto
+| ...tabela... |
+
+> 💡 Status Atual: Este repositório corresponde à Fase 2 concluída do projeto Smart Farm IoT System.
+
+---
+
+# 📚 Documentação Oficial (Fase 2)
+- docs/requisitos.md
+- docs/especificacao_arquitetura.md
+- docs/architecture.md
+- docs/versoes.md
+
+---
 
 
 
