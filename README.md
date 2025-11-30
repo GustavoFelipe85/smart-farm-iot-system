@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
 </p>
 
-# 🚜 **Smart Farm IoT System**
+# 🚜 Smart Farm IoT System
 ### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
 
 <div align="center">
@@ -18,9 +18,9 @@
 
 ---
 
-# 📘 **Resumo Executivo**
+# 📘 Resumo Executivo
 
-O **Smart Farm IoT System** é uma plataforma modular de monitoramento ambiental agrícola, baseada em uma arquitetura IoT segura e containerizada.
+O Smart Farm IoT System é uma plataforma modular de monitoramento ambiental agrícola, baseada em uma arquitetura IoT segura e containerizada.
 
 O sistema implementa:
 
@@ -34,32 +34,33 @@ Funcionalidades como API, automação, ML e atuadores serão implementadas nas F
 
 ---
 
-> 📝 **Este projeto integra o processo seletivo do Programa de Pós-Graduação em Ciência da Computação (PPGComp) – UNIOESTE.**  
-> Todo o desenvolvimento segue rigor metodológico, reprodutibilidade e aderência às diretrizes da linha de pesquisa *Sistemas de Computação*, conforme previsto no Edital 11/2025.
+> 📝 **Projeto integrante do processo seletivo do Programa de Pós-Graduação em Ciência da Computação (PPGComp) – UNIOESTE.**  
+> Desenvolvimento conduzido com rigor metodológico e reprodutibilidade, alinhado à linha *Sistemas de Computação*, conforme Edital 11/2025.
 
-Este repositório documenta integralmente a **Fase 2** do Smart Farm IoT System, incluindo:
-- arquitetura distribuída,
-- pipeline IoT completo,
-- validação de dados,
-- persistência estruturada,
-- dashboards analíticos,
-- documentação técnica formal.
+Este repositório documenta integralmente a **Fase 2**, incluindo:
 
-As **Fases 3 e 4** (sensores reais, testes de laboratório, testes de campo, automação e análise científica) serão executadas durante o Mestrado.
+- arquitetura distribuída  
+- pipeline IoT completo  
+- validação de dados  
+- persistência estruturada  
+- dashboards analíticos  
+- documentação técnica formal  
+
+As **Fases 3 e 4** (sensores reais, laboratório, campo, automação e ML) serão executadas durante o Mestrado.
 
 ---
 
-# 🎯 **Objetivos do Projeto**
+# 🎯 Objetivos do Projeto
 
-- Criar uma arquitetura IoT **segura, replicável e modular**  
+- Criar uma arquitetura IoT segura, replicável e modular  
 - Monitorar temperatura, umidade do ar e umidade do solo  
-- Registrar medições em banco **time-series**  
+- Registrar medições em banco time-series  
 - Disponibilizar dashboards analíticos  
-- Construir base técnica para automação, controle e ML nas próximas fases  
+- Construir base técnica para automação, controle e ML  
 
 ---
 
-# 🧩 **Fases do Projeto**
+# 🧩 Fases do Projeto
 
 | Fase | Descrição | Status | Entregas |
 |------|------------|--------|-----------|
@@ -67,11 +68,26 @@ As **Fases 3 e 4** (sensores reais, testes de laboratório, testes de campo, aut
 | **2️⃣ Fase 2 — Processamento e Visualização** | Ingestão, persistência e dashboards | ✅ Concluída | Python Consumer + InfluxDB + Grafana |
 | **3️⃣ Fase 3 — Expansão Inteligente** | API, automação e ML | 🔜 Planejada | FastAPI + Controle + ML |
 
-> 💡 **Status Atual:** Este repositório corresponde **à Fase 2 concluída** do projeto Smart Farm IoT System.
+> 💡 **Status Atual:** Repositório corresponde à **Fase 2 concluída**.
 
 ---
 
-# 🏗️ **Arquitetura Implementada**
+### 🔧 Integração com CELUS (Fase 3 – Hardware Assistido por IA)
+
+A Fase 3 utilizará o **CELUS Design Studio** para acelerar o desenvolvimento de hardware IoT real.  
+A ferramenta permitirá:
+
+- geração automatizada de esquemas eletrônicos (ESP32 + sensores)  
+- criação assistida de PCB  
+- documentação eletrônica padronizada  
+- lista de materiais (BOM)  
+- infraestrutura reprodutível para laboratório  
+
+Essa integração será essencial para prototipagem, calibração e testes acadêmicos na fase experimental do projeto.
+
+---
+
+# 🏗️ Arquitetura Implementada
 
 ```mermaid
 flowchart LR
@@ -99,10 +115,7 @@ flowchart LR
   MQ -->|Mensagem Validada| PY
   PY -->|Write Data| INF
   INF -->|Consulta| GF
-````
-
----
-
+```
 # 🔧 **Componentes Implementados (Fase 2 – Concluída)**
 
 | Camada       | Tecnologia       | Status | Função               |
