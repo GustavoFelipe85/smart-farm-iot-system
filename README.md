@@ -302,4 +302,21 @@ Este repositório inclui toda a documentação técnica referente à Fase 2 do p
 
 ---
 
+## 🧩 Hardware (Fase 3)
+
+O hardware do projeto Smart Farm IoT System — incluindo o protótipo baseado em ESP32-S3, sensores ambientais e sensor capacitivo de solo — está documentado na pasta:
+
+➡️ **[/hardware](hardware/)**
+
+Lá você encontra:
+
+- Estrutura completa do hardware
+- Versão celus-v1 do design (prototipagem assistida por IA)
+- Esquemáticos, BOM e canvas (ao serem exportados)
+- Datasheets oficiais
+- Planejamento para a PCB v2 (laboratório / mestrado)
+
+
+---
+
 
