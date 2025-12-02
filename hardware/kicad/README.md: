@@ -1,0 +1,24 @@
+# Smart Farm IoT — PCB / KiCad (Versão Futuras)
+
+Este diretório é destinado ao desenvolvimento das versões futuras do hardware do Smart Farm IoT System utilizando **KiCad**.  
+A geração das primeiras versões do hardware (v1) ocorre via **CELUS Design Studio**, mas as próximas versões — especialmente as versões laboratoriais e a versão final para pesquisa — serão migradas para PCB real.
+
+## 🎯 Objetivo deste diretório
+- Criar a **versão v2 do hardware** com PCB dedicada
+- Refinar rotas, alimentação, sensores e conectores
+- Produzir arquivos Gerber para fabricação
+- Permitir testes controlados no laboratório
+
+## 📦 Conteúdo esperado
+- Esquemáticos (.kicad_sch)
+- PCB Layout (.kicad_pcb)
+- Biblioteca de símbolos e footprints
+- Arquivos Gerber
+- Arquivos de produção (BOM, CPL)
+
+## 🔄 Relacionamento com outras versões
+- **v1 (CELUS)**: protótipo de referência, montado no `/hardware/celus-v1/`
+- **v2 (KiCad)**: versão aprimorada com PCB real, para testes profundos e validação científica
+
+## 📌 Status atual
+A estrutura está preparada. Os arquivos serão criados na Fase 3 após a validação do Hardware v1.
