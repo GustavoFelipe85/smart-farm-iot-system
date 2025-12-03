@@ -68,7 +68,7 @@ As **Fases 3 e 4** (sensores reais, laboratório, campo, automação e ML) serã
 | 🟦 Fase 2 — Processamento e Visualização             | Ingestão, persistência e dashboards                    | ✅ Concluída        | Python Consumer + InfluxDB + Grafana |
 | 🟦 **Fase 3 — Expansão Inteligente & Hardware Real** | API, automação, ML e **prototipagem física com CELUS** | 🟨 **Em execução** | Hardware v1 + FastAPI + ML           |
 
-> 💡 **Status Atual:** Repositório corresponde à **Fase 2 concluída**.
+> 💡 **Status Atual:** Fase 3 em andamento (Hardware Assistido por IA – CELUS)
 
 ---
 
