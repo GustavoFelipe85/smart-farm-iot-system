@@ -62,12 +62,12 @@ As **Fases 3 e 4** (sensores reais, laboratório, campo, automação e ML) serã
 
 # 🧩 Fases do Projeto
 
-| Fase | Descrição | Status | Entregas |
-|------|------------|--------|-----------|
-| **1️⃣ Fase 1 — Infraestrutura IoT** | Sensores, firmware e MQTT Broker | ✅ Concluída | ESP32 + MQTT Secure |
-| **2️⃣ Fase 2 — Processamento e Visualização** | Ingestão, persistência e dashboards | ✅ Concluída | Python Consumer + InfluxDB + Grafana |
-| **3️⃣ Fase 3 — Expansão Inteligente | API, automação e ML | 🔜 Planejada | FastAPI + Controle + ML |
-                & Hardware Real** 
+| Fase                                                 | Descrição                                              | Status             | Entregas                             |
+| ---------------------------------------------------- | ------------------------------------------------------ | ------------------ | ------------------------------------ |
+| 🟦 Fase 1 — Infraestrutura IoT                       | Sensores, firmware e MQTT Broker                       | ✅ Concluída        | ESP32 + MQTT Secure                  |
+| 🟦 Fase 2 — Processamento e Visualização             | Ingestão, persistência e dashboards                    | ✅ Concluída        | Python Consumer + InfluxDB + Grafana |
+| 🟦 **Fase 3 — Expansão Inteligente & Hardware Real** | API, automação, ML e **prototipagem física com CELUS** | 🟨 **Em execução** | Hardware v1 + FastAPI + ML           |
+
 > 💡 **Status Atual:** Repositório corresponde à **Fase 2 concluída**.
 
 ---
