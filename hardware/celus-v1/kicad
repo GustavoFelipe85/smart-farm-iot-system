@@ -1,0 +1,29 @@
+# Smart Farm IoT — Hardware v1 (KiCad)
+
+Este diretório será utilizado para a elaboração do esquemático detalhado e da placa de circuito impresso (PCB) da versão física do módulo IoT.
+
+A PCB será baseada no design exportado do CELUS (localizado em `/hardware/celus-v1/export/`) e incluirá:
+
+## Conteúdo esperado
+
+- `schematic/`  
+  Esquemático elétrico no formato KiCad (`.kicad_sch`).
+
+- `pcb/`  
+  Layout da PCB (`.kicad_pcb`), footprints e definição das camadas.
+
+- `symbols/`  
+  Componentes personalizados e símbolos ajustados ao projeto.
+
+- `footprints/`  
+  Footprints adicionais ou modificados para montagem real.
+
+- `bom/`  
+  Lista de materiais gerada automaticamente pelo KiCad.
+
+- `3d_models/`  
+  Modelos 3D para visualização e encaixe da placa.
+
+## Base do projeto
+
+Os arquivos utilizados aqui são derivados da exportação do CELUS no diretório:
