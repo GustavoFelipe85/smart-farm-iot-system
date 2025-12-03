@@ -88,8 +88,7 @@ O design eletrônico é desenvolvido dentro do **CELUS Design Studio**, permitin
 `/hardware/celus-v1/`
 
 🔗 **Link do projeto no CELUS:**  
-https://app.celus.io/design-studio/692de65564a67ccf656866fe/design-canvas
-
+https://app.celus.io/design-studio/692de65654a678ec656686fe/design-canvas
 
 ---
 
