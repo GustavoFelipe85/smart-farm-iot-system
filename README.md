@@ -72,18 +72,24 @@ As **Fases 3 e 4** (sensores reais, laboratório, campo, automação e ML) serã
 
 ---
 
-### 🔧 Integração com CELUS (Fase 3 – Hardware Assistido por IA)
+## 🔧 Integração com CELUS (Fase 3 — Hardware Assistido por IA)
 
-A Fase 3 utilizará o **CELUS Design Studio** para acelerar o desenvolvimento de hardware IoT real.  
-A ferramenta permitirá:
+Na Fase 3 o projeto passa da simulação para o hardware real.  
+O design eletrônico é desenvolvido dentro do **CELUS Design Studio**, permitindo:
 
-- geração automatizada de esquemas eletrônicos (ESP32 + sensores)  
-- criação assistida de PCB  
-- documentação eletrônica padronizada  
-- lista de materiais (BOM)  
-- infraestrutura reprodutível para laboratório  
+- geração automatizada de esquemas eletrônicos (ESP32 + sensores)
+- criação assistida de PCB
+- documentação eletrônica padronizada
+- lista de materiais (BOM)
+- pinout detalhado por cubo (MCU + sensores)
+- infraestrutura reprodutível para laboratório e testes
 
-Essa integração será essencial para prototipagem, calibração e testes acadêmicos na fase experimental do projeto.
+📎 **Arquivos exportados da Fase 3 (Hardware v1) estão em:**  
+`/hardware/celus-v1/`
+
+🔗 **Link do projeto no CELUS:**  
+https://app.celus.io/design-studio/692de65564a67ccf656866fe/design-canvas
+
 
 ---
 
