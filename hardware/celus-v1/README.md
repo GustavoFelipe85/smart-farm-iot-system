@@ -20,3 +20,8 @@ Este hardware destina-se a:
 
 A versão v1 será substituída posteriormente por uma PCB dedicada (v2).
 
+## Projeto na CELUS
+
+O design completo pode ser visualizado também no CELUS Design Studio:
+
+https://app.celus.io/design-studio/692de65654a678ec656686fe/design-canvas
