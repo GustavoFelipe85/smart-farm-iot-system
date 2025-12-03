@@ -25,3 +25,12 @@ A versão v1 será substituída posteriormente por uma PCB dedicada (v2).
 O design completo pode ser visualizado também no CELUS Design Studio:
 
 https://app.celus.io/design-studio/692de65654a678ec656686fe/design-canvas
+
+## Resumo do Hardware v1
+
+- Conversor AC/DC: RAC02E-3.3SK/277 (3.3 V)
+- MCU: ESP32-WROOM-32E (WiFi + Bluetooth LE)
+- Barramento: I²C
+- Sensores:
+  - Cubo 2 — Measurement and Sensing (entrada I²C genérica)
+  - Cubo 4 — SHT31-DIS-B2.5kS V1 (temperatura e umidade)
