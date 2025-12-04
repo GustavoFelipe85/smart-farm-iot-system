@@ -1,7 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
-</p>![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
-
+</p>
 # 🚜 Smart Farm IoT System
 ### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
 
@@ -13,7 +12,7 @@
 ![Grafana](https://img.shields.io/badge/Grafana-10.4-FF9800?style=for-the-badge&logo=grafana)
 ![Python](https://img.shields.io/badge/Python-Consumer-3776AB?style=for-the-badge&logo=python)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-
+![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
 </div>
 
 ---
