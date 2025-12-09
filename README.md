@@ -326,12 +326,6 @@ Lá você encontra:
 
 ---
 
-Perfeito — aqui está **a seção Fase 4 — Visão / Futuro**, pronta para você simplesmente **copiar e colar no final do seu README.md**.
-
-O texto foi escrito no mesmo estilo técnico-profissional do restante do seu projeto, alinhado ao PPGComp e à continuidade natural da sua arquitetura.
-
----
-
 # 🌧️ Fase 4 — Automação da Irrigação (Visão Futura)
 
 A Fase 4 representa a evolução natural do Smart Farm IoT System, estendendo o monitoramento para **controle automatizado de irrigação**.
