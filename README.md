@@ -326,4 +326,109 @@ Lá você encontra:
 
 ---
 
+Perfeito — aqui está **a seção Fase 4 — Visão / Futuro**, pronta para você simplesmente **copiar e colar no final do seu README.md**.
+
+O texto foi escrito no mesmo estilo técnico-profissional do restante do seu projeto, alinhado ao PPGComp e à continuidade natural da sua arquitetura.
+
+---
+
+# 🌧️ Fase 4 — Automação da Irrigação (Visão Futura)
+
+A Fase 4 representa a evolução natural do Smart Farm IoT System, estendendo o monitoramento para **controle automatizado de irrigação**.
+Esta fase **não precisa ser implementada agora**, mas define o escopo que será desenvolvido durante o Mestrado, conforme disponibilidade de laboratório, equipamentos e campo experimental.
+
+### 🎯 Objetivos da Fase 4
+
+* Integrar **atuadores reais** (relé/mosfet/válvula solenóide) ao nó ESP32
+* Implementar lógica de controle baseada em:
+
+  * regras agronômicas (limiares)
+  * modelos simples de previsão de umidade do solo
+  * possibilidade futura de ML supervisionado
+* Criar um **loop fechado de decisão**:
+
+  ```
+  Sensor → MQTT → Análise → Decisão → Comando → Atuador
+  ```
+* Avaliar impacto da automação na:
+
+  * economia hídrica
+  * estabilidade do solo
+  * eficiência da irrigação
+  * latência e confiabilidade do sistema
+
+---
+
+### 🔧 Arquitetura prevista
+
+```mermaid
+flowchart LR
+  S[📡 Sensores<br/>Soil + Air] --> N[ESP32<br/>Nó IoT]
+  N -->|MQTT Data| C[Serviço de Decisão<br/>FastAPI/Python]
+  C -->|MQTT Command| N
+  N -->|GPIO| A[💧 Atuador<br/>Válvula / Relé / Bomba]
+  C --> DB[(InfluxDB)]
+  DB --> G[(Grafana<br/>Dashboards e Alertas)]
+```
+
+---
+
+### 🧠 Estratégias de Controle Investigadas
+
+* Controle baseado em **limiar de umidade do solo**
+* Controle baseado em **janela temporal** (irrigação em horários específicos)
+* Controle baseado em **histerese** (evita liga/desliga contínuo)
+* Previsão de umidade (baseline ML):
+
+  * regressão linear
+  * regressão por árvore
+  * modelos simples baseados em evapotranspiração
+
+---
+
+### 🧪 Metodologia Experimental Prevista
+
+* Testes em bancada com simulador de solo
+* Testes com diferentes tipos de solo (arenoso/argiloso)
+* Variação de fluxo de água e tempo de acionamento
+* Monitoramento contínuo via InfluxDB
+* Geração de dashboards avançados no Grafana
+* Avaliação de:
+
+  * consumo hídrico
+  * tempo de resposta
+  * confiabilidade do laço de controle
+
+---
+
+### 📦 Entregas Principais da Fase 4
+
+* Firmware atualizado do ESP32 com suporte a atuadores
+* Microserviço de decisão (FastAPI ou Python Worker)
+* Esquema de tópicos MQTT para automação
+* Logging completo (comandos, falhas, restituição manual)
+* Dashboards operacionais de irrigação
+* Relatório técnico dos resultados
+
+---
+
+### 🔭 Impacto no Mestrado
+
+A Fase 4 abre espaço para:
+
+* experimentos aplicados
+* artigos científicos envolvendo IoT + agricultura
+* avaliação quantitativa de automação de irrigação
+* modelos de previsão e controle
+* continuidade para dissertação
+
+---
+
+### 📝 Observação
+
+Esta fase **não faz parte da entrega atual**, mas demonstra planejamento, escalabilidade e maturidade do projeto — algo que pesa muito positivamente em processos seletivos como o PPGComp.
+
+---
+
+
 
