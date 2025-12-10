@@ -342,7 +342,7 @@ Esta fase **não precisa ser implementada agora**, mas define o escopo que será
 * Criar um **loop fechado de decisão**:
 
   ```
-                               Sensor → MQTT → Análise → Decisão → Comando → Atuador 
+                                  Sensor → MQTT → Análise → Decisão → Comando → Atuador 
   ```
 * Avaliar impacto da automação na:
 
