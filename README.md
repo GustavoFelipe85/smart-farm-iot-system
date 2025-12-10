@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-brightgreen?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
+  <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-blue?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
 </p>
 
 # 🚜 Smart Farm IoT System
