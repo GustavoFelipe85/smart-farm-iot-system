@@ -1,4 +1,4 @@
-![Docs](https://img.shields.io/badge/Documentação-Completa-blue?style=for-the-badge)
+  ![Docs](https://img.shields.io/badge/Documentação-Completa-blue?style=for-the-badge)
 
 
 ## 📘 **README — Documentação Oficial do Projeto Smart Farm IoT System**
