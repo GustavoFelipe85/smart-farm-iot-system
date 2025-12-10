@@ -11,7 +11,8 @@ A documentação está estruturada de forma modular para facilitar consulta, man
 
 # 📚 **Conteúdo da Documentação**
 
-### 🔹 **1. Arquitetura e Design**
+<a name="arquitetura"></a>
+## 1. Arquitetura e Design
 
 * **architecture.md** — Descrição da arquitetura IoT do projeto
 * **especificacao_arquitetura.md** — Documento técnico detalhado da arquitetura de software e comunicação
