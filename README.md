@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20%7C%20UNIOESTE-blue?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
+  <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT%20(verde)%20%7C%20UNIOESTE%20(azul)-blue?style=for-the-badge&logo=github" alt="Projeto Acadêmico IoT">
 </p>
+
 
 # 🚜 Smart Farm IoT System
 ### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
