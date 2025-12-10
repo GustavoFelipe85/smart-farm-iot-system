@@ -62,7 +62,6 @@ As **Fases 3 e 4** (sensores reais, laboratório, campo, automação e ML) serã
 ---
 
 # 🧩 Fases do Projeto
-![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
 
 | Fase                                                 | Descrição                                              | Status             | Entregas                             |
 | ---------------------------------------------------- | ------------------------------------------------------ | ------------------ | ------------------------------------ |
