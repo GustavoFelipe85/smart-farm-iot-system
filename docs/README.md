@@ -36,6 +36,25 @@ A documentação está estruturada de forma modular para facilitar consulta, man
 
 ---
 
+## 🧭 Sumário Rápido
+
+- [📘 README — Documentação Oficial](#readme--documentação-oficial-do-projeto-smart-farm-iot-system)
+- [📚 Conteúdo da Documentação](#-conteúdo-da-documentação)
+  - [1. Arquitetura e Design](#1-arquitetura-e-design)
+    - [architecture.md](architecture.md)
+    - [especificacao_arquitetura.md](especificacao_arquitetura.md)
+    - [fase3.md](fase3.md)
+  - [2. Planejamento e Gestão](#2-planejamento-e-gestão)
+    - [cronograma.md](cronograma.md)
+    - [proposta_pesquisa.md](proposta_pesquisa.md)
+    - [versoes.md](versoes.md)
+    - [checklist_validacao.md](checklist_validacao.md)
+  - [3. Requisitos e Referenciais](#3-requisitos-e-referenciais)
+    - [requisitos.md](requisitos.md)
+    - [revisao_bibliografica.md](revisao_bibliografica.md)
+
+---
+
 # 🧭 **Propósito da Documentação**
 
 A pasta `/docs` centraliza informações essenciais para:
