@@ -92,6 +92,8 @@ Engenharia da Computação
 
 ---
 
+> ✨ Esta documentação é atualizada continuamente conforme o avanço das Fases 3 e 4 do projeto.
+
 🔙 Voltar ao [README principal](../README.md)
 
 ---
