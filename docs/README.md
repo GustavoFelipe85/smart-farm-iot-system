@@ -89,26 +89,4 @@ Engenharia da Computação
 
 ---
 
-# 🎯 **3. Inserir o link no README raiz**
-
-No seu README principal, adicione:
-
-```markdown
-## 📚 Documentação Oficial (Pasta /docs)
-
-A documentação completa do projeto está disponível em:
-
-➡️ **[/docs](docs/)**  
-
-Conteúdos principais:
-
-- [Arquitetura Geral](docs/architecture.md)
-- [Requisitos do Sistema](docs/requisitos.md)
-- [Especificação Técnica da Arquitetura](docs/especificacao_arquitetura.md)
-- [Fase 3 — Planejamento](docs/fase3.md)
-- [Revisão Bibliográfica](docs/revisao_bibliografica.md)
-- [Proposta de Pesquisa](docs/proposta_pesquisa.md)
-- [Cronograma](docs/cronograma.md)
-- [Histórico de Versões](docs/versoes.md)
-```
 
