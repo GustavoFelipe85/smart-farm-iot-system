@@ -1,3 +1,6 @@
+![Docs](https://img.shields.io/badge/Documentação-Completa-blue?style=for-the-badge)
+
+
 ## 📘 **README — Documentação Oficial do Projeto Smart Farm IoT System**
 
 Este diretório reúne toda a documentação técnica, acadêmica e operacional do **Smart Farm IoT System**, organizado segundo boas práticas de engenharia e adequado ao processo seletivo e desenvolvimento futuro no **PPGComp — UNIOESTE**.
