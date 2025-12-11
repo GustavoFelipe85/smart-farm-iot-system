@@ -307,10 +307,10 @@ Este repositório documenta integralmente a **Fase 2**, concluída com foco em r
 
 Este repositório inclui toda a documentação técnica referente à Fase 2 do projeto, contendo requisitos, arquitetura, diagramas e histórico de versões.
 
--[Requisitos do Sistema (Fase 2)](docs/requisitos.md)
--[Especificação Técnica da Arquitetura](docs/especificacao_arquitetura.md)
--[Diagrama da Arquitetura (Mermaid)](docs/architecture.md)
--[Histórico de Versões e Roadmap](docs/versoes.md)
+- [Requisitos do Sistema (Fase 2)](docs/requisitos.md)
+- [Especificação Técnica da Arquitetura](docs/especificacao_arquitetura.md)
+- [Diagrama da Arquitetura (Mermaid)](docs/architecture.md)
+- [Histórico de Versões e Roadmap](docs/versoes.md)
 
 ---
 
