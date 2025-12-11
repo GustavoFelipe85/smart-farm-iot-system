@@ -1,13 +1,14 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT-brightgreen?style=for-the-badge&logo=github" />
-  <img src="https://img.shields.io/badge/UNIOESTE-0055FF?style=for-the-badge" />
+<p align="center"> 
+  <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT-green?style=for-the-badge&logo=github">
+  <img src="https://img.shields.io/badge/UNIOESTE-blue?style=for-the-badge">
 </p>
 
 # 🚜 Smart Farm IoT System
-### Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão
+### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
 
-![CI](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml/badge.svg)
+![CI](https://img.shields.io/github/actions/workflow/status/GustavoFelipe85/smart-farm-iot-system/ci.yml?label=CI%20Pipeline&style=for-the-badge&color=0055FF)
 
+![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
 
 <div align="center">
 
