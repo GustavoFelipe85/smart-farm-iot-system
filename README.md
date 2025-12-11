@@ -8,6 +8,12 @@
 
 ![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
 
+<a href="https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml">
+  <img src="https://img.shields.io/github/actions/workflow/status/GustavoFelipe85/smart-farm-iot-system/ci.yml?label=CI%20Pipeline&style=for-the-badge&logo=githubactions&logoColor=white" />
+</a>
+
+</div>
+
 <div align="center">
 
 ![Docker](https://img.shields.io/badge/Docker-OK-2496ED?style=for-the-badge&logo=docker)
