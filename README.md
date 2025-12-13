@@ -287,7 +287,8 @@ Bacharelado em Engenharia da Computação
 
 Universidade Santo Amaro (Unisa)
 
-🔗 LinkedIn: [https://www.linkedin.com/in/gustavofpaluch](https://www.linkedin.com/in/gustavofpaluch)
+🔗<img width="19" height="19" alt="image" src="https://github.com/user-attachments/assets/4e2e8f1a-de02-402b-934f-58c6a937c270" />
+ LinkedIn: [https://www.linkedin.com/in/gustavofpaluch](https://www.linkedin.com/in/gustavofpaluch)
 
 📧 Email: [gustavo.f.p.f@outlook.com.br](mailto:gustavo.f.p.f@outlook.com.br)
 
