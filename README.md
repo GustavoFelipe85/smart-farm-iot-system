@@ -287,10 +287,10 @@ Acessos:
 
 Universidade Santo Amaro (Unisa)
 
-<img width="25" height="27" alt="image" src="https://github.com/user-attachments/assets/67a33bea-2a6c-4a00-b516-2ec4e832e230" />
- LinkedIn:(https://www.linkedin.com/in/gustavofpaluch)
+<img width="19" height="20" alt="image" src="https://github.com/user-attachments/assets/719ce98c-0a0d-433d-bcb3-bb56fda15bc9" />
+ LinkedIn: https://www.linkedin.com/in/gustavofpaluch
  
-📧 Email: (gustavo.f.p.f@outlook.com.br)
+📧 Email: gustavo.f.p.f@outlook.com.br
 
 ---
 
