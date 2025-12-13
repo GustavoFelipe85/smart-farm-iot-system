@@ -283,11 +283,11 @@ Acessos:
 
 **Gustavo Felipe Paluch Figueiredo**
 
-Bacharelado em Engenharia da Computação 🎓
+🎓 Bacharelado em Engenharia da Computação 
 
 Universidade Santo Amaro (Unisa)
 
-<img width="22" height="25" alt="image" src="https://github.com/user-attachments/assets/d57a502e-db6d-4b1c-bdca-1f3ed3e1b612" />
+<img width="17" height="18" alt="image" src="https://github.com/user-attachments/assets/5cd5b503-6c76-4846-9e14-b3f877e0cee0" />
  LinkedIn:(https://www.linkedin.com/in/gustavofpaluch)
  
 📧 Email: (gustavo.f.p.f@outlook.com.br)
