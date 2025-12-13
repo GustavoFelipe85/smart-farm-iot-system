@@ -1,3 +1,15 @@
+🚨 **Vinculação obrigatória**
+
+Este Pull Request **DEVE** estar vinculado a pelo menos uma Issue existente.
+
+Use uma das formas abaixo no corpo do PR:
+- Closes #<número>
+- Fixes #<número>
+- Relates to #<número>
+
+PRs sem Issue vinculada **não devem ser mergeados**.
+
+
 # 📥 Pull Request – Smart Farm IoT System
 
 ## 1. Descrição
