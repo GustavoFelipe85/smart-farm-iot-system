@@ -29,7 +29,7 @@ Resumo:
 
 ## 2. Motivação / Contexto
 
-- Issue(s) relacionada(s): `#123` (se existir)
+- Issue(s) relacionada(s): **Obrigatório** (ex.: Closes #123)
 - Fase do projeto:  
   - [ ] Fase 1 – Infra IoT  
   - [ ] Fase 2 – Processamento & Visualização  
