@@ -283,12 +283,11 @@ Acessos:
 
 **Gustavo Felipe Paluch Figueiredo**
 
-🎓 Bacharelado em Engenharia da Computação 
+Bacharelado em Engenharia da Computação 🎓
 
 Universidade Santo Amaro (Unisa)
 
-<img width="19" height="20" alt="image" src="https://github.com/user-attachments/assets/719ce98c-0a0d-433d-bcb3-bb56fda15bc9" />
- LinkedIn: https://www.linkedin.com/in/gustavofpaluch
+🔗 LinkedIn: https://www.linkedin.com/in/gustavofpaluch
  
 📧 Email: gustavo.f.p.f@outlook.com.br
 
@@ -348,7 +347,7 @@ Esta fase **não precisa ser implementada agora**, mas define o escopo que será
 * Criar um **loop fechado de decisão**:
 
   ```
-                                   Sensor → MQTT → Análise → Decisão → Comando → Atuador 
+                             Sensor → MQTT → Análise → Decisão → Comando → Atuador 
   ```
 * Avaliar impacto da automação na:
 
