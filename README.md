@@ -7,7 +7,8 @@
   ![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
 
   <a href="https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml">
- 
+ > ⚠️ O pipeline de CI está ativo. Falhas atuais são esperadas na Fase 3 devido a testes e integrações de hardware ainda em consolidação.
+
 <div align="center">
 
 ![Docker](https://img.shields.io/badge/Docker-OK-2496ED?style=for-the-badge&logo=docker)
