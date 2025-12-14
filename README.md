@@ -65,7 +65,7 @@ As **Fases 3 e 4** (sensores reais, laboratório, campo, automação e ML) serã
 - Construir base técnica para automação, controle e ML  
 
 ---
-## 📚 Documentação Oficial
+# 📚 Documentação Oficial
 
 Toda a documentação técnica, acadêmica e de planejamento está disponível em:
 
