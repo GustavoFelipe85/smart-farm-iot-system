@@ -7,9 +7,7 @@
 ![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
 
   <a href="https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml">
- [![CI Pipeline](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml/badge.svg)](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml)
-</div>
-
+ 
 <div align="center">
 
 ![Docker](https://img.shields.io/badge/Docker-OK-2496ED?style=for-the-badge&logo=docker)
@@ -18,7 +16,7 @@
 ![Grafana](https://img.shields.io/badge/Grafana-10.4-FF9800?style=for-the-badge&logo=grafana)
 ![Python](https://img.shields.io/badge/Python-Consumer-3776AB?style=for-the-badge&logo=python)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-
+[![CI Pipeline](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml/badge.svg)](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml)
 </div>
 
 ---
