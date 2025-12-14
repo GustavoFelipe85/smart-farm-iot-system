@@ -8,10 +8,6 @@
 
   <a href="https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml">
 
-    > ⚠️ O pipeline de CI está ativo e validando continuamente o repositório.  
-    > Falhas atuais refletem testes e integrações de hardware em andamento na Fase 3.
-
-
 <div align="center">
 
 ![Docker](https://img.shields.io/badge/Docker-OK-2496ED?style=for-the-badge&logo=docker)
@@ -55,6 +51,17 @@ Este repositório documenta integralmente a **Fase 2**, incluindo:
 - documentação técnica formal  
 
 As **Fases 3 e 4** (sensores reais, laboratório, campo, automação e ML) serão executadas durante o Mestrado.
+
+---
+
+## 🧪 Status do Pipeline de CI
+
+⚠️ O pipeline de CI está ativo e validando continuamente o repositório.
+
+Falhas atuais refletem testes e integrações de hardware ainda em desenvolvimento,
+característicos da **Fase 3 (Hardware Real / CELUS)**.
+
+O pipeline já está preparado para estabilização completa nas Fases 4 e seguintes.
 
 ---
 
