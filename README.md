@@ -156,15 +156,15 @@ flowchart LR
 ### 1️⃣ Captura — ESP32
 
 ```json
-{
-  "device": "esp32-node-01",
-  "timestamp": "2025-11-11T14:57:00Z",
-  "metrics": {
-    "temperature": 25.7,
-    "humidity": 63.1,
-    "soil_moisture": 41.2
-  }
-}
+                           {
+                          "device": "esp32-node-01",
+                       "timestamp": "2025-11-11T14:57:00Z",
+                                  "metrics": {
+                              "temperature": 25.7,
+                               "humidity": 63.1,
+                             "soil_moisture": 41.2
+                                               }
+                                            }
 ```
 
 ### 2️⃣ Transporte — MQTT Seguro (Auth)
