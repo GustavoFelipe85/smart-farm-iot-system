@@ -16,7 +16,9 @@
 ![Grafana](https://img.shields.io/badge/Grafana-10.4-FF9800?style=for-the-badge&logo=grafana)
 ![Python](https://img.shields.io/badge/Python-Consumer-3776AB?style=for-the-badge&logo=python)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-![CI PIPELINE](https://img.shields.io/badge/CI%20PIPELINE-REPO%20OR%20WORKFLOW%20NOT%20FOUND-red)
+<a href="https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml">
+  <img src="https://img.shields.io/github/actions/workflow/status/GustavoFelipe85/smart-farm-iot-system/ci.yml?label=CI%20Pipeline&style=for-the-badge&logo=githubactions&logoColor=white" />
+</a>
 
 ---
 
