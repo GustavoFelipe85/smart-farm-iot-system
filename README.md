@@ -445,8 +445,6 @@ A Fase 4 abre espaço para:
 
 ## 📝 Observação
 
----
-
 Esta fase não faz parte da entrega atual, mas demonstra planejamento,
 escalabilidade e maturidade do projeto — aspectos que pesam
 positivamente em processos seletivos como o **PPGComp**.
