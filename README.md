@@ -7,9 +7,7 @@
 ![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
 
   <a href="https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml">
-  [![CI Pipeline](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml/badge.svg)](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml)
-</a>
-
+ [![CI Pipeline](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml/badge.svg)](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml)
 </div>
 
 <div align="center">
