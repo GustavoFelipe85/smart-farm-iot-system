@@ -8,7 +8,9 @@
 
   <a href="https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml">
 
-    > ⚠️ O pipeline de CI está ativo. Falhas atuais são esperadas na Fase 3 devido a testes e integrações de hardware ainda em consolidação.
+    > ⚠️ O pipeline de CI está ativo e validando continuamente o repositório.  
+    > Falhas atuais refletem testes e integrações de hardware em andamento na Fase 3.
+
 
 <div align="center">
 
