@@ -243,10 +243,10 @@ INFLUX_TOKEN=SUA_CHAVE_INFLUX
 GRAFANA_PASSWORD=SUA_SENHA_GRAFANA
 
 ```
+---
 
 # 🚀 **Quick Start (5 minutos)**
 
----
 ```bash
                    git clone https://github.com/GustavoFelipe85/smart-farm-iot-system
                    cd smart-farm-iot-system
