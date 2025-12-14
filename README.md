@@ -442,12 +442,9 @@ A Fase 4 abre espaço para:
 * continuidade para dissertação
 
 ---
-
 ## 📝 Observação
 
-Esta fase não faz parte da entrega atual, mas demonstra planejamento,
-escalabilidade e maturidade do projeto — aspectos que pesam
-positivamente em processos seletivos como o **PPGComp**.
+Esta fase não faz parte da entrega atual, mas evidencia planejamento, escalabilidade e maturidade do projeto — aspectos valorizados em processos seletivos acadêmicos como o PPGComp.
 
 ---
 
