@@ -4,9 +4,11 @@
 # 🚜 Smart Farm IoT System
 ### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
 
+
   ![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
 
   <a href="https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml">
+
 
 <div align="center">
 
