@@ -10,14 +10,13 @@
  
 <div align="center">
 
+<img src="https://img.shields.io/github/actions/workflow/status/GustavoFelipe85/smart-farm-iot-system/ci.yml?label=CI%20Pipeline&style=for-the-badge&logo=githubactions&logoColor=white" />
 ![Docker](https://img.shields.io/badge/Docker-OK-2496ED?style=for-the-badge&logo=docker)
 ![MQTT](https://img.shields.io/badge/MQTT-Secure-660066?style=for-the-badge&logo=eclipse)
 ![InfluxDB](https://img.shields.io/badge/InfluxDB-2.7-22ADF6?style=for-the-badge&logo=influxdb)
 ![Grafana](https://img.shields.io/badge/Grafana-10.4-FF9800?style=for-the-badge&logo=grafana)
 ![Python](https://img.shields.io/badge/Python-Consumer-3776AB?style=for-the-badge&logo=python)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-[![CI Pipeline](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml/badge.svg)](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml)
-</div>
 
 ---
 
