@@ -22,7 +22,6 @@
 
 ---
 
-
 # 📘 Resumo Executivo
 
 O Smart Farm IoT System é uma plataforma modular de monitoramento ambiental agrícola, baseada em uma arquitetura IoT segura e containerizada.
