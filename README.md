@@ -240,20 +240,20 @@ flowchart LR
 ---
 
 ```bash
-                   # MQTT
-                   MQTT_BROKER=mosquitto
-                   MQTT_PORT=1883
-                   MQTT_USERNAME=iot_user
-                   MQTT_PASSWORD=SUA_SENHA_AQUI
-
-                   # INFLUXDB
-                   INFLUX_URL=http://influxdb:8086
-                   INFLUX_ORG=smartfarm
-                   INFLUX_BUCKET=sensors
-                   INFLUX_TOKEN=SUA_CHAVE_INFLUX
-
-                   # GRAFANA
-                   GRAFANA_PASSWORD=SUA_SENHA_GRAFANA
+                    | # MQTT |
+                    |  MQTT_BROKER=mosquitto |
+                    | MQTT_PORT=1883 |
+                    | MQTT_USERNAME=iot_user |
+                    | MQTT_PASSWORD=SUA_SENHA_AQUI |
+                     ------------------------------ 
+                    | # INFLUXDB |
+                    | INFLUX_URL=http://influxdb:8086 |
+                    | INFLUX_ORG=smartfarm |
+                    | INFLUX_BUCKET=sensors |
+                    | INFLUX_TOKEN=SUA_CHAVE_INFLUX | 
+                     -------------------------------
+                    | # GRAFANA |
+                    | GRAFANA_PASSWORD=SUA_SENHA_GRAFANA |
 
 ```
 ---
