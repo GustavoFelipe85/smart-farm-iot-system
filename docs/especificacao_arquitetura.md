@@ -172,5 +172,7 @@ As seguintes funcionalidades são **intencionais e formalmente deixadas para as 
 
 **Documento alinhado à estrutura formal da Fase 2 do projeto e ao pré-projeto do mestrado.**
 
+🔙 Voltar ao [README principal](../README.md)
+
 ```
 
