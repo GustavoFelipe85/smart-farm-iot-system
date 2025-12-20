@@ -154,3 +154,9 @@ A conclusão total do projeto considera a entrega das 6 fases:
 **v2.0.0 — Fase 2 Concluída**  
 Projeto pronto para apresentação, publicação, demonstração técnica e replicação acadêmica.
 
+---
+
+🔙 Voltar ao [README principal](../README.md)
+
+---
+
