@@ -31,3 +31,9 @@ Esta versão será utilizada para:
 - Ensaios de laboratório
 - Teste de sensores ambientais e de solo
 - Construção da pipeline de dados real para o Mestrado
+
+---
+
+🔙 Voltar ao [README principal](../README.md)
+
+---
