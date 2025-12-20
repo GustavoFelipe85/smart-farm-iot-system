@@ -148,3 +148,6 @@ Regras:
 - `metrics` → tópico de publicação de dados ambientais  
 ```
 
+🔙 Voltar ao [README principal](../README.md)
+
+---
