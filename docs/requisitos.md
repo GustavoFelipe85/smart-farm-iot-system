@@ -136,3 +136,7 @@ Esse padrão facilita:
 Esses itens pertencem às **Fase 3 e Fase 4**, a serem desenvolvidas com laboratório durante o mestrado.
 
 ---
+
+🔙 Voltar ao [README principal](../README.md)
+
+---
