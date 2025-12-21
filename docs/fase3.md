@@ -144,6 +144,15 @@ Com a Fase 3 concluída, inicia-se a **Fase 4**, envolvendo:
 
 ---
 
+## Artefatos de Hardware
+
+Os artefatos técnicos da Fase 3 (esquemáticos, BOM, pinagem e registros
+da prototipagem assistida por IA) estão organizados na pasta:
+
+➡️ `/hardware/celus-v1/`
+
+---
+
 🔙 Voltar ao README principal
 
 ---
