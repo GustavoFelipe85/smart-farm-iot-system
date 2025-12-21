@@ -142,3 +142,8 @@ Com a Fase 3 concluída, inicia-se a **Fase 4**, envolvendo:
 **Fase 3 = laboratório, hardware real, validação do nó IoT, documentação e preparação para campo.**  
 É o coração da pesquisa experimental do mestrado.
 
+---
+
+🔙 Voltar ao README principal
+
+---
