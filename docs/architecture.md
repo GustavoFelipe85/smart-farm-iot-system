@@ -146,6 +146,7 @@ Regras:
 - `field1/` → campo ou área monitorada  
 - `device1/` → identificador lógico do nó  
 - `metrics` → tópico de publicação de dados ambientais  
+
 ```
 
 🔙 Voltar ao [README principal](../README.md)
