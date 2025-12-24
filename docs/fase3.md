@@ -153,6 +153,6 @@ da prototipagem assistida por IA) estão organizados na pasta:
 
 ---
 
-🔙 Voltar ao README principal
+🔙 Voltar ao [README principal](../README.md)
 
 ---
