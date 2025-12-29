@@ -1,6 +1,7 @@
-Relatório Técnico – Fase 1
+# Relatório Técnico — Fase 1  
 
-Smart Farm IoT System
+## Smart Farm IoT System
+
 
 1. Objetivo da Fase 1
 A Fase 1 teve como objetivo estabelecer a infraestrutura básica do sistema IoT, validando a
