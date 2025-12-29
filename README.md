@@ -104,21 +104,23 @@ Documentos principais:
 
 ## 🔧 Integração com CELUS (Fase 3 — Hardware Assistido por IA)
 
-Na Fase 3 o projeto passa da simulação para o hardware real.  
-O design eletrônico é desenvolvido dentro do **CELUS Design Studio**, permitindo:
+Na **Fase 3**, o projeto evolui da simulação para o **hardware real**.
 
-- geração automatizada de esquemas eletrônicos (ESP32 + sensores)
-- criação assistida de PCB
-- documentação eletrônica padronizada
-- lista de materiais (BOM)
-- pinout detalhado por cubo (MCU + sensores)
-- infraestrutura reprodutível para laboratório e testes
+O design eletrônico é desenvolvido no **CELUS Design Studio**, permitindo:
 
-📎 **Arquivos exportados da Fase 3 (Hardware v1) estão em:**  
-`/hardware/celus-v1/`
+- geração automatizada de esquemas eletrônicos (ESP32 + sensores)  
+- criação assistida de PCB  
+- documentação eletrônica padronizada  
+- lista de materiais (BOM)  
+- pinout detalhado por módulo (MCU + sensores)  
+- infraestrutura reprodutível para laboratório e testes  
 
-🔗 **Link do projeto no CELUS:**  
+📎 **Arquivos exportados da Fase 3 (Hardware v1)** estão disponíveis em:  
+➡️ [`/hardware/celus-v1`](./hardware/celus-v1)
+
+🔗 **Projeto no CELUS Design Studio**:  
 https://app.celus.io/design-studio/692de65654a678ec656686fe/design-canvas
+
 
 ---
 
