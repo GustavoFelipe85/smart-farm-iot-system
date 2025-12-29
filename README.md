@@ -77,16 +77,16 @@ O pipeline já está preparado para estabilização completa nas Fases 4 e segui
 
 ---
 
-# 📚 Documentação Oficial
+## 📚 Documentação Oficial
 
 Toda a documentação técnica, acadêmica e de planejamento do projeto está disponível em:
 
 ➡️ [`/docs`](./docs)
 
 Documentos principais:
-- Fase 1 — Infraestrutura IoT (`docs/fase1.md`)
-- Fase 2 — Processamento e Visualização (`docs/fase2.md`)
-- Fase 3 — Hardware Real e Prototipagem (`docs/fase3.md`)
+- **Fase 1 — Infraestrutura IoT** → [`docs/fase1.md`](./docs/fase1.md)
+- **Fase 2 — Processamento e Visualização** → [`docs/fase2.md`](./docs/fase2.md)
+- **Fase 3 — Hardware Real e Prototipagem** → [`docs/fase3.md`](./docs/fase3.md)
 
 ---
 
