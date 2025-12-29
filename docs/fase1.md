@@ -38,6 +38,10 @@ dados na Fase 2.
 
 ---
 
+Esta fase estabelece uma base reprodutível e validada de comunicação IoT, essencial para experimentação controlada nas fases subsequentes.
+
+---
+
 🔙 Voltar ao [README principal](../README.md)
 
 ---
