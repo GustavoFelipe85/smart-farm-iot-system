@@ -77,13 +77,13 @@ O pipeline já está preparado para estabilização completa nas Fases 4 e segui
 
 ---
 
-## 📚 Documentação Oficial
+# 📚 Documentação Oficial
 
 Toda a documentação técnica, acadêmica e de planejamento do projeto está disponível em:
 
 ➡️ [`/docs`](./docs)
 
-### 📄 Documentos Técnicos por Fase
+## 📄 Documentos Técnicos por Fase
 
 | Fase | Documento | Conteúdo | Status |
 |-----|----------|---------|--------|
