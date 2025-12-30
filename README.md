@@ -83,10 +83,13 @@ Toda a documentação técnica, acadêmica e de planejamento do projeto está di
 
 ➡️ [`/docs`](./docs)
 
-Documentos principais:
-- **Fase 1 — Infraestrutura IoT** → [`docs/fase1.md`](./docs/fase1.md)
-- **Fase 2 — Processamento e Visualização** → [`docs/fase2.md`](./docs/fase2.md)
-- **Fase 3 — Hardware Real e Prototipagem** → [`docs/fase3.md`](./docs/fase3.md)
+### 📄 Documentos Técnicos por Fase
+
+| Fase | Documento | Conteúdo | Status |
+|-----|----------|---------|--------|
+| Fase 1 | [`docs/fase1.md`](./docs/fase1.md) | Infraestrutura IoT, MQTT seguro, base de comunicação | ✅ Concluída |
+| Fase 2 | [`docs/fase2.md`](./docs/fase2.md) | Ingestão, persistência time-series e dashboards | ✅ Concluída |
+| Fase 3 | [`docs/fase3.md`](./docs/fase3.md) | Hardware real, CELUS, testes de laboratório | 🟡 Em execução |
 
 ---
 
