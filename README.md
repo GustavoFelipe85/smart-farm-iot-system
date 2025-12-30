@@ -83,6 +83,8 @@ Toda a documentação técnica, acadêmica e de planejamento do projeto está di
 
 ➡️ [`/docs`](./docs)
 
+---
+
 ## 📄 Documentos Técnicos por Fase
 
 | Fase | Documento | Conteúdo | Status |
