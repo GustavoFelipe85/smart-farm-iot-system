@@ -97,6 +97,9 @@ Toda a documentação técnica, acadêmica e de planejamento do projeto está di
 
 # 🧩 Fases do Projeto
 
+ As fases abaixo representam a evolução funcional e arquitetural do sistema,
+com entregas técnicas associadas a cada etapa.
+
 | Fase                                                 | Descrição                                              | Status             | Entregas                             |
 | ---------------------------------------------------- | ------------------------------------------------------ | ------------------ | ------------------------------------ |
 | 🟦 Fase 1 — Infraestrutura IoT                       | Sensores, firmware e MQTT Broker                       | ✅ Concluída        | ESP32 + MQTT Secure                  |
