@@ -6,8 +6,8 @@
 # 🚜 Smart Farm IoT System
 ### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
 
-[![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](README.md)
 [![EN](https://img.shields.io/badge/lang-English-blue)](README_en.md)
+
 ![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
 
 <p align="center">
