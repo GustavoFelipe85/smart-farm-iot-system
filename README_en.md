@@ -5,6 +5,7 @@
 ### *Secure IoT Architecture for Environmental Monitoring in Precision Agriculture*
 
 [![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](README.md)
+
 ![status](https://img.shields.io/badge/Phase%203-In%20Progress-blue)
 
 ---
