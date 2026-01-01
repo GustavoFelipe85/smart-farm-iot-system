@@ -328,8 +328,6 @@ Universidade Santo Amaro (Unisa)
 
 ---
 
-</div>
-
 ### ✨ “Tecnologia e ciência transformando a agricultura brasileira.”
 
 📌 Documento técnico elaborado para o processo seletivo do **PPGComp – UNIOESTE (Edital 11/2025)**
