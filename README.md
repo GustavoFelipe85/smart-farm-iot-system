@@ -193,15 +193,15 @@ flowchart LR
 ### 1️⃣ Captura — ESP32
 
 ```json
-                               {
-                              "device": "esp32-node-01",
-                           "timestamp": "2025-11-11T14:57:00Z",
-                                     "metrics": {
-                                  "temperature": 25.7,
-                                   "humidity": 63.1,
-                                 "soil_moisture": 41.2
-                                               }
-                                            }
+{
+"device": "esp32-node-01",
+"timestamp": "2025-11-11T14:57:00Z",
+"metrics": {
+"temperature": 25.7,
+"humidity": 63.1,
+"soil_moisture": 41.2
+ }
+ }
 ```
 
 ### 2️⃣ Transporte — MQTT Seguro (Auth)
@@ -251,25 +251,25 @@ flowchart LR
 
 ---
 
-# 📘 **.env.example (versão final)**
+#📘 **.env.example (versão final)**
 
 ---
 
 ```bash
-                                    | # MQTT |
-                                MQTT_BROKER=mosquitto 
-                                MQTT_PORT=1883 
-                                MQTT_USERNAME=iot_user 
-                                MQTT_PASSWORD=SUA_SENHA_AQUI 
+# MQTT 
+MQTT_BROKER=mosquitto 
+MQTT_PORT=1883 
+MQTT_USERNAME=iot_user 
+MQTT_PASSWORD=SUA_SENHA_AQUI 
                                
-                                    | # INFLUXDB |
-                                INFLUX_URL=http://influxdb:8086 
-                                INFLUX_ORG=smartfarm 
-                                INFLUX_BUCKET=sensors 
-                                INFLUX_TOKEN=SUA_CHAVE_INFLUX 
+# INFLUXDB 
+INFLUX_URL=http://influxdb:8086 
+INFLUX_ORG=smartfarm 
+INFLUX_BUCKET=sensors 
+INFLUX_TOKEN=SUA_CHAVE_INFLUX 
                                
-                                    | # GRAFANA |
-                                GRAFANA_PASSWORD=SUA_SENHA_GRAFANA 
+# GRAFANA 
+GRAFANA_PASSWORD=SUA_SENHA_GRAFANA 
 
 ```
 ---
@@ -277,16 +277,16 @@ flowchart LR
 # 🚀 **Quick Start (5 minutos)**
 
 ```bash
-                   git clone https://github.com/GustavoFelipe85/smart-farm-iot-system
-                   cd smart-farm-iot-system
+git clone https://github.com/GustavoFelipe85/smart-farm-iot-system
+cd smart-farm-iot-system
 
-                   copy .env.example .env  # Windows
-                   cp .env.example .env    # Linux / macOS
+copy .env.example .env  # Windows
+cp .env.example .env    # Linux / macOS
 
-                   cd docker
-                   docker-compose up -d
+cd docker
+docker-compose up -d
+
 ```
-
 Acessos:
 
 * 📊 Grafana → [http://localhost:3000](http://localhost:3000)
