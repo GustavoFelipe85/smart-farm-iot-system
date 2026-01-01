@@ -1,7 +1,7 @@
 <p align="center"> 
 <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT-green?style=for-the-badge&logo=github"><img src="https://img.shields.io/badge/UNIOESTE-blue?style=for-the-badge"></p>
 
-#🚜 Smart Farm IoT System
+# 🚜 Smart Farm IoT System
 ### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
 
 [![EN](https://img.shields.io/badge/lang-English-blue)](README_en.md)
@@ -25,7 +25,7 @@
 
 ---
 
-#📘 Resumo Executivo
+# 📘 Resumo Executivo
 
 O Smart Farm IoT System é uma plataforma modular de monitoramento ambiental agrícola, baseada em uma arquitetura IoT segura e containerizada.
 
