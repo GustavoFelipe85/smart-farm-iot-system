@@ -395,6 +395,8 @@ Esta fase **não precisa ser implementada agora**, mas define o escopo que será
 
 ```mermaid
 flowchart LR
+  ...
+  INF -->|Consulta| GF
   S[📡 Sensores<br/>Soil + Air] --> N[ESP32<br/>Nó IoT]
   N -->|MQTT Data| C[Serviço de Decisão<br/>FastAPI/Python]
   C -->|MQTT Command| N
