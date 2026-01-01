@@ -250,7 +250,7 @@ flowchart LR
 
 ---
 
-#📘 **.env.example (versão final)**
+# 📘 **.env.example (versão final)**
 
 ---
 
