@@ -1,7 +1,5 @@
 # 🚜 Smart Farm IoT System
 
-🇧🇷 Versão em Português: [README.md](README.md)
-
 ### *Secure IoT Architecture for Environmental Monitoring in Precision Agriculture*
 
 [![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](README.md)
