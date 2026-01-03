@@ -83,6 +83,9 @@ Toda a documentação técnica, acadêmica e de planejamento do projeto está di
 
 ➡️ [`/docs`](./docs)
 
+📄 **Alinhamento com diretrizes internacionais de sustentabilidade e uso eficiente da água**  
+➡️ [`docs/alinhamento_internacional.md`](./docs/alinhamento_internacional.md)
+
 ---
 
 ## 📄 Documentos Técnicos por Fase
