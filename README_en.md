@@ -50,6 +50,9 @@ All technical, academic, and planning documentation is available at:
 
 ➡️ [`/docs`](./docs)
 
+📄 **Alignment with international sustainability and efficient water use guidelines**  
+➡️ [`docs/alinhamento_internacional_en.md`](./docs/alinhamento_internacional_en.md)
+
 ---
 
 ## 📄 Technical Documents by Phase
