@@ -15,7 +15,8 @@ The solution integrates IoT sensors, authenticated MQTT communication, Python-ba
 
 The entire architecture is containerized using Docker to ensure **portability, isolation, and experimental reproducibility**.
 
-Currently, the repository corresponds to **Phase 2 (completed)**, while **Phases 3 and 4** focus on real hardware integration and agricultural automation and are planned to be developed during the graduate program.
+Currently, the repository documents Phase 2 (completed),
+while Phase 3 is under active development.
 
 ---
 
@@ -121,7 +122,7 @@ flowchart LR
   end
 
   subgraph VIS[📊 Visualization]
-    GF[Grafana 10.4<br/>Basic Dashboards]
+    GF[Grafana 10.4<br/>Exploratory Dashboards]
   end
 
   ESP -->|MQTT Secure| MQ
@@ -174,9 +175,9 @@ flowchart LR
 }
 ```
 
-### 2️⃣ Transport — Secure MQTT
+### 2️⃣ Transport — Message publication via authenticated MQTT
 
-### 3️⃣ Ingestion — Python Consumer
+### 3️⃣ Ingestion — Schema validation and ingestion (Python Consumer)
 
 ### 4️⃣ Storage — InfluxDB
 
@@ -226,6 +227,9 @@ cp .env.example .env
 
 cd docker
 docker-compose up -d
+
+cp .env.example .env   # Linux / macOS
+
 ```
 
 Access points:
