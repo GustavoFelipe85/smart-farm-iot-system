@@ -223,12 +223,11 @@ flowchart LR
 git clone https://github.com/GustavoFelipe85/smart-farm-iot-system
 cd smart-farm-iot-system
 
-cp .env.example .env
+cp .env.example .env   # Linux / macOS
+# copy .env.example .env  # Windows
 
 cd docker
 docker-compose up -d
-
-cp .env.example .env   # Linux / macOS
 
 ```
 
