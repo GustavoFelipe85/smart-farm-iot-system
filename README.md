@@ -282,8 +282,8 @@ GRAFANA_PASSWORD=SUA_SENHA_GRAFANA
 git clone https://github.com/GustavoFelipe85/smart-farm-iot-system
 cd smart-farm-iot-system
 
-copy .env.example .env  # Windows
-cp .env.example .env    # Linux / macOS
+cp .env.example .env   # Linux / macOS
+# copy .env.example .env  # Windows
 
 cd docker
 docker-compose up -d
