@@ -1,107 +1,61 @@
 # 🚜 Smart Farm IoT System
 
-### *Secure IoT Architecture for Environmental Monitoring in Precision Agriculture*
+### Secure IoT Architecture for Environmental Monitoring in Precision Agriculture
 
 [![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](README.md)
-
 ![status](https://img.shields.io/badge/Phase%203-In%20Progress-blue)
 
 ---
 
-## 📘 Executive Summary
+## Executive Summary
 
-The **Smart Farm IoT System** is a modular and secure IoT platform for environmental monitoring applied to precision agriculture.  
-The solution integrates IoT sensors, authenticated MQTT communication, Python-based data processing, a time-series database (InfluxDB), and analytical dashboards in Grafana.
+The Smart Farm IoT System is a modular, secure, and reproducible IoT platform for environmental monitoring applied to precision agriculture.  
+It integrates low-cost sensor nodes, authenticated MQTT communication, Python-based data processing, a time-series database (InfluxDB), and analytical dashboards in Grafana. The entire stack is containerized with Docker to ensure portability and reproducibility of experiments.
 
-The entire architecture is containerized using Docker to ensure **portability, isolation, and experimental reproducibility**.
-
-Currently, the repository documents Phase 2 (completed),
-while Phase 3 is under active development.
+This repository documents Phase 2 (completed) and the ongoing work for Phase 3 (real hardware and AI-assisted PCB design).
 
 ---
 
-> 📝 **This project is part of the selection process for the Graduate Program in Computer Science (PPGComp) – UNIOESTE.**  
-> Development follows rigorous methodological principles and reproducibility guidelines, aligned with the *Computer Systems* research area (Call for Applications 11/2025).
+> Note: This project was prepared as part of an application to the Graduate Program in Computer Science (PPGComp) – UNIOESTE and follows reproducibility and methodological guidelines aligned with the Computer Systems research area.
 
 ---
 
-## 🧪 CI Pipeline Status
+## CI Pipeline Status
 
-⚠️ The CI pipeline is active and continuously validating the repository.
-
-Current failures are related to **hardware-dependent integrations under development**, which are characteristic of **Phase 3 (Real Hardware / CELUS)**.
-
-The pipeline is already prepared for full stabilization in later phases.
+The CI pipeline runs automated checks for code quality and configuration.  
+Current failures are expected and associated with hardware-dependent components under active development (Phase 3). These checks will be stabilized as hardware artifacts and testbeds are finalized.
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
-- Design a **secure, modular, and replicable IoT architecture**
-- Monitor air temperature, air humidity, and soil moisture
-- Persist measurements in a **time-series database**
-- Provide analytical dashboards for data exploration
-- Establish a solid technical foundation for **automation, control, and ML**
-
----
-
-## 📚 Official Documentation
-
-All technical, academic, and planning documentation is available at:
-
-➡️ [`/docs`](./docs)
-
-📄 **Alignment with international sustainability and efficient water use guidelines**  
-➡️ [`docs/alinhamento_internacional_en.md`](./docs/alinhamento_internacional_en.md)
+- Design a secure, modular, and replicable IoT architecture for agricultural monitoring.  
+- Measure air temperature, relative humidity, and soil moisture.  
+- Persist telemetry in a time-series database and provide analytical dashboards.  
+- Provide a foundation for automation, control, and machine learning for irrigation optimization.  
 
 ---
 
-## 📄 Technical Documents by Phase
+## Documentation
 
-| Phase | Document | Content | Status |
-|-----|---------|--------|--------|
-| Phase 1 | [`docs/fase1.md`](./docs/fase1.md) | IoT infrastructure, secure MQTT, communication baseline | ✅ Completed |
-| Phase 2 | [`docs/fase2.md`](./docs/fase2.md) | Data ingestion, time-series persistence, dashboards | ✅ Completed |
-| Phase 3 | [`docs/fase3.md`](./docs/fase3.md) | Real hardware, CELUS, laboratory testing | 🟡 In Progress |
+All technical and planning documentation is available in the docs folder:
 
----
-
-## 🧩 Project Phases
-
-The phases below represent the functional and architectural evolution of the system.
-
-| Phase | Description | Status | Deliverables |
-|-----|------------|--------|-------------|
-| Phase 1 — IoT Infrastructure | Sensors, firmware, MQTT broker | ✅ Completed | ESP32 + Secure MQTT |
-| Phase 2 — Processing & Visualization | Ingestion, persistence, dashboards | ✅ Completed | Python Consumer + InfluxDB + Grafana |
-| **Phase 3 — Intelligent Expansion & Real Hardware** | API, automation, ML, **physical prototyping with CELUS** | 🟨 In Progress | Hardware v1 + FastAPI + ML |
-
-📌 **Current status:** Phase 3 in progress (AI-assisted hardware design with CELUS).
+➡️ [`/docs`](./docs)  
+➡️ International alignment and sustainability: [`docs/alinhamento_internacional_en.md`](./docs/alinhamento_internacional_en.md)
 
 ---
 
-## 🔧 CELUS Integration (Phase 3 — AI-assisted Hardware)
+## Documents by Phase
 
-In **Phase 3**, the project transitions from simulation to **real hardware**.
-
-Electronic design is developed using **CELUS Design Studio**, enabling:
-
-- automated schematic generation (ESP32 + sensors)
-- assisted PCB design
-- standardized electronic documentation
-- Bill of Materials (BOM)
-- detailed pinout per module (MCU + sensors)
-- reproducible laboratory and testing infrastructure
-
-📎 **Phase 3 hardware exports (Hardware v1):**  
-➡️ [`/hardware/celus-v1`](./hardware/celus-v1)
-
-🔗 **CELUS Design Studio Project:**  
-https://app.celus.io/design-studio/692de65654a678ec656686fe/design-canvas
+| Phase | Document | Contents | Status |
+| ----- | -------- | -------- | ------ |
+| Phase 1 | [`docs/fase1.md`](./docs/fase1.md) | IoT infrastructure, secure MQTT | ✅ Completed |
+| Phase 2 | [`docs/fase2.md`](./docs/fase2.md) | Data ingestion, persistence, dashboards | ✅ Completed |
+| Phase 3 | [`docs/fase3.md`](./docs/fase3.md) | Real hardware, CELUS, lab testing | 🟡 In Progress |
 
 ---
 
-## 🏗️ Implemented Architecture
+## System Architecture (Implemented — Phase 2)
 
 ```mermaid
 flowchart LR
@@ -129,39 +83,35 @@ flowchart LR
   MQ -->|Validated Message| PY
   PY -->|Write Data| INF
   INF -->|Query| GF
-````
+```
 
 ---
 
-## 🔧 Implemented Components (Phase 2 — Completed)
+## Implemented Components (Phase 2)
 
-| Layer          | Technology       | Status | Function               |
-| -------------- | ---------------- | ------ | ---------------------- |
-| IoT Device     | ESP32 + Sensors  | ✅      | Environmental sensing  |
-| Broker         | Mosquitto + Auth | ✅      | Secure communication   |
-| Consumer       | Python 3.11      | ✅      | Validation + ingestion |
-| Database       | InfluxDB 2.7     | ✅      | Time-series storage    |
-| Visualization  | Grafana 10.4     | ✅      | Dashboards             |
-| Infrastructure | Docker Compose   | ✅      | Orchestration          |
-
----
-
-## ❌ What Is NOT Implemented (Academic Rigor)
-
-| Feature                | Status        |
-| ---------------------- | ------------- |
-| FastAPI API            | ❌             |
-| Automation (actuators) | ❌             |
-| Machine Learning       | ❌             |
-| Advanced dashboards    | ⚠️ Basic only |
-| Alerts / Notifications | ❌             |
-| Irrigation control     | ❌             |
+| Layer          | Technology       | Status | Purpose                  |
+| -------------- | ---------------- | ------ | ------------------------ |
+| Edge device    | ESP32 + sensors  | ✅      | Environmental sensing    |
+| Broker         | Mosquitto + auth | ✅      | Secure communication     |
+| Consumer       | Python 3.11      | ✅      | Validation and ingestion |
+| Database       | InfluxDB 2.7     | ✅      | Time-series storage      |
+| Visualization  | Grafana 10.4     | ✅      | Dashboards               |
+| Orchestration  | Docker Compose   | ✅      | Reproducible deployment  |
 
 ---
 
-## ⚙️ Operational Flow
+## Not Implemented / Roadmap (Academic scope)
 
-### 1️⃣ Acquisition — ESP32
+- FastAPI-based REST API (not implemented)  
+- Actuator control and irrigation automation (not implemented)  
+- Machine learning models for prediction/control (planned)  
+- Advanced dashboards and alerting (basic dashboards available)
+
+---
+
+## Operational Flow (example payload)
+
+Acquisition (ESP32):
 
 ```json
 {
@@ -175,49 +125,47 @@ flowchart LR
 }
 ```
 
-### 2️⃣ Transport — Message publication via authenticated MQTT
-
-### 3️⃣ Ingestion — Schema validation and ingestion (Python Consumer)
-
-### 4️⃣ Storage — InfluxDB
-
-### 5️⃣ Visualization — Grafana
+1. Device publishes authenticated MQTT message.  
+2. Python consumer validates schema and ingests data.  
+3. Data persisted in InfluxDB.  
+4. Grafana dashboards query InfluxDB for visualization.
 
 ---
 
-## 🧪 Experimental Methodology
+## Experimental Methodology (summary)
 
-* Sampling frequency: **30 s**
-* MQTT QoS: **1**
-* Full payload sanitization
-* Retention policies applied
-* Exploratory dashboards
+- Sampling frequency: 30 s  
+- MQTT QoS: 1  
+- Payload validation (schema sanitization)  
+- Retention policies configured in InfluxDB  
+- Exploratory analysis via Jupyter notebooks
 
 ---
 
-## 📈 Results (Phase 2)
+## Key Results (Phase 2)
 
-| Metric                  | Value              |
+| Metric                  | Observed Value     |
 | ----------------------- | ------------------ |
-| MQTT → Consumer latency | **< 120 ms**       |
-| Ingestion rate          | **10,000+ msgs/h** |
-| Docker uptime           | **99.9%**          |
-| Retention               | configurable       |
+| MQTT → Consumer latency | < 120 ms           |
+| Ingestion throughput    | 10,000+ msgs/h     |
+| Docker uptime           | ~99.9%             |
+| Retention               | Configurable        |
+
+(Complete analysis and experimental notebooks are available in the repository.)
 
 ---
 
-## 🔐 Security Measures
+## Security Measures
 
-* MQTT with `allow_anonymous false`
-* File-based authentication
-* Secrets handled via `.env`
-* `.env.example` provided
-* Isolated Docker network
-* Grafana credentials via environment variables
+- Mosquitto configured with `allow_anonymous false`  
+- File-based authentication for MQTT users  
+- Secrets handled via environment variables (`.env`), `.env.example` included  
+- Docker services run in an isolated network  
+- Grafana credentials injected via environment variables
 
 ---
 
-## 🚀 Quick Start (5 minutes)
+## Quick Start (local, ~5 minutes)
 
 ```bash
 git clone https://github.com/GustavoFelipe85/smart-farm-iot-system
@@ -228,51 +176,41 @@ cp .env.example .env   # Linux / macOS
 
 cd docker
 docker-compose up -d
-
 ```
 
-Access points:
-
-* 📊 Grafana → [http://localhost:3000](http://localhost:3000)
-* 💾 InfluxDB → [http://localhost:8086](http://localhost:8086)
-* 📡 MQTT Broker → mqtt://localhost:1883
-
----
-
-## 🎓 Academic Contributions
-
-* Secure and modular IoT architecture
-* Complete ingestion pipeline
-* Reproducible scientific documentation
-* Robust data validation
-* Foundation for automation and ML research
+Access:
+- Grafana: http://localhost:3000  
+- InfluxDB: http://localhost:8086  
+- MQTT broker: mqtt://localhost:1883
 
 ---
 
-## 📚 References
+## Academic Contributions
 
-* Wolfert, S. et al. *Big Data in Smart Farming.* Agricultural Systems, 2017.
-* Zhang, Y. *IoT Applications in Smart Agriculture.* JAI, 2022.
-* ConectarAGRO. *Agriculture 4.0.*
-* This work extends the undergraduate thesis:
-  **“Limiting Factors and Applications of IoT in Agriculture” (UNISA)**
-  [https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed](https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed)
+- Secure, modular IoT architecture for precision agriculture  
+- Reproducible ingestion pipeline and visualization stack  
+- Notebooks and documentation to support scientific validation  
+- Foundation for automation and ML research in agricultural settings
 
 ---
 
-## 👨‍💻 Author
+## References
 
-**Gustavo Felipe Paluch Figueiredo**
-
-B.Sc. in Computer Engineering
-Universidade Santo Amaro (UNISA)
-
-🔗 LinkedIn: [https://www.linkedin.com/in/gustavofpaluch](https://www.linkedin.com/in/gustavofpaluch)
-📧 Email: [gustavo.f.p.f@outlook.com.br](mailto:gustavo.f.p.f@outlook.com.br)
+- Wolfert, S. et al., "Big Data in Smart Farming", Agricultural Systems, 2017.  
+- Zhang, Y., "IoT Applications in Smart Agriculture", JAI, 2022.  
+- ConectarAGRO — Agriculture 4.0 resources.  
+- Related undergraduate thesis: "Limiting Factors and Applications of IoT in Agriculture" (UNISA) — https://dspace.unisa.br/items/ab0577db-a4a9-4fc7-af72-d1b23e7345ed
 
 ---
 
-📝 *This repository fully documents Phase 2 and establishes an experimental foundation for subsequent phases involving real hardware and agricultural automation.*
+## Author
 
-```
+**Gustavo Felipe Paluch Figueiredo**  
+B.Sc. Computer Engineering — Universidade Santo Amaro (UNISA)
 
+LinkedIn: https://www.linkedin.com/in/gustavofpaluch  
+Email: gustavo.f.p.f@outlook.com.br
+
+---
+
+*This repository documents Phase 2 and provides the foundation for Phase 3 (real hardware and automation). Contributions and feedback are welcome.*
