@@ -192,7 +192,7 @@ flowchart LR
 
 ## ⚙️ **Fluxo Operacional**
 
-## 1️⃣ Captura — ESP32
+### 1️⃣ Captura — ESP32
 
 ```json
 {
@@ -206,18 +206,18 @@ flowchart LR
  }
 ```
 
-## 2️⃣ Transporte — MQTT Seguro (Auth)
+### 2️⃣ Transporte — MQTT Seguro (Auth)
 
-## 3️⃣ Ingestão — Python Consumer
+### 3️⃣ Ingestão — Python Consumer
 
 * valida JSON
 * trata erros
 * rejeita payload inválido
 * grava no InfluxDB
 
-## 4️⃣ Armazenamento — InfluxDB 2.7
+### 4️⃣ Armazenamento — InfluxDB 2.7
 
-## 5️⃣ Visualização — Grafana
+### 5️⃣ Visualização — Grafana
 
 ---
 
@@ -252,7 +252,6 @@ flowchart LR
 * Senha do Grafana via env
 
 ---
-
 ## 📘 **.env.example (versão final)**
 
 ---
