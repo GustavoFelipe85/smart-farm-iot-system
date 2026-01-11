@@ -24,7 +24,7 @@
 
 ---
 
-# 📘 Resumo Executivo
+## 📘 Resumo Executivo
 
 O Smart Farm IoT System é uma plataforma modular de monitoramento ambiental agrícola, baseada em uma arquitetura IoT segura e containerizada.
 
@@ -67,7 +67,7 @@ O pipeline já está preparado para estabilização completa nas Fases 4 e segui
 
 ---
 
-# 🎯 Objetivos do Projeto
+## 🎯 Objetivos do Projeto
 
 - Criar uma arquitetura IoT segura, replicável e modular  
 - Monitorar temperatura, umidade do ar e umidade do solo  
@@ -77,7 +77,7 @@ O pipeline já está preparado para estabilização completa nas Fases 4 e segui
 
 ---
 
-# 📚 Documentação Oficial
+## 📚 Documentação Oficial
 
 Toda a documentação técnica, acadêmica e de planejamento do projeto está disponível em:
 
@@ -98,7 +98,7 @@ Toda a documentação técnica, acadêmica e de planejamento do projeto está di
 
 ---
 
-# 🧩 Fases do Projeto
+## 🧩 Fases do Projeto
 
  As fases abaixo representam a evolução funcional e arquitetural do sistema,
 com entregas técnicas associadas a cada etapa.
@@ -135,7 +135,7 @@ https://app.celus.io/design-studio/692de65654a678ec656686fe/design-canvas
 
 ---
 
-# 🏗️ Arquitetura Implementada
+## 🏗️ Arquitetura Implementada
 
 ```mermaid
 flowchart LR
@@ -164,7 +164,7 @@ flowchart LR
   PY -->|Write Data| INF
   INF -->|Consulta| GF
 ```
-# 🔧 **Componentes Implementados (Fase 2 – Concluída)**
+## 🔧 **Componentes Implementados (Fase 2 – Concluída)**
 
 | Camada       | Tecnologia       | Status | Função               |
 | ------------ | ---------------- | ------ | -------------------- |
@@ -177,7 +177,7 @@ flowchart LR
 
 ---
 
-# ❌ **O que NÃO existe (rigor acadêmico)**
+## ❌ **O que NÃO existe (rigor acadêmico)**
 
 | Funcionalidade        | Status            |
 | --------------------- | ----------------- |
@@ -190,9 +190,9 @@ flowchart LR
 
 ---
 
-# ⚙️ **Fluxo Operacional**
+## ⚙️ **Fluxo Operacional**
 
-### 1️⃣ Captura — ESP32
+## 1️⃣ Captura — ESP32
 
 ```json
 {
@@ -206,22 +206,22 @@ flowchart LR
  }
 ```
 
-### 2️⃣ Transporte — MQTT Seguro (Auth)
+## 2️⃣ Transporte — MQTT Seguro (Auth)
 
-### 3️⃣ Ingestão — Python Consumer
+## 3️⃣ Ingestão — Python Consumer
 
 * valida JSON
 * trata erros
 * rejeita payload inválido
 * grava no InfluxDB
 
-### 4️⃣ Armazenamento — InfluxDB 2.7
+## 4️⃣ Armazenamento — InfluxDB 2.7
 
-### 5️⃣ Visualização — Grafana
+## 5️⃣ Visualização — Grafana
 
 ---
 
-# 🧪 **Metodologia Operacional**
+## 🧪 **Metodologia Operacional**
 
 * Frequência de amostragem: **30s**
 * MQTT QoS: **1**
@@ -231,7 +231,7 @@ flowchart LR
 
 ---
 
-# 📈 **Resultados Obtidos (Fase 2)**
+## 📈 **Resultados Obtidos (Fase 2)**
 
 | Indicador                | Valor              |
 | ------------------------ | ------------------ |
@@ -242,7 +242,7 @@ flowchart LR
 
 ---
 
-# 🔐 **Segurança Implementada**
+## 🔐 **Segurança Implementada**
 
 * MQTT com `allow_anonymous false`
 * Autenticação por arquivo `passwords`
@@ -253,7 +253,7 @@ flowchart LR
 
 ---
 
-# 📘 **.env.example (versão final)**
+## 📘 **.env.example (versão final)**
 
 ---
 
@@ -276,7 +276,7 @@ GRAFANA_PASSWORD=SUA_SENHA_GRAFANA
 ```
 ---
 
-# 🚀 **Quick Start (5 minutos)**
+## 🚀 **Quick Start (5 minutos)**
 
 ```bash
 git clone https://github.com/GustavoFelipe85/smart-farm-iot-system
@@ -297,7 +297,7 @@ Acessos:
 
 ---
 
-# 🎓 **Contribuições Acadêmicas**
+## 🎓 **Contribuições Acadêmicas**
 
 * Arquitetura IoT modular e segura
 * Pipeline completo de ingestão
@@ -307,7 +307,7 @@ Acessos:
 
 ---
 
-# 📚 **Referências**
+## 📚 **Referências**
 
 * Wolfert, S. et al. *Big Data in Smart Farming.* Agricultural Systems, 2017.
 * Zhang, Y. *IoT Applications in Smart Agriculture.* JAI, 2022.
@@ -317,7 +317,7 @@ Acessos:
 
 ---
 
-# 👨‍💻 **Autor**
+## 👨‍💻 **Autor**
 
 **Gustavo Felipe Paluch Figueiredo**
 
@@ -339,7 +339,7 @@ Este repositório documenta integralmente a **Fase 2**, concluída com foco em r
 
 ---
 
-# 📚 Documentação Oficial (Fase 2)
+## 📚 Documentação Oficial (Fase 2)
 
 Este repositório inclui toda a documentação técnica referente à Fase 2 do projeto, contendo requisitos, arquitetura, diagramas e histórico de versões.
 
@@ -350,7 +350,7 @@ Este repositório inclui toda a documentação técnica referente à Fase 2 do p
 
 ---
 
-# 🧩 Hardware (Fase 3)
+## 🧩 Hardware (Fase 3)
 
 O hardware do projeto Smart Farm IoT System — incluindo o protótipo baseado em ESP32-S3, sensores ambientais e sensor capacitivo de solo — está documentado na pasta:
 
@@ -367,12 +367,12 @@ Lá você encontra:
 
 ---
 
-# 🌧️ Fase 4 — Automação da Irrigação (Visão Futura)
+## 🌧️ Fase 4 — Automação da Irrigação (Visão Futura)
 
 A Fase 4 representa a evolução natural do Smart Farm IoT System, estendendo o monitoramento para **controle automatizado de irrigação**.
 Esta fase **não precisa ser implementada agora**, mas define o escopo que será desenvolvido durante o Mestrado, conforme disponibilidade de laboratório, equipamentos e campo experimental.
 
-### 🎯 Objetivos da Fase 4
+## 🎯 Objetivos da Fase 4
 
 * Integrar **atuadores reais** (relé/mosfet/válvula solenóide) ao nó ESP32
 * Implementar lógica de controle baseada em:
@@ -394,7 +394,7 @@ Esta fase **não precisa ser implementada agora**, mas define o escopo que será
 
 ---
 
-### 🔧 Arquitetura prevista
+## 🔧 Arquitetura prevista
 
 ```mermaid
 flowchart LR
@@ -410,7 +410,7 @@ flowchart LR
 
 ---
 
-### 🧠 Estratégias de Controle Investigadas
+## 🧠 Estratégias de Controle Investigadas
 
 * Controle baseado em **limiar de umidade do solo**
 * Controle baseado em **janela temporal** (irrigação em horários específicos)
@@ -423,7 +423,7 @@ flowchart LR
 
 ---
 
-### 🧪 Metodologia Experimental Prevista
+## 🧪 Metodologia Experimental Prevista
 
 * Testes em bancada com simulador de solo
 * Testes com diferentes tipos de solo (arenoso/argiloso)
@@ -438,7 +438,7 @@ flowchart LR
 
 ---
 
-### 📦 Entregas Principais da Fase 4
+## 📦 Entregas Principais da Fase 4
 
 * Firmware atualizado do ESP32 com suporte a atuadores
 * Microserviço de decisão (FastAPI ou Python Worker)
@@ -449,7 +449,7 @@ flowchart LR
 
 ---
 
-### 🔭 Impacto no Mestrado
+## 🔭 Impacto no Mestrado
 
 A Fase 4 abre espaço para:
 
