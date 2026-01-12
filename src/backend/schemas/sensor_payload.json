@@ -1,0 +1,57 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: you <you@example.com>
+Date: Tue, 13 Jan 2026 00:00:00 +0000
+Subject: [PATCH 1/4] fix(schema): add canonical sensor_payload.json (single source of truth)
+
+---
+ src/backend/schemas/sensor_payload.json | 49 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+ create mode 100644 src/backend/schemas/sensor_payload.json
+
+diff --git a/src/backend/schemas/sensor_payload.json b/src/backend/schemas/sensor_payload.json
+new file mode 100644
+index 0000000..1111111
+--- /dev/null
++++ b/src/backend/schemas/sensor_payload.json
+@@ -0,0 +1,49 @@
++{
++  "$schema": "http://json-schema.org/draft-07/schema#",
++  "title": "Smart Farm Sensor Payload",
++  "type": "object",
++  "required": ["device", "timestamp", "metrics"],
++  "properties": {
++    "device": { "type": "string", "description": "Unique device identifier" },
++    "timestamp": {
++      "type": "string",
++      "format": "date-time",
++      "description": "ISO8601 UTC timestamp, e.g. 2026-01-12T14:57:00Z"
++    },
++    "metrics": {
++      "type": "object",
++      "required": ["temperature", "humidity"],
++      "properties": {
++        "temperature": {
++          "type": "number",
++          "description": "Air temperature in Celsius"
++        },
++        "humidity": {
++          "type": "number",
++          "description": "Relative humidity in %"
++        },
++        "soil_moisture": {
++          "type": ["number","null"],
++          "description": "Normalized soil moisture in % (0-100) or null if not available"
++        },
++        "soil_raw": {
++          "type": ["integer","null"],
++          "description": "Raw ADC reading (0-4095) when available"
++        }
++      },
++      "additionalProperties": false
++    }
++  },
++  "additionalProperties": false
++}
++
+-- 
+2.39.0
