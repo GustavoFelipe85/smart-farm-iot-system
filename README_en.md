@@ -3,6 +3,7 @@
 ### Secure IoT Architecture for Environmental Monitoring in Precision Agriculture
 
 [![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](README.md)
+
 ![status](https://img.shields.io/badge/Phase%203-In%20Progress-blue)
 
 ---
@@ -10,13 +11,13 @@
 ## Executive Summary
 
 The Smart Farm IoT System is a modular, secure, and reproducible IoT platform for environmental monitoring applied to precision agriculture.  
-It integrates low-cost sensor nodes, authenticated MQTT communication, Python-based data processing, a time-series database (InfluxDB), and analytical dashboards in Grafana. The entire stack is containerized with Docker to ensure portability and reproducibility of experiments.
+It integrates low-cost sensor nodes, authenticated MQTT communication, Python-based data processing, a time-series database (InfluxDB), and analytical dashboards in Grafana. The entire stack is contai[...]
 
 This repository documents Phase 2 (completed) and the ongoing work for Phase 3 (real hardware and AI-assisted PCB design).
 
 ---
 
-> Note: This project was prepared as part of an application to the Graduate Program in Computer Science (PPGComp) – UNIOESTE and follows reproducibility and methodological guidelines aligned with the Computer Systems research area.
+> Note: This project was prepared as part of an application to the Graduate Program in Computer Science (PPGComp) – UNIOESTE and follows reproducibility and methodological guidelines aligned with th[...]
 
 ---
 
