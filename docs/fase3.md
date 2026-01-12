@@ -113,7 +113,7 @@ Conteúdo esperado:
 
 ---
 
-# 📌 7. Critérios de Conclusão da Fase 3
+## 📌 7. Critérios de Conclusão da Fase 3
 
 A Fase 3 será considerada concluída quando:
 
