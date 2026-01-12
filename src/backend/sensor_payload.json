@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Smart Farm Sensor Payload",
+  "type": "object",
+  "required": ["device", "timestamp", "metrics"],
+  "properties": {
+    "device": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "metrics": {
+      "type": "object",
+      "required": ["temperature", "humidity"],
+      "properties": {
+        "temperature": { "type": "number" },
+        "humidity": { "type": "number" },
+        "soil_moisture": { "type": ["number", "null"] },
+        "soil_raw": { "type": ["integer", "null"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
