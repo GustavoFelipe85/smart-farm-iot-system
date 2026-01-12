@@ -5,7 +5,7 @@ Após a conclusão da Fase 2 (pipeline IoT completo em ambiente simulado), esta 
 
 ---
 
-# 🎯 1. Objetivos da Fase 3
+## 🎯 1. Objetivos da Fase 3
 
 - Integrar sensores ambientais reais ao ESP32  
 - Realizar prototipagem e testes controlados em laboratório  
@@ -16,7 +16,7 @@ Após a conclusão da Fase 2 (pipeline IoT completo em ambiente simulado), esta 
 
 ---
 
-# 🔧 2. Sensores Reais Utilizados
+## 🔧 2. Sensores Reais Utilizados
 
 Os sensores planejados para esta etapa são:
 
@@ -31,7 +31,7 @@ Todos os sensores serão conectados ao **ESP32 DevKit** com alimentação contro
 
 ---
 
-# 🧪 3. Testes de Laboratório
+## 🧪 3. Testes de Laboratório
 
 Os testes serão realizados em bancada, incluindo:
 
@@ -47,7 +47,7 @@ Os testes serão realizados em bancada, incluindo:
 
 ---
 
-# 🤖 4. Prototipagem Assistida por CELUS
+## 🤖 4. Prototipagem Assistida por CELUS
 
 O **CELUS Design Studio** será usado nesta fase para automatizar parte da engenharia eletrônica:
 
@@ -73,7 +73,7 @@ Os arquivos gerados deverão ser armazenados em:
 
 ---
 
-# 🔗 5. Pipeline com Hardware Real
+## 🔗 5. Pipeline com Hardware Real
 
 O pipeline desta fase é:
 
@@ -93,7 +93,7 @@ A meta é confirmar que o fluxo permanece estável em condições reais.
 
 ---
 
-# 📄 6. Documentação Técnica da Fase 3
+## 📄 6. Documentação Técnica da Fase 3
 
 Será criado o documento:
 
@@ -126,7 +126,7 @@ A Fase 3 será considerada concluída quando:
 
 ---
 
-# 🚀 8. Transição para a Fase 4
+## 🚀 8. Transição para a Fase 4
 
 Com a Fase 3 concluída, inicia-se a **Fase 4**, envolvendo:
 
