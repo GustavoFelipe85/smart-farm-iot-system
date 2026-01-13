@@ -1,9 +1,12 @@
-import os, json, time
-from datetime import datetime
+import os, json
+from datetime import datetime, timezone
 from jsonschema import validate, ValidationError
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 import paho.mqtt.client as mqtt
+
+SCHEMA_VERSION = "1.0.0"
+STRICT_SCHEMA = os.getenv("STRICT_SCHEMA", "true").lower() in ("1", "true", "yes")
 
 SCHEMA_PATH = os.path.join(os.path.dirname(__file__), "..", "schemas", "sensor_payload.json")
 with open(SCHEMA_PATH, "r", encoding="utf-8") as f:
@@ -23,29 +26,110 @@ MQTT_TOPIC = "smartfarm/sensors/#"
 client_influx = InfluxDBClient(url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
 write_api = client_influx.write_api(write_options=SYNCHRONOUS)
 
+
+def _now_utc_iso_z() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def normalize_payload(raw: dict) -> dict:
+    """
+    Normaliza payload legado (ts/temp/umid/soil) para canônico (schema-first).
+    IMPORTANT: solo ausente -> None (não inventa 0.0).
+    """
+    if not isinstance(raw, dict):
+        raise ValueError("payload must be a JSON object")
+
+    # Já canônico?
+    if "device" in raw and "timestamp" in raw and "metrics" in raw:
+        out = dict(raw)
+        out.setdefault("schema_version", SCHEMA_VERSION)
+        if isinstance(out.get("metrics"), dict):
+            out["metrics"].setdefault("soil_moisture", None)
+            out["metrics"].setdefault("soil_raw", None)
+        return out
+
+    device = raw.get("device") or raw.get("dev") or "unknown"
+    timestamp = raw.get("timestamp") or raw.get("ts") or raw.get("time") or _now_utc_iso_z()
+
+    metrics_in = raw.get("metrics") if isinstance(raw.get("metrics"), dict) else raw
+
+    # legado: temp/umid/soil
+    temperature = metrics_in.get("temperature", metrics_in.get("temp"))
+    humidity = metrics_in.get("humidity", metrics_in.get("umid", metrics_in.get("hum")))
+
+    # Solo: pode vir como % ("soil") ou como raw ADC (não assumimos aqui; mantemos compatível)
+    soil_moisture = metrics_in.get("soil_moisture")
+    soil_raw = metrics_in.get("soil_raw")
+
+    # legado: "soil" costuma existir
+    if soil_moisture is None and "soil" in metrics_in:
+        try:
+            soil_moisture = float(metrics_in["soil"])
+        except Exception:
+            soil_moisture = None
+
+    # Se "soil" for ADC e você tiver certeza disso, aí sim faria conversão.
+    # Por default acadêmico/conservador: NÃO inventa transformação.
+    # (A conversão entra só quando você documentar a definição científica.)
+
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "device": str(device),
+        "timestamp": str(timestamp),
+        "metrics": {
+            "temperature": float(temperature),
+            "humidity": float(humidity),
+            "soil_moisture": None if soil_moisture is None else float(soil_moisture),
+            "soil_raw": None if soil_raw is None else int(soil_raw),
+        },
+    }
+
+
 def write_influx(payload: dict):
+    # Corrige parsing de Z: precisa virar +00:00
+    ts = payload["timestamp"].replace("Z", "+00:00")
+    dt = datetime.fromisoformat(ts)
+
+    m = payload["metrics"]
+
+    # MANTÉM measurement e fields atuais para não quebrar Grafana/histórico
     p = Point("sensors") \
         .tag("device", payload["device"]) \
-        .field("temp", float(payload["metrics"].get("temp", 0.0))) \
-        .field("umid", float(payload["metrics"].get("umid", 0.0))) \
-        .field("soil", float(payload["metrics"].get("soil", 0.0))) \
-        .time(datetime.fromisoformat(payload["ts"].replace("Z","")), WritePrecision.NS)
+        .field("temp", float(m["temperature"])) \
+        .field("umid", float(m["humidity"])) \
+        .time(dt, WritePrecision.NS)
+
+    # Solo só grava se existir (None ≠ 0)
+    if m.get("soil_moisture") is not None:
+        p = p.field("soil", float(m["soil_moisture"]))
+
     write_api.write(bucket=INFLUX_BUCKET, org=INFLUX_ORG, record=p)
+
 
 def on_connect(client, userdata, flags, rc):
     print(f"[MQTT] Connected rc={rc}")
     client.subscribe(MQTT_TOPIC, qos=1)
 
+
 def on_message(client, userdata, msg):
     try:
-        data = json.loads(msg.payload.decode("utf-8"))
-        validate(instance=data, schema=PAYLOAD_SCHEMA)
-        write_influx(data)
-        print(f"[OK] {data['device']} -> influx")
-    except (json.JSONDecodeError, ValidationError) as e:
-        print(f"[SCHEMA ERROR] {e}")
+        raw = json.loads(msg.payload.decode("utf-8"))
+        payload = normalize_payload(raw)
+
+        validate(instance=payload, schema=PAYLOAD_SCHEMA)
+
+        write_influx(payload)
+        print(f"[OK] {payload['device']} -> influx")
+
+    except ValidationError as e:
+        if STRICT_SCHEMA:
+            print(f"[DROP][SCHEMA] {e.message}")
+            return
+        print(f"[WARN][SCHEMA] {e.message}")
+
     except Exception as e:
-        print(f"[WRITE ERROR] {e}")
+        print(f"[ERROR] {e}")
+
 
 def main():
     mqttc = mqtt.Client()
@@ -55,6 +139,7 @@ def main():
     mqttc.on_message = on_message
     mqttc.connect(MQTT_BROKER, MQTT_PORT, 60)
     mqttc.loop_forever()
+
 
 if __name__ == "__main__":
     main()
