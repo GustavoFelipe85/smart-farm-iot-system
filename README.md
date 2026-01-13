@@ -164,6 +164,11 @@ flowchart LR
   PY -->|Write Data| INF
   INF -->|Consulta| GF
 ```
+📐 **Contrato de dados (canônico):** o formato oficial das mensagens MQTT é definido em  
+`src/backend/schemas/sensor_payload.json`, utilizado como *single source of truth* para validação e ingestão de dados.
+
+---
+
 ## 🔧 **Componentes Implementados (Fase 2 – Concluída)**
 
 | Camada       | Tecnologia       | Status | Função               |
