@@ -1,6 +1,4 @@
-➡️ [docs/](docs/)
-
-## 📘 **README — Documentação Oficial do Projeto Smart Farm IoT System**
+# 📘 **README — Documentação Oficial do Projeto Smart Farm IoT System**
 
 Este diretório reúne toda a documentação técnica, acadêmica e operacional do **Smart Farm IoT System**, organizado segundo boas práticas de engenharia e adequado ao processo seletivo e desenvolvimento futuro no **PPGComp — UNIOESTE**.
 
@@ -8,7 +6,7 @@ A documentação está estruturada de forma modular para facilitar consulta, man
 
 ---
 
-# 📚 **Conteúdo da Documentação**
+## 📚 **Conteúdo da Documentação**
 
 <a name="arquitetura"></a>
 ## 1. Arquitetura e Design
@@ -19,7 +17,7 @@ A documentação está estruturada de forma modular para facilitar consulta, man
 
 ---
 
-### 🔹 **2. Planejamento e Gestão**
+##🔹 **2. Planejamento e Gestão**
 
 * **cronograma.md** — Cronograma oficial das fases do projeto
 * **proposta_pesquisa.md** — Proposta acadêmica alinhada ao Edital 11/2025
@@ -28,7 +26,7 @@ A documentação está estruturada de forma modular para facilitar consulta, man
 
 ---
 
-### 🔹 **3. Requisitos e Especificações**
+##🔹 **3. Requisitos e Especificações**
 
 * **requisitos.md** — Requisitos funcionais e não funcionais
 * **revisao_bibliografica.md** — Fundamentação teórica e revisão da literatura
@@ -55,7 +53,7 @@ A documentação está estruturada de forma modular para facilitar consulta, man
 
 ---
 
-# 🧭 **Propósito da Documentação**
+## 🧭 **Propósito da Documentação**
 
 A pasta `/docs` centraliza informações essenciais para:
 
@@ -67,7 +65,7 @@ A pasta `/docs` centraliza informações essenciais para:
 
 ---
 
-# 🏗️ **Como navegar**
+## 🏗️ **Como navegar**
 
 Use os links abaixo para acesso rápido:
 
@@ -82,7 +80,7 @@ Use os links abaixo para acesso rápido:
 
 ---
 
-# 🧩 **Integração com Outras Pastas**
+## 🧩 **Integração com Outras Pastas**
 
 Este diretório se relaciona diretamente com:
 
@@ -93,7 +91,7 @@ Este diretório se relaciona diretamente com:
 
 ---
 
-# 📝 **Manutenção**
+## 📝 **Manutenção**
 
 Este diretório continuará a ser expandido conforme:
 
@@ -103,7 +101,7 @@ Este diretório continuará a ser expandido conforme:
 
 ---
 
-# 📌 **Autor**
+## 📌 **Autor**
 
 **Gustavo Felipe Paluch Figueiredo**
 Projeto Acadêmico — UNIOESTE / PPGComp
