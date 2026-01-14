@@ -133,11 +133,11 @@ Conteúdo esperado:
 A Fase 3 será considerada concluída quando:
 
 - [ ] Sensores reais estiverem totalmente integrados  
-- [ ] Pipeline com hardware real estiver funcional  
+- [x] Pipeline com hardware real estiver funcional  
 - [ ] Testes de bancada estiverem documentados  
-- [ ] Esquemático e BOM forem gerados pelo CELUS  
-- [ ] Documentação estiver completa em `/docs/hardware_fase3.md`  
-- [ ] Preparação para testes de campo (Fase 4) estiver finalizada  
+- [x] Esquemático e BOM forem gerados pelo CELUS  
+- [x] Documentação estiver completa em `/docs/hardware_fase3.md`  
+- [x] Preparação para testes de campo (Fase 4) estiver finalizada  
 
 ---
 
