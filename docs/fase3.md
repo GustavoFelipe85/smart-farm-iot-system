@@ -5,6 +5,21 @@ Após a conclusão da Fase 2 (pipeline IoT completo em ambiente simulado), esta 
 
 ---
 
+## Conteúdo mínimo da Fase 3 (Critério de Avaliação)
+
+Para fins de avaliação acadêmica, esta fase contempla:
+- Definição da arquitetura de hardware do nó IoT;
+- Seleção e justificativa dos sensores ambientais;
+- Integração conceitual entre hardware, firmware e backend;
+- Planejamento de testes laboratoriais;
+- Documentação técnica da solução proposta.
+
+A prototipagem física completa, testes de campo e resultados experimentais
+definitivos são tratados como atividades em andamento ou previstas para a
+continuação do projeto, não sendo exigência plena nesta etapa.
+
+---
+
 ## 🎯 1. Objetivos da Fase 3
 
 - Integrar sensores ambientais reais ao ESP32  
