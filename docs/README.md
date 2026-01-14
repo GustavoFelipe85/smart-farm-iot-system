@@ -104,8 +104,10 @@ Este diretório continuará a ser expandido conforme:
 ## 📌 **Autor**
 
 **Gustavo Felipe Paluch Figueiredo**
+
+🎓 Engenheiro da Computação 
+
 Projeto Acadêmico — UNIOESTE / PPGComp
-Engenharia da Computação
 
 ---
 
