@@ -8,7 +8,7 @@
 
 [![EN](https://img.shields.io/badge/lang-English-blue)](README_en.md)
 
-![status](https://img.shields.io/badge/Fase%203-Em%20andamento-blue)
+https://img.shields.io/badge/Phase_3-In_Progress-blue
 
 <p align="center">
   <img src="https://img.shields.io/badge/Docker-OK-2496ED?style=for-the-badge&logo=docker" />
