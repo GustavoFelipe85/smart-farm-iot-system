@@ -66,17 +66,31 @@ jobs:
           fi
           echo "✅ README docs link OK"
 
-      - name: "✅ Validate JSON Schema"
+          - name: "✅ Validate JSON Schema"
         run: |
           python - << 'EOF'
           import json
+          from pathlib import Path
           from jsonschema import Draft7Validator
 
-          with open("src/backend/schemas/sensor_payload.json", "r", encoding="utf-8") as f:
-              schema = json.load(f)
+          candidates = [
+              Path("src/backend/schemas/sensor_payload.json"),
+              Path("src/backend/schemas/sensor_payload.schema.json"),
+              Path("src/backend/python-consumer/schemas/sensor_payload.json"),
+              Path("schemas/sensor_payload.json"),
+              Path("src/schemas/sensor_payload.json"),
+          ]
 
+          schema_path = next((p for p in candidates if p.exists()), None)
+          if not schema_path:
+              raise SystemExit(
+                  "❌ JSON Schema file not found. Expected one of: \n- " +
+                  "\n- ".join(str(p) for p in candidates)
+              )
+
+          schema = json.loads(schema_path.read_text(encoding="utf-8"))
           Draft7Validator.check_schema(schema)
-          print("✅ JSON Schema is valid")
+          print(f"✅ JSON Schema is valid: {schema_path}")
           EOF
 
       - name: "✅ Check consumer structure"
