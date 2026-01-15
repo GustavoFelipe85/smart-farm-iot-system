@@ -21,7 +21,7 @@ This repository documents Phase 2 (completed) and the ongoing work for Phase 3 (
 
 ---
 
-##  CI Pipeline Status
+## CI Pipeline Status
 
 The Continuous Integration (CI) pipeline is active and performs automated checks
 for code quality, data contracts, documentation, and infrastructure configuration.
