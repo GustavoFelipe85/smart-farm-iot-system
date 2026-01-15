@@ -21,10 +21,17 @@ This repository documents Phase 2 (completed) and the ongoing work for Phase 3 (
 
 ---
 
-## CI Pipeline Status
+##  CI Pipeline Status
 
-The CI pipeline runs automated checks for code quality and configuration.  
-Current failures are expected and associated with hardware-dependent components under active development (Phase 3). These checks will be stabilized as hardware artifacts and testbeds are finalized.
+The Continuous Integration (CI) pipeline is active and performs automated checks
+for code quality, data contracts, documentation, and infrastructure configuration.
+
+Current validations are aligned with the experimental scope of **Phase 3
+(Real Hardware / CELUS)**, focusing on architectural consistency, technical
+documentation, and pipeline integrity.
+
+Full stabilization of hardware-dependent tests and field measurements is planned
+for Phase 4 and subsequent stages.
 
 ---
 
