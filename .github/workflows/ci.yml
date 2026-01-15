@@ -79,6 +79,7 @@ jobs:
           print("✅ JSON Schema is valid")
           EOF
 
+
         - name: "✅ Check consumer structure"
         run: |
           test -d src/backend/python-consumer || (echo "❌ missing python-consumer folder" && exit 1)
