@@ -59,10 +59,8 @@ As **Fases 3 e 4** (sensores reais, laboratório, campo, automação e ML) serã
 ## 🧪 Status do Pipeline de CI
 
 O pipeline de Integração Contínua (CI) está ativo e executa validações automáticas de qualidade de código, contratos de dados, documentação e configuração da infraestrutura.
-
-As verificações estão alinhadas ao escopo experimental da **Fase 3 (Hardware Real / CELUS)**, com foco em consistência arquitetural, integridade do pipeline e rastreabilidade técnica.
-
-A consolidação de testes dependentes de hardware físico e medições em campo está planejada como parte da progressão natural do projeto nas **Fases 4 e seguintes**.
+As verificações estão alinhadas ao escopo experimental da Fase 3 (Hardware Real / CELUS), priorizando consistência arquitetural, integridade do pipeline e rastreabilidade técnica.
+Testes dependentes de hardware físico e medições de campo serão aprofundados e estabilizados nas Fases 4 e seguintes.
 
 ---
 
