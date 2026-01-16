@@ -9,7 +9,6 @@
 [![EN](https://img.shields.io/badge/lang-English-blue)](README_en.md)
 
 ![Phase](https://img.shields.io/badge/Phase%203-In%20Progress-blue)
-
 <p align="center">
   <img src="https://img.shields.io/badge/Docker-OK-2496ED?style=for-the-badge&logo=docker" />
   <img src="https://img.shields.io/badge/MQTT-Secure-660066?style=for-the-badge&logo=eclipse" />
@@ -19,8 +18,8 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
   <a href="https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml">
     <img src="https://img.shields.io/github/actions/workflow/status/GustavoFelipe85/smart-farm-iot-system/ci.yml?label=CI%20Pipeline&style=for-the-badge&logo=githubactions&logoColor=white" />
-  </a>
-</p>
+  </a> </p>
+  
 ---
 
 ## 📘 Resumo Executivo
