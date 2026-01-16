@@ -4,6 +4,8 @@
 
 [![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](README.md)
 
+<img src="https://img.shields.io/github/actions/workflow/status/GustavoFelipe85/smart-farm-iot-system/ci.yml?label=CI%20Pipeline&style=for-the-badge&logo=githubactions&logoColor=white" />
+
 ![status](https://img.shields.io/badge/Phase%203-In%20Progress-blue)
 
 ---
