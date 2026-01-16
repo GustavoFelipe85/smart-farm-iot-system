@@ -5,7 +5,6 @@
 [![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](README.md)
 
 ![Phase](https://img.shields.io/badge/Phase%203-In%20Progress-blue)
-
 <p align="center">
   <img src="https://img.shields.io/badge/Docker-OK-2496ED?style=for-the-badge&logo=docker" />
   <img src="https://img.shields.io/badge/MQTT-Secure-660066?style=for-the-badge&logo=eclipse" />
