@@ -6,6 +6,8 @@
 # 🚜 Smart Farm IoT System
 ### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
 
+<img src="https://img.shields.io/github/actions/workflow/status/GustavoFelipe85/smart-farm-iot-system/ci.yml?label=CI%20Pipeline&style=for-the-badge&logo=githubactions&logoColor=white" />
+
 [![EN](https://img.shields.io/badge/lang-English-blue)](README_en.md)
 
 ![Phase](https://img.shields.io/badge/Phase%203-In%20Progress-blue)
