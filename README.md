@@ -17,7 +17,7 @@
   <img src="https://img.shields.io/badge/Python-Consumer-3776AB?style=for-the-badge&logo=python" />
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
   <a href="https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml">
-  [![CI Pipeline](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/GustavoFelipe85/smart-farm-iot-system/actions/workflows/ci.yml)
+   <img src="https://img.shields.io/github/actions/workflow/status/GustavoFelipe85/smart-farm-iot-system/ci.yml?label=CI%20Pipeline&style=for-the-badge&logo=githubactions&logoColor=white" />
   </a> </p>
   
 ---
