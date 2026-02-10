@@ -128,6 +128,9 @@ jobs:
       - name: "🔍 Validate docker compose config"
         working-directory: docker
         run: |
+         - name: Validate docker-compose.yml
+           run: docker compose -f docker-compose.yml config -q
+
           echo "✅ docker compose validation passed"
 
           - name: Install Docker Compose plugin
