@@ -66,19 +66,21 @@ jobs:
           fi
           echo "✅ README docs link OK"
 
-      - name: ✅ Validate JSON Schema
-       run: |
-        python - << 'EOF'
-        import json
-        from jsonschema import Draft7Validator
+      - name: Validate JSON Schema
+        shell: bash
+        run: |
+         python - <<'PY'
+         import json
+         from jsonschema import Draft7Validator
+         from pathlib import Path
 
-    with open("src/backend/schemas/sensor_payload.json", "r", encoding="utf-8") as f:
-         schema = json.load(f)
+         p = Path("src/backend/schemas/sensor_payload.json")
+        assert p.exists(), f"Schema not found: "{p.resolve()}"
+          schema = json.loads(p.read_text(encoding="utf-8"))
+          Draft7Validator.check_schema(schema)
 
-         Draft7Validator.check_schema(schema)
-       print("✅ JSON Schema is valid")
-        EOF
-
+       print("OK: JSON Schema is valid")
+         PY
 
       - name: "✅ Check consumer structure"
         run: |
@@ -127,16 +129,16 @@ jobs:
     steps:
       - name: "📥 Checkout code"
         uses: actions/checkout@v4
-
       - name: "🔍 Validate docker compose config"
         working-directory: docker
         run: |
          - name: Validate docker-compose.yml
-           run: docker compose -f docker-compose.yml config -q
-
+           run: docker compose config -q
           echo "✅ docker compose validation passed"
 
-          - name: Install Docker Compose plugin
+         - name: Install Docker Compose (fallback)
+           run: |
+            docker compose version || sudo apt-get update && sudo apt-get install -y docker-compose-plugin
 
       # Opcional (recomendado deixar desligado na Fase 3):
       # - name: "🏗️ Build Docker Images"
