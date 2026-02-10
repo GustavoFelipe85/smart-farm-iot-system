@@ -66,16 +66,19 @@ jobs:
           fi
           echo "✅ README docs link OK"
 
-      - name: "✅ Validate JSON Schema"
-        run: |
-         python - << 'EOF'
-         import json
-         from jsonschema import Draft7Validator
-         with open("src/backend/schemas/sensor_payload.json", "r", encoding="utf-8") as f:
-          schema = json.load(f)
-          Draft7Validator.check_schema(schema)
-          print("✅ JSON Schema is valid")
-           EOF
+      - name: ✅ Validate JSON Schema
+       run: |
+        python - << 'EOF'
+        import json
+        from jsonschema import Draft7Validator
+
+    with open("src/backend/schemas/sensor_payload.json", "r", encoding="utf-8") as f:
+         schema = json.load(f)
+
+         Draft7Validator.check_schema(schema)
+       print("✅ JSON Schema is valid")
+        EOF
+
 
       - name: "✅ Check consumer structure"
         run: |
