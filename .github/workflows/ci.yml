@@ -68,16 +68,14 @@ jobs:
 
       - name: "✅ Validate JSON Schema"
         run: |
-          python - << 'EOF'
-          import json
-          from jsonschema import Draft7Validator
-
-          with open("src/backend/sensor_payload.json", "r", encoding="utf-8") as f:
-              schema = json.load(f)
-
-          Draft7Validator.check_schema(schema)
-          print("✅ JSON Schema is valid")
-          EOF
+         python - << 'EOF'
+         import json
+         from jsonschema import Draft7Validator
+       with open("src/backend/sensor_payload.json", "r", encoding="utf-8") as f:
+        schema = json.load(f)
+        Draft7Validator.check_schema(schema)
+        print("✅ JSON Schema is valid")
+        EOF
 
       - name: "✅ Check consumer structure"
         run: |
@@ -133,6 +131,8 @@ jobs:
           docker compose version
           docker compose config -q
           echo "✅ docker compose validation passed"
+
+          - name: Install Docker Compose plugin
 
       # Opcional (recomendado deixar desligado na Fase 3):
       # - name: "🏗️ Build Docker Images"
