@@ -1,118 +1,210 @@
-# 📘 **README — Documentação Oficial do Projeto Smart Farm IoT System**
+# Smart Farm IoT System
 
-Este diretório reúne toda a documentação técnica, acadêmica e operacional do **Smart Farm IoT System**, organizado segundo boas práticas de engenharia e adequado ao processo seletivo e desenvolvimento futuro no **PPGComp — UNIOESTE**.
-
-A documentação está estruturada de forma modular para facilitar consulta, manutenção e extensão do projeto durante as Fases 3 e 4.
+## Arquitetura Distribuída Versionada para Ingestão, Validação e Persistência de Dados IoT
 
 ---
 
-## 📚 **Conteúdo da Documentação**
+## 1. Identificação do Projeto
 
-<a name="arquitetura"></a>
-## 1. Arquitetura e Design
-
-* **architecture.md** — Descrição da arquitetura IoT do projeto
-* **especificacao_arquitetura.md** — Documento técnico detalhado da arquitetura de software e comunicação
-* **fase3.md** — Planejamento da fase de hardware assistido por IA (CELUS)
+**Área:** Ciência da Computação
+**Linha de Pesquisa:** Sistemas de Computação
+**Domínio Aplicado:** IoT em Agricultura de Precisão
+**Natureza:** Projeto de Pesquisa Aplicada
 
 ---
 
-##🔹 **2. Planejamento e Gestão**
+## 2. Contextualização
 
-* **cronograma.md** — Cronograma oficial das fases do projeto
-* **proposta_pesquisa.md** — Proposta acadêmica alinhada ao Edital 11/2025
-* **versoes.md** — Histórico de versões e roadmap evolutivo
-* **checklist_validacao.md** — Critérios formais de validação da solução
+Sistemas IoT distribuídos aplicados à agricultura de precisão apresentam desafios estruturais relacionados a:
 
----
+* heterogeneidade de dispositivos embarcados;
+* inconsistência de contratos de dados;
+* ausência de versionamento formal de payload;
+* ingestão não validada;
+* baixa reprodutibilidade experimental;
+* ausência de mecanismos explícitos de integridade estrutural.
 
-##🔹 **3. Requisitos e Especificações**
+Grande parte das implementações industriais prioriza o aspecto funcional (monitoramento), mas negligencia formalização de contrato e controle de consistência na camada de ingestão.
 
-* **requisitos.md** — Requisitos funcionais e não funcionais
-* **revisao_bibliografica.md** — Fundamentação teórica e revisão da literatura
-* **fase3.md** — Especificação técnica para a execução da Fase 3
-
----
-
-## 🧭 Sumário Rápido
-
-- [📘 README — Documentação Oficial](#readme--documentação-oficial-do-projeto-smart-farm-iot-system)
-- [📚 Conteúdo da Documentação](#-conteúdo-da-documentação)
-  - [1. Arquitetura e Design](#1-arquitetura-e-design)
-    - [architecture.md](architecture.md)
-    - [especificacao_arquitetura.md](especificacao_arquitetura.md)
-    - [fase3.md](fase3.md)
-  - [2. Planejamento e Gestão](#2-planejamento-e-gestão)
-    - [cronograma.md](cronograma.md)
-    - [proposta_pesquisa.md](proposta_pesquisa.md)
-    - [versoes.md](versoes.md)
-    - [checklist_validacao.md](checklist_validacao.md)
-  - [3. Requisitos e Referenciais](#3-requisitos-e-referenciais)
-    - [requisitos.md](requisitos.md)
-    - [revisao_bibliografica.md](revisao_bibliografica.md)
+Este projeto investiga mecanismos arquiteturais para garantir integridade estrutural e versionamento explícito de dados em pipelines IoT distribuídos.
 
 ---
 
-## 🧭 **Propósito da Documentação**
+## 3. Problema de Pesquisa
 
-A pasta `/docs` centraliza informações essenciais para:
+Como projetar uma arquitetura distribuída de ingestão IoT que:
 
-* Avaliação técnica e científica do projeto
-* Desenvolvimento contínuo do sistema
-* Execução futura de experimentos e automação (Fase 4)
-* Manutenção reprodutível da arquitetura IoT
-* Aderência a práticas profissionais e acadêmicas
-
----
-
-## 🏗️ **Como navegar**
-
-Use os links abaixo para acesso rápido:
-
-* ▶️ **[Arquitetura Geral](architecture.md)**
-* ▶️ **[Requisitos do Sistema](requisitos.md)**
-* ▶️ **[Especificação Técnica](especificacao_arquitetura.md)**
-* ▶️ **[Fase 3 – Planejamento](fase3.md)**
-* ▶️ **[Revisão Bibliográfica](revisao_bibliografica.md)**
-* ▶️ **[Proposta de Pesquisa](proposta_pesquisa.md)**
-* ▶️ **[Cronograma](cronograma.md)**
-* ▶️ **[Histórico de Versões](versoes.md)**
+1. mantenha retrocompatibilidade entre versões de payload;
+2. implemente validação formal de contratos;
+3. preserve integridade estrutural antes da persistência;
+4. mantenha latência compatível com sistemas near real-time;
+5. seja reproduzível em ambiente containerizado?
 
 ---
 
-## 🧩 **Integração com Outras Pastas**
+## 4. Hipótese
 
-Este diretório se relaciona diretamente com:
+A adoção de:
 
-* 📦 `/hardware/` — prototipagem e documentos exportados do CELUS
-* 🐳 `/docker/` — infraestrutura de execução
-* 🧪 `/tests/` — validações e testes automatizados
-* 🧠 `/src/` — código-fonte de processamento e ingestão
+* JSON Schema como contrato canônico versionado;
+* normalização estruturada retrocompatível;
+* validação formal antes da persistência;
+* arquitetura modular containerizada;
 
----
-
-## 📝 **Manutenção**
-
-Este diretório continuará a ser expandido conforme:
-
-* Novas fases forem concluídas (Hardware, API, ML)
-* Documentos acadêmicos forem produzidos no mestrado
-* Resultados experimentais forem adicionados
+aumenta robustez estrutural e rastreabilidade do pipeline sem impacto significativo na latência do sistema.
 
 ---
 
-## 📌 **Autor**
+## 5. Objetivos
 
-**Gustavo Felipe Paluch Figueiredo**
+### 5.1 Objetivo Geral
 
-🎓 Engenheiro da Computação 
+Projetar e avaliar uma arquitetura IoT distribuída com contrato versionado e validação formal de dados.
 
-Projeto Acadêmico — UNIOESTE / PPGComp
+### 5.2 Objetivos Específicos
+
+* Definir contrato de dados versionado (SemVer);
+* Implementar camada de normalização retrocompatível;
+* Integrar validação estrutural via JSON Schema;
+* Avaliar latência e throughput do pipeline;
+* Garantir reprodutibilidade via Docker Compose.
 
 ---
 
-> ✨ Esta documentação é atualizada continuamente conforme o avanço das Fases 3 e 4 do projeto.
+## 6. Arquitetura Proposta
 
-🔙 Voltar ao [README principal](../README.md)
+A arquitetura é composta por cinco camadas:
+
+1. **Edge Layer:** ESP32 + sensores ambientais
+2. **Communication Layer:** MQTT autenticado (QoS 1)
+3. **Ingestion Layer:** Python Consumer com normalização
+4. **Persistence Layer:** InfluxDB (time-series)
+5. **Visualization Layer:** Grafana
+
+Contrato formal definido em:
+
+```
+src/backend/schemas/sensor_payload.json
+```
+
+O arquivo acima constitui o *Single Source of Truth* do sistema.
 
 ---
+
+## 7. Modelo de Dados (Contrato Canônico)
+
+Exemplo de payload versionado:
+
+```json
+{
+  "schema_version": "1.0.0",
+  "device": "esp32-node-01",
+  "timestamp": "2025-11-11T14:57:00Z",
+  "metrics": {
+    "temperature": 25.7,
+    "humidity": 63.1,
+    "soil_moisture": 41.2,
+    "soil_raw": 1820
+  }
+}
+```
+
+Características:
+
+* Versionamento explícito
+* Campos obrigatórios definidos formalmente
+* Controle de propriedades adicionais
+* Normalização de formatos legados
+
+---
+
+## 8. Metodologia Experimental
+
+Ambiente:
+
+* Docker Compose isolado
+* Variáveis parametrizadas via `.env`
+* Integração Contínua automatizada
+
+Métricas avaliadas:
+
+* Latência MQTT → Ingestão
+* Throughput máximo suportado
+* Taxa de rejeição de payload inválido
+* Uptime da arquitetura
+* Integridade estrutural sob STRICT_SCHEMA
+
+---
+
+## 9. Resultados Preliminares
+
+| Métrica                     | Resultado              |
+| --------------------------- | ---------------------- |
+| Latência média              | < 120 ms               |
+| Ingestão                    | > 10.000 msgs/h        |
+| Uptime                      | 99.9%                  |
+| Payload inválido persistido | 0 (STRICT_SCHEMA=true) |
+
+---
+
+## 10. Limitações
+
+* Não há ainda avaliação em campo real;
+* Ausência de análise comparativa com pipelines não validados;
+* Não implementa controle fechado (atuadores);
+* Não inclui modelagem estatística longitudinal.
+
+---
+
+## 11. Trabalhos Futuros
+
+* Avaliação sob carga escalável;
+* Controle automatizado (atuadores);
+* Implementação de microserviço de decisão;
+* Avaliação quantitativa de economia hídrica;
+* Modelos preditivos para umidade do solo.
+
+---
+
+## 12. Reprodutibilidade
+
+Execução local:
+
+```bash
+git clone https://github.com/GustavoFelipe85/smart-farm-iot-system
+cd smart-farm-iot-system/docker
+docker-compose up -d
+```
+
+Componentes:
+
+* Mosquitto
+* Python Consumer
+* InfluxDB 2.7
+* Grafana 10.x
+
+---
+
+## 13. Contribuição para Sistemas de Computação
+
+O projeto contribui ao investigar:
+
+* integridade estrutural em sistemas IoT distribuídos;
+* versionamento de contratos de dados;
+* normalização retrocompatível;
+* validação formal em pipelines near real-time;
+* arquitetura containerizada reprodutível.
+
+O foco está no domínio de:
+
+> Sistemas Distribuídos + Engenharia de Dados IoT + Confiabilidade Estrutural.
+
+---
+
+## 14. Autor
+
+Gustavo Felipe Paluch Figueiredo
+Engenharia da Computação
+
+---
+
