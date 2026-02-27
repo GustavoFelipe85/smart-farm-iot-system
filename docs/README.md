@@ -204,6 +204,7 @@ O foco está no domínio de:
 ## 14. Autor
 
 Gustavo Felipe Paluch Figueiredo
+
 Engenharia da Computação
 
 ---
