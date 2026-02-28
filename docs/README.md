@@ -1,7 +1,7 @@
 # Smart Farm IoT System
 
 ## Arquitetura Distribuída Versionada para Ingestão, Validação e Persistência de Dados IoT
-
+[![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](https://github.com/GustavoFelipe85/smart-farm-iot-system/blob/main/README.md)
 <p align="center">
   <a href="README_en.md">🇺🇸 English</a>
 </p>
