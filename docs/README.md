@@ -3,7 +3,6 @@
 ## Arquitetura Distribuída Versionada para Ingestão, Validação e Persistência de Dados IoT
 
 <p align="center">
-  <a href="README.md">🇧🇷 Português</a> |
   <a href="README_en.md">🇺🇸 English</a>
 </p>
 
