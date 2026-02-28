@@ -1,10 +1,7 @@
+[![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](https://github.com/GustavoFelipe85/smart-farm-iot-system/blob/main/README.md)
 # 🚜 Smart Farm IoT System
 
 ### A Versioned Distributed IoT Architecture for Reliable Environmental Data Ingestion in Precision Agriculture
-
-<p align="center">
-  <a href="README.md">🇧🇷 Português</a> 
-</p>
 
 ## 1. Overview
 
