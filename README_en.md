@@ -2,8 +2,9 @@
 
 ### A Versioned Distributed IoT Architecture for Reliable Environmental Data Ingestion in Precision Agriculture
 
-[![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](README.md)
-
+<p align="center">
+  <a href="README.md">🇧🇷 Português</a> |
+</p>
 ---
 
 ## 1. Overview
