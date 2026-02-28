@@ -2,7 +2,10 @@
 
 ## Arquitetura Distribuída Versionada para Ingestão, Validação e Persistência de Dados IoT
 
-[![EN](https://img.shields.io/badge/lang-English-blue)](README_en.md)
+<p align="center">
+  <a href="README.md">🇧🇷 Português</a> |
+  <a href="README_en.md">🇺🇸 English</a>
+</p>
 
 ## 1. Identificação do Projeto
 
