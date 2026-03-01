@@ -1,8 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT-green?style=for-the-badge&logo=github" />
-  <img src="https://img.shields.io/badge/UNIOESTE-blue?style=for-the-badge" />
-</p>
-
+  
 # 🚜 Smart Farm IoT System
 ### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
 
@@ -37,9 +35,6 @@ O sistema implementa:
 Funcionalidades como API, automação, ML e atuadores serão implementadas nas Fases 3 e 4.
 
 ---
-
-> 📝 **Projeto integrante do processo seletivo do Programa de Pós-Graduação em Ciência da Computação (PPGComp) – UNIOESTE.**  
-> Desenvolvimento conduzido com rigor metodológico e reprodutibilidade, alinhado à linha *Sistemas de Computação*, conforme Edital 11/2025.
 
 Este repositório documenta integralmente a **Fase 2**, incluindo:
 
@@ -461,7 +456,7 @@ A Fase 4 abre espaço para:
 
 ## 📝 Observação
 
-Esta fase não faz parte da entrega atual, mas evidencia planejamento, escalabilidade e maturidade do projeto — aspectos valorizados em processos seletivos acadêmicos como o PPGComp.
+Esta fase não faz parte da entrega atual, mas evidencia planejamento, escalabilidade e maturidade do projeto.
 
 ---
 
