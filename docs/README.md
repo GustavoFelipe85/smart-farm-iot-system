@@ -1,13 +1,3 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/Projeto_Acadêmico-IoT-green?style=for-the-badge&logo=github" />
-  
-# 🚜 Smart Farm IoT System
-### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
-
-[![EN](https://img.shields.io/badge/lang-English-blue)](README_en.md)
-
-![Phase](https://img.shields.io/badge/Phase%203-In%20Progress-blue)
-
 # Smart Farm IoT System
 
 ## Arquitetura Distribuída Versionada para Ingestão, Validação e Persistência de Dados IoT
