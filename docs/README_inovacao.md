@@ -4,8 +4,6 @@
 # 🚜 Smart Farm IoT System
 ### *Arquitetura IoT Segura para Monitoramento Ambiental em Agricultura de Precisão*
 
-[![EN](https://img.shields.io/badge/lang-English-blue)](README_en.md)
-
 ![Phase](https://img.shields.io/badge/Phase%203-In%20Progress-blue)
 <p align="center">
   <img src="https://img.shields.io/badge/Docker-OK-2496ED?style=for-the-badge&logo=docker" />
