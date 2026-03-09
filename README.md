@@ -209,3 +209,4 @@ Engenharia da Computação
 
 ---
 
+![Release](https://img.shields.io/github/v/release/GustavoFelipe85/smart-farm-iot-system)
