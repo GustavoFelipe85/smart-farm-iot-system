@@ -45,7 +45,7 @@ Este repositório documenta integralmente a **Fase 2**, incluindo:
 - dashboards analíticos  
 - documentação técnica formal  
 
-As **Fases 3 e 4** (sensores reais, laboratório, campo, automação e ML) serão executadas durante o Mestrado.
+As **Fases 3 e 4** (sensores reais, laboratório, campo, automação e ML).
 
 ---
 
@@ -326,7 +326,6 @@ Universidade Santo Amaro (Unisa)
 
 ### ✨ “Tecnologia e ciência transformando a agricultura brasileira.”
 
-📌 Documento técnico elaborado para o processo seletivo do **PPGComp – UNIOESTE (Edital 11/2025)**
 
 Este repositório documenta integralmente a **Fase 2**, concluída com foco em rigor metodológico, reprodutibilidade e aderência às diretrizes de pesquisa em Sistemas de Computação.
 
