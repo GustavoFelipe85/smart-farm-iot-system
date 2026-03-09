@@ -458,5 +458,6 @@ Esta fase não faz parte da entrega atual, mas evidencia planejamento, escalabil
 
 ---
 
+🔙 Voltar ao [README principal](../README.md)
 
-
+---
