@@ -1,4 +1,4 @@
-# 🚜 Smart Farm IoT System
+# Smart Farm IoT System
 
 [![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](https://github.com/GustavoFelipe85/smart-farm-iot-system/blob/main/README.md) ![Release](https://img.shields.io/github/v/release/GustavoFelipe85/smart-farm-iot-system)
 
