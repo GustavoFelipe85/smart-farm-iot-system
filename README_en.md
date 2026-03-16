@@ -1,6 +1,6 @@
 # Smart Farm IoT System
 
-[![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](https://github.com/GustavoFelipe85/smart-farm-iot-system/blob/main/README.md) ![Release](https://img.shields.io/github/v/release/GustavoFelipe85/smart-farm-iot-system)
+[![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](https://github.com/GustavoFelipe85/smart-farm-iot-system/blob/main/README.md) ![Release](https://img.shields.io/github/v/release/GustavoFelipe85/smart-farm-iot-system)  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19040627.svg)](https://doi.org/10.5281/zenodo.19040627)
 
 ### A Versioned Distributed IoT Architecture for Reliable Environmental Data Ingestion in Precision Agriculture
 
