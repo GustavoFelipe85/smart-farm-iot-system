@@ -1,154 +1,110 @@
-name: CI - Smart Farm IoT System
+name: CI Reduzida - Smart Farm System
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
     paths:
-      - ".github/workflows/ci.yml"
       - "src/**"
-      - "docker-compose.yml"
-      - "docs/**"
-      - "README.md"
+      - "tests/**"
+      - "docker/**"
+      - "requirements.txt"
+      - ".github/workflows/ci.yml"
+
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "docker/**"
+      - "requirements.txt"
+      - ".github/workflows/ci.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  security-scan:
-    name: "🔒 Security Scan"
+  software-validation:
+    name: Validação de Software
     runs-on: ubuntu-latest
+
     steps:
-      - name: "📥 Checkout code"
+      - name: Baixar repositório
         uses: actions/checkout@v4
 
-      - name: "🐍 Set up Python"
-        uses: actions/setup-python@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
 
-      - name: "🔍 Run Bandit Security Scan"
-        run: |
-          pip install bandit
-          bandit -r src/ -f html -o security-report.html || true
-          echo "📊 Security scan completed"
-
-      - name: "📦 Dependency Vulnerability Check"
-        run: |
-          pip install safety
-          safety check --json --output safety-report.json || true
-
-      - name: "💾 Upload Security Reports"
-        uses: actions/upload-artifact@v4
-        with:
-          name: security-reports
-          path: |
-            security-report.html
-            safety-report.json
-
-  contract-docs:
-    name: "📜 Contract & Docs"
-    runs-on: ubuntu-latest
-    steps:
-      - name: "📥 Checkout code"
-        uses: actions/checkout@v4
-
-      - name: "🐍 Set up Python"
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-
-      - name: "📦 Install jsonschema (pinned)"
-        run: |
-          pip install jsonschema==4.23.0
-
-      - name: "✅ Check docs folder exists"
-        run: |
-          test -d docs || (echo "❌ docs/ folder missing" && exit 1)
-
-      - name: "✅ Check README docs link (reject /docs)"
-        run: |
-          if grep -nE '\]\(/docs\)|\(/docs\)' README.md README_en.md; then
-            echo "❌ Broken /docs link found. Use docs/ or ./docs instead."
-            exit 1
-          fi
-          echo "✅ README docs link OK"
-
-      - name: Validate JSON Schema
+      - name: Instalar dependências
         shell: bash
         run: |
-         python - <<'PY'
-         import json
-         from jsonschema import Draft7Validator
-         from pathlib import Path
+          python -m pip install --upgrade pip
 
-         p = Path("src/backend/schemas/sensor_payload.json")
-        assert p.exists(), f"Schema not found: "{p.resolve()}"
-          schema = json.loads(p.read_text(encoding="utf-8"))
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+          pip install pytest jsonschema
+
+      - name: Verificar sintaxe Python
+        run: |
+          python -m compileall -q src
+
+      - name: Validar JSON Schema
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          from jsonschema import Draft7Validator
+
+          schema_path = Path(
+              "src/backend/schemas/sensor_payload.json"
+          )
+
+          if not schema_path.exists():
+              raise FileNotFoundError(
+                  f"Schema não encontrado: {schema_path.resolve()}"
+              )
+
+          schema = json.loads(
+              schema_path.read_text(encoding="utf-8")
+          )
+
           Draft7Validator.check_schema(schema)
 
-       print("OK: JSON Schema is valid")
-         PY
+          print("JSON Schema válido.")
+          PY
 
-      - name: "✅ Check consumer structure"
+      - name: Executar testes sem hardware
+        shell: bash
         run: |
-          test -d src/backend/python-consumer || (echo "❌ missing python-consumer folder" && exit 1)
-          test -f src/backend/python-consumer/main.py || (echo "❌ missing main.py consumer entrypoint" && exit 1)
-          echo "✅ consumer structure OK"
-  code-quality:
-    name: "✨ Code Quality"
-    runs-on: ubuntu-latest
-    needs: [ security-scan, contract-docs ]
-    steps:
-      - name: "📥 Checkout code"
-        uses: actions/checkout@v4
+          if find tests -type f -name "test_*.py" 2>/dev/null | grep -q .; then
+            pytest tests -v -m "not hardware"
+          else
+            echo "Nenhum teste automatizado encontrado em tests/."
+          fi
 
-      - name: "🐍 Set up Python"
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-
-      - name: "📋 Install dependencies"
+      - name: Validar Docker Compose
+        shell: bash
         run: |
-          pip install -r requirements.txt
-          pip install flake8 black pytest pytest-cov
+          if [ -f docker/docker-compose.yml ]; then
+            docker compose -f docker/docker-compose.yml config -q
+          elif [ -f docker/compose.yml ]; then
+            docker compose -f docker/compose.yml config -q
+          elif [ -f docker-compose.yml ]; then
+            docker compose -f docker-compose.yml config -q
+          elif [ -f compose.yml ]; then
+            docker compose -f compose.yml config -q
+          else
+            echo "Arquivo Docker Compose não encontrado."
+            exit 1
+          fi
 
-      - name: "🧹 Code Formatting Check (Black)"
-        run: |
-          black --check src/ tests/ || echo "⚠️ Code formatting issues found"
-
-      - name: "📏 Linting (Flake8)"
-        run: |
-          flake8 src/ --max-line-length=88 --extend-ignore=E203,W503 || echo "⚠️ Linting issues found"
-
-      - name: "🧪 Run Tests"
-        run: |
-          pytest tests/ -v --cov=src --cov-report=xml || echo "⚠️ Some tests failed"
-
-      - name: "📊 Upload Coverage Reports"
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-coverage
-          path: coverage.xml
-
-  docker-build:
-    name: "🐳 Docker Compose Validation"
-    runs-on: ubuntu-latest
-    steps:
-      - name: "📥 Checkout code"
-        uses: actions/checkout@v4
-      - name: "🔍 Validate docker compose config"
-        working-directory: docker
-        run: |
-         - name: Validate docker-compose.yml
-           run: docker compose config -q
-          echo "✅ docker compose validation passed"
-
-         - name: Install Docker Compose (fallback)
-           run: |
-            docker compose version || sudo apt-get update && sudo apt-get install -y docker-compose-plugin
-
-      # Opcional (recomendado deixar desligado na Fase 3):
-      # - name: "🏗️ Build Docker Images"
-      #   working-directory: docker
-      #   run: |
-      #     docker compose build --no-cache
-      #     echo "✅ All Docker images built successfully"
