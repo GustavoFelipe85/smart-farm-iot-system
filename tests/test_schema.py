@@ -13,7 +13,7 @@ def load_schema():
     with open(SCHEMA_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
-
+"schema_version": "1.0.0",
 def test_payload_schema_ok():
     schema = load_schema()
 
