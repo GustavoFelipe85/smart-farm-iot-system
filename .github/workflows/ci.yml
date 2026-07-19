@@ -1,4 +1,4 @@
-name: CI Reduzida - Smart Farm System
+name: CI Reduzida - Smart Farm System.
 
 on:
   push:
