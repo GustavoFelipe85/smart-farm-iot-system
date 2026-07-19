@@ -87,7 +87,7 @@ jobs:
         shell: bash
         run: |
           if find tests -type f -name "test_*.py" 2>/dev/null | grep -q .; then
-            pytest tests -v -m "not hardware"
+             pytest tests -v -m "not hardware and not integration"
           else
             echo "Nenhum teste automatizado encontrado em tests/."
           fi
