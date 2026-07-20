@@ -169,10 +169,13 @@ def write_influx(payload: Dict[str, Any]) -> None:
         .time(dt, WritePrecision.NS)
     )
 
-    if m.get("soil_moisture") is not None:
-        p = p.field("soil", float(m["soil_moisture"]))
+  if m.get("soil_moisture") is not None:
+    p = p.field("soil", float(m["soil_moisture"]))
 
-    write_api.write(bucket=INFLUX_BUCKET, org=INFLUX_ORG, record=p)
+if m.get("soil_raw") is not None:
+    p = p.field("soil_raw", int(m["soil_raw"]))
+
+write_api.write(bucket=INFLUX_BUCKET, org=INFLUX_ORG, record=p)
 
 
 def on_connect(client: mqtt.Client, userdata, flags, rc):
