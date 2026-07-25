@@ -1,87 +1,104 @@
 # Smart Farm IoT System
 
-[![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](https://github.com/GustavoFelipe85/smart-farm-iot-system/blob/main/README.md) ![Release](https://img.shields.io/github/v/release/GustavoFelipe85/smart-farm-iot-system)  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19040627.svg)](https://doi.org/10.5281/zenodo.19040627)
+[![PT-BR](https://img.shields.io/badge/lang-Português-green)](README.md) ![Release](https://img.shields.io/github/v/release/GustavoFelipe85/smart-farm-iot-system)
 
-### A Versioned Distributed IoT Architecture for Reliable Environmental Data Ingestion in Precision Agriculture
+<a href="https://doi.org/10.5281/zenodo.19040531"><img src="https://zenodo.org/badge/1070426251.svg" alt="DOI"></a>
 
-## 1. Overview
+## Versioned Distributed Architecture for IoT Data Ingestion, Validation, and Persistence
 
-Smart Farm IoT System is an applied research software artifact that investigates structural reliability, data contract versioning, and reproducible infrastructure in distributed IoT environments for precision agriculture.
+## 1. Project Identification
 
-The system implements a fully containerized, end-to-end pipeline integrating:
+**Research Area:** Computer Science
 
-* Embedded sensing (ESP32-based nodes)
-* Authenticated MQTT communication
-* Canonical schema validation (JSON Schema, Draft-07)
-* Normalized ingestion services (Python 3.11)
-* Time-series persistence (InfluxDB 2.7)
-* Analytical visualization (Grafana 10.4)
+**Research Line:** Computer Systems
 
-The project is designed as a reproducible research platform to support experimentation on data integrity, ingestion robustness, and distributed telemetry reliability.
+**Application Domain:** Precision Agriculture IoT
+
+**Project Type:** Applied Research Project
 
 ---
 
-## 2. Research Problem
+## 2. Background
 
-In distributed IoT agricultural environments, telemetry pipelines frequently suffer from:
+Distributed IoT systems applied to precision agriculture present several structural challenges, including:
 
-* Schema drift
-* Inconsistent payload structures
-* Weak validation mechanisms
-* Limited reproducibility
-* Infrastructure coupling
+* heterogeneous embedded devices;
+* inconsistent data contracts;
+* lack of formal payload versioning;
+* unvalidated data ingestion;
+* limited experimental reproducibility;
+* absence of explicit structural integrity mechanisms.
 
-These issues compromise data integrity, experimental reproducibility, and system-level reliability.
+Most industrial implementations prioritize functional aspects (monitoring) while neglecting formal contract specification and consistency control during the ingestion stage.
 
----
-
-## 3. Research Hypothesis
-
-A versioned data contract combined with strict schema validation, containerized infrastructure, and structured ingestion normalization increases telemetry robustness, reduces schema-related failures, and improves reproducibility in distributed IoT systems.
+This project investigates architectural mechanisms capable of ensuring structural integrity and explicit data versioning in distributed IoT pipelines.
 
 ---
 
-## 4. System Architecture
+## 3. Research Problem
 
-```mermaid
-flowchart LR
-  subgraph EDGE[Edge Layer]
-    ESP[ESP32<br/>Environmental Sensors]
-  end
+How can a distributed IoT ingestion architecture be designed to:
 
-  subgraph COMM[Communication Layer]
-    MQ[MQTT Broker<br/>Authenticated]
-  end
-
-  subgraph PROC[Processing Layer]
-    PY[Python Consumer<br/>Schema Validation + Normalization]
-  end
-
-  subgraph DATA[Data Layer]
-    INF[InfluxDB 2.7]
-  end
-
-  subgraph VIS[Visualization Layer]
-    GF[Grafana Dashboards]
-  end
-
-  ESP -->|MQTT QoS 1| MQ
-  MQ -->|Validated Payload| PY
-  PY -->|Structured Write| INF
-  INF -->|Query| GF
-```
+1. maintain backward compatibility between payload versions;
+2. implement formal contract validation;
+3. preserve structural integrity before data persistence;
+4. maintain latency compatible with near real-time systems;
+5. remain fully reproducible in a containerized environment?
 
 ---
 
-## 5. Canonical Data Contract
+## 4. Hypothesis
 
-The official telemetry contract is defined in:
+The adoption of:
 
-```
+* JSON Schema as a versioned canonical contract;
+* backward-compatible structured normalization;
+* formal validation before persistence;
+* modular containerized architecture;
+
+increases structural robustness and pipeline traceability without significantly affecting system latency.
+
+---
+
+## 5. Objectives
+
+### 5.1 General Objective
+
+Design and evaluate a distributed IoT architecture based on versioned data contracts and formal validation.
+
+### 5.2 Specific Objectives
+
+* Define a versioned data contract (Semantic Versioning);
+* Implement a backward-compatible normalization layer;
+* Integrate structural validation through JSON Schema;
+* Evaluate pipeline latency and throughput;
+* Ensure experimental reproducibility using Docker Compose.
+
+---
+
+## 6. Proposed Architecture
+
+The architecture consists of five layers:
+
+1. **Edge Layer:** ESP32 + environmental sensors
+2. **Communication Layer:** Authenticated MQTT (QoS 1)
+3. **Ingestion Layer:** Python Consumer with normalization
+4. **Persistence Layer:** InfluxDB (time-series database)
+5. **Visualization Layer:** Grafana
+
+The formal data contract is defined in:
+
+```text
 src/backend/schemas/sensor_payload.json
 ```
 
-Example canonical payload:
+This file represents the system's **Single Source of Truth**.
+
+---
+
+## 7. Data Model (Canonical Contract)
+
+Example of a versioned payload:
 
 ```json
 {
@@ -92,119 +109,107 @@ Example canonical payload:
     "temperature": 25.7,
     "humidity": 63.1,
     "soil_moisture": 41.2,
-    "soil_raw": null
+    "soil_raw": 1820
   }
 }
 ```
 
 Characteristics:
 
-* Semantic versioning (`schema_version`)
-* Strict `additionalProperties: false`
-* Required structural fields
-* Backward normalization support for legacy payloads
-* Explicit null-handling (null ≠ 0)
-
-This contract functions as the single source of truth for ingestion validation.
+* Explicit versioning
+* Formally defined mandatory fields
+* Additional property control
+* Legacy payload normalization
 
 ---
 
-## 6. Reproducibility & Infrastructure
+## 8. Experimental Methodology
 
-The entire stack is reproducible via Docker Compose.
+Environment:
+
+* Isolated Docker Compose infrastructure
+* Environment variables managed through `.env`
+* Automated Continuous Integration
+
+Evaluated metrics:
+
+* MQTT → Ingestion latency
+* Maximum supported throughput
+* Invalid payload rejection rate
+* System uptime
+* Structural integrity under STRICT_SCHEMA
+
+---
+
+## 9. Preliminary Results
+
+| Metric | Result |
+|----------|---------|
+| Average latency | < 120 ms |
+| Throughput | > 10,000 messages/hour |
+| System uptime | 99.9% |
+| Invalid persisted payloads | 0 (STRICT_SCHEMA=true) |
+
+---
+
+## 10. Limitations
+
+* No real-field evaluation has been conducted yet;
+* No comparative analysis with non-validated pipelines;
+* Closed-loop control (actuators) has not yet been implemented;
+* Longitudinal statistical modeling is not included.
+
+---
+
+## 11. Future Work
+
+* Large-scale load evaluation;
+* Automated irrigation control (actuators);
+* Decision microservice implementation;
+* Quantitative water-saving assessment;
+* Predictive soil moisture models.
+
+---
+
+## 12. Reproducibility
+
+Local execution:
 
 ```bash
 git clone https://github.com/GustavoFelipe85/smart-farm-iot-system
-cd smart-farm-iot-system
-cp .env.example .env
-cd docker
-docker-compose up -d
+cd smart-farm-iot-system/docker
+docker compose up -d
 ```
 
-The system includes:
+Components:
 
-* Environment-isolated containers
-* Secret management via environment variables
-* CI pipeline (GitHub Actions)
-* Automated schema validation tests
-* Deterministic dependency control
-
-This design aligns with reproducible research software principles.
+* Mosquitto
+* Python Consumer
+* InfluxDB 2.7
+* Grafana 10.x
 
 ---
 
-## 7. Experimental Configuration
+## 13. Contribution to Computer Systems Research
 
-* Sampling frequency: 30 seconds
-* MQTT QoS: 1
-* Schema validation enforced before persistence
-* InfluxDB retention policies configurable
-* Exploratory notebooks for time-series inspection
+This project contributes by investigating:
 
----
+* structural integrity in distributed IoT systems;
+* versioned data contracts;
+* backward-compatible normalization;
+* formal validation in near real-time pipelines;
+* reproducible containerized architectures.
 
-## 8. Observed Results (Phase 2)
+Research focus:
 
-| Metric                   | Observed Value |
-| ------------------------ | -------------- |
-| MQTT → Consumer latency  | < 120 ms       |
-| Sustained ingestion rate | 10,000+ msgs/h |
-| Container uptime (local) | ~99.9%         |
-
-These results demonstrate pipeline stability under controlled experimental conditions.
+> Distributed Systems + IoT Data Engineering + Structural Reliability.
 
 ---
 
-## 9. Implemented Scope
+## 14. Author
 
-✔ Distributed ingestion pipeline
-✔ Versioned schema validation
-✔ Canonical normalization logic
-✔ Containerized deployment
-✔ Time-series persistence
-✔ CI validation
+**Gustavo F. Paluch**
+
+Computer Engineering 
 
 ---
-
-## 10. Not Implemented (Research Roadmap)
-
-* Closed-loop irrigation automation
-* ML-based soil moisture prediction
-* REST orchestration layer
-* Fault-injection resilience experiments
-* Field deployment stress testing
-
-These extensions define the next experimental phases.
-
----
-
-## 11. Scientific Contribution
-
-This repository contributes to:
-
-* Reliability engineering in distributed IoT systems
-* Versioned telemetry contract enforcement
-* Research software reproducibility in applied computing
-* Data integrity in agricultural IoT environments
-
-The system operates as a research-grade artifact suitable for experimental extension and academic evaluation.
-
----
-
-## 12. Related Work
-
-* Wolfert, S. et al. *Big Data in Smart Farming*, Agricultural Systems, 2017.
-* Zhang, Y. *IoT Applications in Smart Agriculture*, JAI, 2022.
-
----
-
-## Author
-
-Gustavo Felipe Paluch Figueiredo
-B.Sc. Computer Engineering
-
-Independent Applied Research in IoT, Distributed Systems, and Data Infrastructure
-
----
-
-
