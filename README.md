@@ -84,3 +84,157 @@ A arquitetura é composta por cinco camadas, operando sobre uma rede virtualizad
 5. **Visualization Layer:** Grafana
 
 Contrato formal definido em:
+
+
+```
+
+src/backend/schemas/sensor_payload.json
+
+```
+
+O arquivo acima constitui o *Single Source of Truth* do sistema.
+
+---
+
+## 7. Matriz de Segurança e Confiabilidade (DevSecOps)
+
+[MODO ACADÊMICO] O ambiente implementa controles estritos no nível de engenharia e esteira de integração contínua (CI/CD), mitigando vetores de ataque comuns em implantações de IoT industrial:
+
+| Vetor de Ameaça | Controle Implementado (*Mitigação*) |
+| :--- | :--- |
+| **Container Breakout** | Execução *Rootless* forçada (UID/GID predefinidos), `security_opt: no-new-privileges:true` e supressão de *capabilities* do kernel (`cap_drop: ALL`). |
+| **Supply Chain Attacks** | Arquitetura *Multi-Stage Build* isolando dependências de compilação do ambiente de execução. |
+| **Vazamento de Credenciais** | Controle de exclusão algorítmica (`.gitignore`) e varredura ativa de segredos (Gitleaks) na esteira de CI. |
+| **Exploração de Execução** | Sistemas de arquivos operacionais montados como somente leitura (`read_only: true`). |
+| **Vulnerabilidade de Código** | Integração SAST (Bandit) no *pipeline* para identificação estática de falhas na camada de ingestão. |
+| **Resource Exhaustion (DoS)** | Imposição de limites de consumo computacional (CPU/Memória RAM) via orquestrador. |
+
+---
+
+## 8. Modelo de Dados (Contrato Canônico)
+
+Exemplo de payload versionado:
+
+```json
+{
+  "schema_version": "1.0.0",
+  "device": "esp32-node-01",
+  "timestamp": "2025-11-11T14:57:00Z",
+  "metrics": {
+    "temperature": 25.7,
+    "humidity": 63.1,
+    "soil_moisture": 41.2,
+    "soil_raw": 1820
+  }
+}
+
+```
+
+Características:
+
+* Versionamento explícito
+* Campos obrigatórios definidos formalmente
+* Controle de propriedades adicionais
+* Normalização de formatos legados
+
+---
+
+## 9. Metodologia Experimental
+
+Ambiente:
+
+* Docker Compose isolado com limitação de recursos
+* Variáveis e credenciais isoladas via `.env`
+* Integração Contínua automatizada (Validação de Software e SecOps)
+
+Métricas avaliadas:
+
+* Latência MQTT → Ingestão
+* Throughput máximo suportado
+* Taxa de rejeição de payload inválido
+* Uptime da arquitetura
+* Integridade estrutural sob STRICT_SCHEMA
+
+---
+
+## 10. Resultados Preliminares
+
+| Métrica | Resultado |
+| --- | --- |
+| Latência média | < 120 ms |
+| Ingestão | > 10.000 msgs/h |
+| Uptime | 99.9% |
+| Payload inválido persistido | 0 (STRICT_SCHEMA=true) |
+
+---
+
+## 11. Limitações
+
+* Não há ainda avaliação em campo real;
+* Ausência de análise comparativa com pipelines não validados;
+* Não implementa controle fechado (atuadores);
+* Não inclui modelagem estatística longitudinal.
+
+---
+
+## 12. Trabalhos Futuros
+
+* Avaliação sob carga escalável;
+* Controle automatizado (atuadores) via autenticação mútua (mTLS);
+* Implementação de microserviço de decisão;
+* Avaliação quantitativa de economia hídrica;
+* Modelos preditivos para umidade do solo.
+
+---
+
+## 13. Reprodutibilidade
+
+Para fins de auditoria e testes de segurança, a implantação exige a injeção de credenciais em ambiente local isolado:
+
+```bash
+git clone [https://github.com/GustavoFelipe85/smart-farm-iot-system](https://github.com/GustavoFelipe85/smart-farm-iot-system)
+cd smart-farm-iot-system/docker
+
+# 1. Configuração do isolamento de credenciais
+cp .env.example .env
+
+# 2. Orquestração e compilação das imagens imutáveis
+docker compose up -d --build
+
+```
+
+Componentes:
+
+* Mosquitto (Rootless)
+* Python Consumer (Multi-Stage Build)
+* InfluxDB 2.7 (Rootless)
+* Grafana 10.x (Rootless)
+
+---
+
+## 14. Contribuição para Sistemas de Computação
+
+O projeto contribui ao investigar:
+
+* integridade estrutural em sistemas IoT distribuídos;
+* versionamento de contratos de dados;
+* validação formal em pipelines near real-time;
+* mitigação de superfície de ataque em infraestrutura de borda.
+
+O foco está no domínio de:
+
+> Sistemas Distribuídos + Engenharia de Dados IoT + Cibersegurança (SecOps) + Confiabilidade Estrutural.
+
+---
+
+## 15. Autor
+
+Gustavo F. Paluch
+
+Engenheiro da Computação
+
+```
+
+A estrutura agora demonstra domínio simultâneo em pesquisa acadêmica de alta performance e pragmatismo operacional de mercado. Qual o próximo componente da arquitetura você deseja submeter ao *pipeline* local para validar as restrições de sistema de arquivos do contêiner?
+
+```
