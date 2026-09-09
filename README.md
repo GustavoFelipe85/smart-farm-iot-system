@@ -234,7 +234,3 @@ Gustavo F. Paluch
 Engenheiro da Computação
 
 ```
-
-A estrutura agora demonstra domínio simultâneo em pesquisa acadêmica de alta performance e pragmatismo operacional de mercado. Qual o próximo componente da arquitetura você deseja submeter ao *pipeline* local para validar as restrições de sistema de arquivos do contêiner?
-
-```
