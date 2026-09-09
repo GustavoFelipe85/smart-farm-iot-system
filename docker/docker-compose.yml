@@ -117,21 +117,23 @@ services:
       - iot-network
 
   api:
-    image: python:3.11-slim
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     container_name: smartfarm-api
     user: "${UID:-1000}:${GID:-1000}"
     security_opt:
       - no-new-privileges:true
     cap_drop:
       - ALL
+    read_only: true
     working_dir: /app
     volumes:
       - ../src/backend:/app:ro
       - ../src/backend/schemas:/app/schemas:ro
     tmpfs:
       - /tmp
-      - /.cache/pip
-    command: sh -c "pip install --no-warn-script-location -r requirements.txt && uvicorn api.app:app --host ${API_HOST} --port ${API_PORT}"
+    command: uvicorn api.app:app --host 0.0.0.0 --port 8000
     environment:
       - INFLUX_URL=${INFLUX_URL}
       - INFLUX_ORG=${INFLUX_ORG}
@@ -155,21 +157,23 @@ services:
       - iot-network
 
   consumer:
-    image: python:3.11-slim
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     container_name: smartfarm-consumer
     user: "${UID:-1000}:${GID:-1000}"
     security_opt:
       - no-new-privileges:true
     cap_drop:
       - ALL
+    read_only: true
     working_dir: /app
     volumes:
       - ../src/backend:/app:ro
       - ../src/backend/schemas:/app/schemas:ro
     tmpfs:
       - /tmp
-      - /.cache/pip
-    command: sh -c "pip install --no-warn-script-location -r requirements.txt && python python-consumer/main.py"
+    command: python python-consumer/main.py
     environment:
       - INFLUX_URL=${INFLUX_URL}
       - INFLUX_ORG=${INFLUX_ORG}
@@ -189,21 +193,3 @@ services:
       - mosquitto
     networks:
       - iot-network
-
-      api:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
-    container_name: smartfarm-api
-    # ... (mantenha user, security_opt, cap_drop, read_only, environment, etc.) ...
-    # O comando agora executa nativamente, sem injeção de shell para pip
-    command: uvicorn api.app:app --host 0.0.0.0 --port 8000
-
-  consumer:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
-    container_name: smartfarm-consumer
-    # ... (mantenha user, security_opt, cap_drop, read_only, environment, etc.) ...
-    # Execução direta do script Python
-    command: python python-consumer/main.py
