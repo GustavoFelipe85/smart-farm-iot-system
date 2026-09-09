@@ -1,4 +1,3 @@
-```markdown
 # Smart Farm IoT System
 
 [![PT-BR](https://img.shields.io/badge/lang-PT--BR-green)](README.md) ![Release](https://img.shields.io/github/v/release/GustavoFelipe85/smart-farm-iot-system)  [![Google Scholar](https://img.shields.io/badge/Google%20Scholar-Author_Profile-blue)](https://scholar.google.com/citations?user=5EhQZ31XiJ0C)
