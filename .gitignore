@@ -1,21 +1,25 @@
-# GitHub .gitignore template for Python
-*.pyc
+# ===========================================
+# SMART FARM IOT SYSTEM - GITIGNORE
+# ===========================================
+
+# ✅ CREDENCIAIS E AMBIENTE (SECURE BY DESIGN)
+.env
+.env.*
+secrets/
+certs/
+*.pem
+*.key
+credentials.json
+
+# ✅ PYTHON & AMBIENTES VIRTUAIS
 __pycache__/
+*.py[cod]
+*$py.class
 *.so
 .Python
 env/
 venv/
 .venv/
-.env
-
-# ===========================================
-# SMART FARM IOT SYSTEM - CONFIGURAÇÕES
-# ===========================================
-
-# ✅ PYTHON
-*.pyo
-*.pyd
-.venv
 pip-log.txt
 pip-delete-this-directory.txt
 
@@ -26,22 +30,24 @@ yarn-debug.log*
 yarn-error.log*
 .lock-wscript
 
-# ✅ DADOS SENSÍVEIS
+# ✅ DADOS SENSÍVEIS E BANCOS
 *.csv
 *.db
 *.sqlite
 *.sqlite3
+data/
 database/
 data/local/
-*.backup
 
-# ✅ LOGS
+# ✅ LOGS E PROFILING
 *.log
 logs/
 *.logs
+callgrind.out.*
 
 # ✅ DOCKER
 docker-compose.override.yml
+.docker/
 
 # ✅ SISTEMA OPERACIONAL
 .DS_Store
@@ -52,24 +58,12 @@ docker-compose.override.yml
 ehthumbs.db
 Thumbs.db
 
-# ✅ IDE/EDITORES
+# ✅ IDE, EDITORES E BACKUPS
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-
-# ✅ BACKUPS
 *.backup
 *.bak
 *.tmp
-
-# ✅ GitHub .gitignore template for Python
-*.pyc
-__pycache__/
-*.so
-.Python
-env/
-venv/
-.venv/
-.env
