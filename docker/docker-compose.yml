@@ -189,3 +189,21 @@ services:
       - mosquitto
     networks:
       - iot-network
+
+      api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: smartfarm-api
+    # ... (mantenha user, security_opt, cap_drop, read_only, environment, etc.) ...
+    # O comando agora executa nativamente, sem injeção de shell para pip
+    command: uvicorn api.app:app --host 0.0.0.0 --port 8000
+
+  consumer:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: smartfarm-consumer
+    # ... (mantenha user, security_opt, cap_drop, read_only, environment, etc.) ...
+    # Execução direta do script Python
+    command: python python-consumer/main.py
