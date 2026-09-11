@@ -2,4 +2,5 @@ fastapi
 uvicorn
 paho-mqtt
 requests
+python-dotenv
 influxdb-client==1.36.0
