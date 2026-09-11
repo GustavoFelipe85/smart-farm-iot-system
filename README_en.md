@@ -195,14 +195,16 @@ Evaluated Metrics:
 For auditing and security testing purposes, deployment requires credential injection in an isolated local environment:
 
 ```bash
-git clone [https://github.com/GustavoFelipe85/smart-farm-iot-system](https://github.com/GustavoFelipe85/smart-farm-iot-system)
-cd smart-farm-iot-system/docker
-
-# 1. Credential isolation setup
+# 1. Credentials isolation setup
 cp .env.example .env
 
-# 2. Orchestration and compilation of immutable images
+# 2. Orchestration and build of immutable images
 docker compose up -d --build
+
+# 3. Telemetry Audit (Software-in-the-Loop)
+# Access the endpoint via browser or cURL to validate the SVG badge rendering
+# stochastically fed by InfluxDB:
+# http://localhost:8000/metrics/badge.svg
 
 ```
 
