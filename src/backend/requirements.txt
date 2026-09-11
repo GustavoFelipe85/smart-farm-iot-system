@@ -3,6 +3,7 @@ fastapi
 uvicorn
 paho-mqtt
 requests
+<<<<<<< HEAD
 =======
 paho-mqtt==1.6.1
 influxdb-client==1.42.0
@@ -15,4 +16,7 @@ jsonschema==4.23.0
 fastapi==0.115.0
 uvicorn[standard]==0.30.6
 >>>>>>> fix/python-dotenv-security
+=======
+python-dotenv
+>>>>>>> cab3188d7b403da83bc152639e2d6ffd1bf3377f
 influxdb-client==1.36.0
