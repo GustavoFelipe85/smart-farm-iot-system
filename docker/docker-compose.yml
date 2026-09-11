@@ -193,8 +193,20 @@ services:
       - mosquitto
     networks:
       - iot-network
+      
+  consumer:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: smartfarm-consumer
+    # ... (mantenha o restante das configurações do consumer intactas)
+    depends_on:
+      - influxdb
+      - mosquitto
+    networks:
+      - iot-network
 
-smartfarm-emulator:
+  smartfarm-emulator:
     build:
       context: ../src/emulator
     container_name: smartfarm-emulator
