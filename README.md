@@ -193,14 +193,16 @@ Métricas avaliadas:
 Para fins de auditoria e testes de segurança, a implantação exige a injeção de credenciais em ambiente local isolado:
 
 ```bash
-git clone [https://github.com/GustavoFelipe85/smart-farm-iot-system](https://github.com/GustavoFelipe85/smart-farm-iot-system)
-cd smart-farm-iot-system/docker
-
 # 1. Configuração do isolamento de credenciais
 cp .env.example .env
 
 # 2. Orquestração e compilação das imagens imutáveis
 docker compose up -d --build
+
+# 3. Auditoria de Telemetria (Software-in-the-Loop)
+# Acesse o endpoint via navegador ou cURL para validar a renderização do selo SVG
+# alimentado estocasticamente pelo InfluxDB:
+# http://localhost:8000/metrics/badge.svg
 
 ```
 
